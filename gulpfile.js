@@ -55,7 +55,28 @@ function css(cb) {
     // .pipe(
     //   cssmin().on("error", function (err) {
     //     console.log(err);
-    //   })
+    //   })snip
+    // )
+    .pipe(gulp.dest(buildDir + "css"))
+    .pipe(browserSync.stream());
+  cb();
+}
+
+function printcss(cb) {
+  gulp
+    .src(srcDir + "less/**/print.less")
+    .pipe(
+      less().on("error", function (err) {
+        console.log(err);
+      })
+    )
+    .pipe(
+      gulpautoprefixer({ overrideBrowserslist: ["last 2 versions", ">5%"] })
+    )
+    // .pipe(
+    //   cssmin().on("error", function (err) {
+    //     console.log(err);
+    //   })snip
     // )
     .pipe(gulp.dest(buildDir + "css"))
     .pipe(browserSync.stream());
@@ -117,7 +138,7 @@ function watching(done) {
   });
 
   watch(srcDir + "js/**/*.js", series(js, reloadBrowser));
-  watch(srcDir + "less/**/*.less", series(bootstrap, css));
+  watch(srcDir + "less/**/*.less", series(bootstrap, css, printcss));
   watch(srcDir + "html/**/*.html", series(html, reloadBrowser));
   done();
 }
@@ -130,13 +151,14 @@ exports.default = series(
   html,
   bootstrap,
   css,
+  printcss,
   js,
   watching
 );
 
 exports.build = series(
   reset,
-  parallel(img, vendor, fonts, html, bootstrap, css, js)
+  parallel(img, vendor, fonts, html, bootstrap, css, printcss, js)
 );
 
 
