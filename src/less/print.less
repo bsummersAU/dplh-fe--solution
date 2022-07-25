@@ -1,3 +1,28 @@
+
+@media print{
 main {
     display: block;
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+    page-break-after: auto;
+  }
+  
+  .col-left{
+      display: none
+      }
+      
+      .col-right{
+        display: none;
+      }
+      
+      ::-webkit-scrollbar {
+          display: none;
+      }
+  
+    details{
+      page-break-inside: avoid;
+      overflow: visible;
+      margin: 10px;
+    }
 }
