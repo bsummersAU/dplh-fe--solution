@@ -276,16 +276,16 @@ fieldset[aria-label*="Required documents"] ul {
   margin-bottom: 0;
   padding-left: 32px;
 }
-fieldset[aria-label*="Required documents"] td.clearfix.cell {
+fieldset[aria-label*="Required documents"] td.clearfix.cell:not(:empty) {
   padding: 16px !important;
   background-color: #fcf8e3;
 }
-fieldset[aria-label*="Required documents"] td.clearfix.cell h4 {
+fieldset[aria-label*="Required documents"] td.clearfix.cell:not(:empty) h4 {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: -8px;
 }
-fieldset[aria-label*="Required documents"] td.clearfix.cell ul {
+fieldset[aria-label*="Required documents"] td.clearfix.cell:not(:empty) ul {
   padding-left: 28px;
   margin-bottom: 0;
   margin-top: 0;
@@ -525,8 +525,8 @@ li {
   font-size: 17.92px;
   line-height: 26.88px;
 }
-ol {
-  padding: 0;
+li + li {
+  margin-top: 4px;
 }
 small,
 .small {
@@ -1645,7 +1645,7 @@ fieldset[aria-label$="fieldset-body"] {
 fieldset[aria-label$="fieldset-header"] ~ fieldset[aria-label$="fieldset-header"] {
   margin-top: 24px;
 }
-fieldset ol {
+fieldset[aria-label="Additional Information"] ol {
   list-style: none;
 }
 details {
