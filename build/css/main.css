@@ -402,6 +402,10 @@ td {
 a.link-disabled {
   color: #919191;
 }
+a.link-disabled:hover {
+  cursor: unset !important;
+  color: #919191;
+}
 a.link-disabled::before {
   position: absolute;
   top: 4px;
@@ -479,6 +483,13 @@ a.link-disabled::before {
   display: inline-block;
   margin-left: 3px;
 }
+fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul {
+  list-style: none;
+  padding-left: 0;
+}
+[aria-label="Additional Supporting Documents"] .panel-title {
+  display: none;
+}
 :root {
   accent-color: #D14210;
 }
@@ -527,6 +538,9 @@ li {
 }
 li + li {
   margin-top: 4px;
+}
+label {
+  font-weight: 600;
 }
 small,
 .small {
@@ -826,6 +840,9 @@ body *::-webkit-scrollbar-thumb {
     font-size: 1.66em;
     text-indent: 46px;
   }
+  .navbar .weblinks li {
+    margin: 0;
+  }
 }
 footer {
   position: relative;
@@ -1001,7 +1018,7 @@ footer .footer-bottom {
   }
 }
 .alert {
-  border-color: transparent;
+  border-radius: 4px;
 }
 .alert h4 {
   font-weight: 600;
@@ -1017,6 +1034,14 @@ footer .footer-bottom {
 }
 .alert ul > li > a {
   color: #000 !important;
+}
+.alert .fa {
+  top: 3px;
+}
+#validapplication .alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .alert-message {
   padding-left: 0;
@@ -1260,7 +1285,7 @@ label > span {
 .control > input[type="date"] {
   height: 50px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .control > input[type="text"]:placeholder,
 .control > input[type="number"]:placeholder,
@@ -1275,9 +1300,10 @@ label > span {
   font-weight: 300;
 }
 .form-control {
+  color: inherit;
   height: 50px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   border-color: #ccc !important;
 }
 .form-control:placeholder {
@@ -1286,7 +1312,7 @@ label > span {
 select {
   height: 50px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 select:placeholder {
   color: #333333;
@@ -1437,7 +1463,7 @@ label.control-radio > span {
   height: 48px;
 }
 .field-label {
-  font-weight: 500;
+  font-weight: 600;
 }
 .crmEntityFormView .tab-title {
   border-bottom: none;

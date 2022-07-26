@@ -455,6 +455,10 @@ td {
 
 a.link-disabled {
   color: #919191;
+  &:hover {
+    cursor: unset !important;
+    color: #919191;
+  }
   &::before {
     position: absolute;
     top: 4px;
@@ -544,4 +548,20 @@ a.link-disabled {
 .rotating.fa-spinner::before {
   display: inline-block;
   margin-left: 3px;
+}
+
+// Extract into lists file
+fieldset[aria-label="Required documents"] [class="list-required-documents"] {
+  > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+
+// Shame.css
+[aria-label="Additional Supporting Documents"] {
+  .panel-title {
+    display: none;
+  }
 }

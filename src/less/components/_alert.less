@@ -1,5 +1,5 @@
 .alert {
-  border-color: transparent;
+  border-radius: 4px;
   h4 {
     font-weight: 600;
     color: @brand-primary;
@@ -11,9 +11,16 @@
       font-size: 14px;
       margin-bottom: 5px;
       > a {
-        color: @brand-primary!important;
+        color: @brand-primary !important;
       }
     }
+  }
+  .fa {
+    top: 3px;
+  }
+  // add display flex to specific instances 
+  #validapplication & {
+    display: flex;
   }
 }
 
