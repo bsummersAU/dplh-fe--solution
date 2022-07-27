@@ -258,7 +258,7 @@ ul.stepper-vertical li.active a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 fieldset[aria-label*="Required documents"] {
-  background-color: #d3d3d3;
+  background-color: #fcf8e3;
   position: relative;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -890,6 +890,14 @@ footer .footer-bottom {
 .pagination > li > a {
   font-size: 16px;
   font-weight: 600;
+}
+.pagination > .active > a,
+.pagination > .active > a:active {
+  background-color: #000 !important;
+}
+.pagination > .active > a:hover,
+.pagination > .active > a:focus {
+  background-color: #D14210 !important;
 }
 .step-num {
   list-style: none;
