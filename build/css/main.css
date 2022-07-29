@@ -435,7 +435,7 @@ a.link-disabled::before {
   border-radius: 2px;
   color: #fff;
   font-size: 14px;
-  left: 5;
+  left: 6;
   padding: 10px 20px;
   position: absolute;
   top: -47px;
@@ -447,7 +447,7 @@ a.link-disabled::before {
   border: 2px dotted #fff;
   text-decoration: none;
   color: #fff;
-  left: 5px;
+  left: 6px;
   position: absolute;
   top: 10px;
   -webkit-transition: top 0.1s ease-in;
