@@ -54,9 +54,6 @@ body {
 .site-container {
   min-height: 100%;
 }
-.site-container-2-col {
-  min-height: 90%;
-}
 body > form {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -74,26 +71,20 @@ body > form {
 .max-width-xl {
   max-width: 1640px;
 }
-.dplh-3-col,
-.dplh-2-col {
+.dplh-3-col {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.dplh-3-col .form-row,
-.dplh-2-col .form-row {
+.dplh-3-col .form-row {
   height: 100%;
 }
 .dplh-3-col .form-row .col-left,
-.dplh-2-col .form-row .col-left,
 .dplh-3-col .form-row .col-right,
-.dplh-2-col .form-row .col-right,
-.dplh-3-col .form-row .col-centre,
-.dplh-2-col .form-row .col-centre {
+.dplh-3-col .form-row .col-centre {
   padding-top: 32px;
 }
-.dplh-3-col #navigationbtns,
-.dplh-2-col #navigationbtns {
+.dplh-3-col #navigationbtns {
   height: 77px;
   padding: 16px;
   z-index: 10;
@@ -110,16 +101,13 @@ body > form {
   margin-left: -15px;
   margin-right: -15px;
 }
-.dplh-3-col #navigationbtns input[type="button"] + input[type="button"],
-.dplh-2-col #navigationbtns input[type="button"] + input[type="button"] {
+.dplh-3-col #navigationbtns input[type="button"] + input[type="button"] {
   margin-left: 8px;
 }
-.dplh-3-col #navigationbtns #unlockappform,
-.dplh-2-col #navigationbtns #unlockappform {
+.dplh-3-col #navigationbtns #unlockappform {
   width: 0;
 }
-.dplh-3-col #navigationbtns #unlockappform input[title="Unlock Application"],
-.dplh-2-col #navigationbtns #unlockappform input[title="Unlock Application"] {
+.dplh-3-col #navigationbtns #unlockappform input[title="Unlock Application"] {
   position: absolute;
   top: -45px;
   white-space: nowrap;
@@ -209,31 +197,24 @@ ul.stepper-vertical li.active a {
   }
 }
 @media (min-width: 992px) {
-  .dplh-3-col .form-row,
-  .dplh-2-col .form-row {
+  .dplh-3-col .form-row {
     height: 100%;
   }
   .dplh-3-col .form-row .col-left,
-  .dplh-2-col .form-row .col-left,
   .dplh-3-col .form-row .col-right,
-  .dplh-2-col .form-row .col-right,
-  .dplh-3-col .form-row .col-centre,
-  .dplh-2-col .form-row .col-centre {
+  .dplh-3-col .form-row .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
     height: calc(100vh - 64px) !important;
     position: relative;
   }
-  .dplh-3-col .form-nav__toggle,
-  .dplh-2-col .form-nav__toggle {
+  .dplh-3-col .form-nav__toggle {
     display: none;
   }
-  .dplh-3-col #mainContent,
-  .dplh-2-col #mainContent {
+  .dplh-3-col #mainContent {
     min-height: calc(100% - 77px);
   }
-  .dplh-3-col #navigationbtns,
-  .dplh-2-col #navigationbtns {
+  .dplh-3-col #navigationbtns {
     position: sticky;
   }
   .page-title {
@@ -448,24 +429,27 @@ a.link-disabled::before {
   color: black;
 }
 .skip-to-content a {
-  background: #00668d;
+  border: 2px dotted #fff;
+  background: #d54614;
+  text-decoration: none;
   border-radius: 2px;
   color: #fff;
   font-size: 14px;
-  left: 0;
+  left: 6;
   padding: 10px 20px;
   position: absolute;
-  top: -43px;
+  top: -47px;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 999999;
 }
 .skip-to-content a:focus {
+  border: 2px dotted #fff;
+  text-decoration: none;
   color: #fff;
-  left: 0;
-  outline: 0;
+  left: 6px;
   position: absolute;
-  top: 0;
+  top: 10px;
   -webkit-transition: top 0.1s ease-in;
   transition: top 0.1s ease-in;
 }
