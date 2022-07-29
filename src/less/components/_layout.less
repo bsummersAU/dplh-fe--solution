@@ -23,10 +23,6 @@ body {
   min-height: 100%;
 }
 
-.site-container-2-col {
-  min-height: 90%;
-}
-
 // watch out for the <form> element!
 body {
   > form {
@@ -52,7 +48,7 @@ body {
   max-width: 1640px;
 }
 
-.dplh-3-col, .dplh-2-col {
+.dplh-3-col {
   flex-grow: 1;
 
   .form-row {
@@ -200,7 +196,7 @@ ul.stepper-vertical {
 }
 
 @media (min-width: @screen-md-min) {
-  .dplh-3-col, .dplh-2-col  {
+  .dplh-3-col {
     .form-row {
       height: 100%;
       .col-left,
@@ -490,24 +486,27 @@ a.link-disabled {
 
 // Included in preform css but sometimes disappears?
 .skip-to-content a {
-  background: #00668d;
+  border: 2px dotted #fff;
+  background: #d54614;
+  text-decoration: none;
   border-radius: 2px;
   color: #fff;
   font-size: 14px;
-  left: 0;
+  left: 5;
   padding: 10px 20px;
   position: absolute;
-  top: -43px;
+  top: -47px;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 999999;
 }
 .skip-to-content a:focus {
+  border: 2px dotted #fff;
+  text-decoration: none;
   color: #fff;
-  left: 0;
-  outline: 0;
+  left: 5px;
   position: absolute;
-  top: 0;
+  top: 10px;
   -webkit-transition: top 0.1s ease-in;
   transition: top 0.1s ease-in;
 }
