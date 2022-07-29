@@ -23,6 +23,10 @@ body {
   min-height: 100%;
 }
 
+.site-container-2-col {
+  min-height: 90%;
+}
+
 // watch out for the <form> element!
 body {
   > form {
@@ -48,7 +52,7 @@ body {
   max-width: 1640px;
 }
 
-.dplh-3-col {
+.dplh-3-col, .dplh-2-col {
   flex-grow: 1;
 
   .form-row {
@@ -196,7 +200,7 @@ ul.stepper-vertical {
 }
 
 @media (min-width: @screen-md-min) {
-  .dplh-3-col {
+  .dplh-3-col, .dplh-2-col  {
     .form-row {
       height: 100%;
       .col-left,
