@@ -429,8 +429,7 @@ a.link-disabled::before {
   color: black;
 }
 .skip-to-content a {
-  border: 2px solid #fff;
-  outline: 2px dotted #d54614;
+  border: 2px dotted #fff;
   background: #d54614;
   text-decoration: none;
   border-radius: 2px;
@@ -445,8 +444,7 @@ a.link-disabled::before {
   z-index: 999999;
 }
 .skip-to-content a:focus {
-  border: 2px solid #fff;
-  outline: 2px dotted #d54614;
+  border: 2px dotted #fff;
   text-decoration: none;
   color: #fff;
   left: 6px;
