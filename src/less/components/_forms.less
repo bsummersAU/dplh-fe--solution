@@ -200,6 +200,49 @@ label.control-radio {
   }
 }
 
+fieldset[aria-label="Pay by anyone"] legend{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 24px;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+fieldset[aria-label="Pay by anyone"] table {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background: white;
+  margin-top: -5px;
+  border: 1px solid #D1D1D1;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+fieldset[aria-label="Pay by anyone"] table tr td .control input{
+  width: 39vw;
+  outline: 1px solid #4D4D4D;
+}
+
+fieldset[aria-label="Pay by anyone"] table tr td .control input:focus{
+  width: 39vw;
+}
+
+fieldset[aria-label="Pay by anyone"] table tr td .info label{
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17.92px;
+  line-height: 150%;
+}
+
 @media (min-width: @screen-md-min) {
   label {
     font-size: 1.75rem;
