@@ -487,6 +487,8 @@ a.link-disabled {
 // Included in preform css but sometimes disappears?
 .skip-to-content a {
   border: 2px dotted #fff;
+  outline: 2px dotted #d54614;
+  outline-offset: 2px;
   background: #d54614;
   text-decoration: none;
   border-radius: 2px;
@@ -495,14 +497,16 @@ a.link-disabled {
   left: 6;
   padding: 10px 20px;
   position: absolute;
-  top: -47px;
+  top: -50px;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 999999;
 }
 
 .skip-to-content a:focus {
-  border: 2px dotted #fff;
+  border: 2px solid #fff;
+  outline: 2px dotted #d54614;
+  outline-offset: 2px;
   text-decoration: none;
   color: #fff;
   left: 6px;
@@ -510,6 +514,11 @@ a.link-disabled {
   top: 10px;
   -webkit-transition: top 0.1s ease-in;
   transition: top 0.1s ease-in;
+}
+
+.skip-to-content a:hover{
+border: 2px solid #fff;
+outline: 0;
 }
 
 
