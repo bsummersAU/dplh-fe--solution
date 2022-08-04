@@ -75,6 +75,15 @@ input[type="radio"] {
   }
 }
 
+.checkbox label:first-child input{
+  &:focus{
+    outline: 2px dotted @brand-focus;
+    outline-offset: 2px;
+  }
+}
+
+
+
 label.control-checkbox,
 label.control-radio {
   display: block;

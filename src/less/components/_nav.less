@@ -16,13 +16,13 @@
     float: left;
     background: url(../wa-gov-crest-white.svg) center left no-repeat;
     background-size: 34px 34px;
-    color: #fff;
+    color: @white;
     text-indent: 28px;
     font-size: 1em;
     text-decoration: none;
 
     a {
-      color: #fff;
+      color: @white;
       text-decoration: none;
       font-size: 1.25em;
       font-weight: 400;
@@ -88,7 +88,7 @@
                 }
 
                 > a {
-                  color: #fff;
+                  color: @white;
                   &:hover,
                   &:focus {
                     background-color: #000;
@@ -109,7 +109,7 @@
       > a {
         margin-top: 10px;
         border-left: 5px solid transparent;
-        color: #fff;
+        color: @white;
         font-weight: 300;
         text-decoration: none;
       }
@@ -155,7 +155,6 @@
           }
         }
         > .dropdown-menu {
-          margin-top: 6px;
           padding: 0;
           background-color: @gray-darker;
           width: auto;
@@ -196,11 +195,22 @@
         border-top: 7px solid transparent;
         text-decoration: none;
 
-        &:hover,
-        &:focus,
+        &:hover:not([role="none"]){
+          background-color: @brand-focus;
+          border-bottom: 7px solid @brand-focus;
+        }
+
+        &:hover:target([role="none"]){
+          background-color: @brand-focus;
+        }
+
+        &:focus:not([role="none"]){  
+          border: 2px dotted @white;
+          padding-bottom:20px;
+          padding-top: 16px;
+        }
         &:focus:active {
-          color: @brand-info;
-          border-top-color: @brand-info;
+          color: @white;
           text-decoration: none;
         }
       }
@@ -216,8 +226,16 @@
       }
       .dropdown {
         > .dropdown-menu {
-          background-color: @gray-darker;
+          background-color: @brand-focus;    
         }
+        &:hover{
+          background-color: @brand-focus;
+
+         > a{
+            background-color: @brand-focus;
+          }
+        }
+
       }
     }
   }
@@ -225,8 +243,7 @@
   .navbar-inverse .navbar-nav > .open > a,
   .navbar-inverse .navbar-nav > .open > a:hover,
   .navbar-inverse .navbar-nav > .open > a:focus {
-    border-color: @brand-info;
-    background-color: @gray-darker;
+    background-color: @brand-focus;
   }
 }
 

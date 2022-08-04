@@ -187,6 +187,9 @@ ul.stepper-vertical li.active a {
 #helpSection h2 {
   font-size: 20px;
 }
+a[title="Profile"]:target {
+  border-left: 5px solid #d45610;
+}
 @media (max-width: 991px) {
   .page-actions {
     margin-top: 2em;
@@ -351,6 +354,44 @@ fieldset[aria-label*="Required documents"] td.clearfix.cell:not(:empty) ul {
 .validators [style*="visibility:hidden"] {
   display: none;
 }
+.view-grid > table > thead > tr > th a {
+  text-decoration: none;
+}
+.view-grid > table > thead > tr > th a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+.view-grid > table > thead > tr > th a:focus {
+  text-decoration: none;
+  border: 2px dotted #000;
+  color: #000;
+  padding: 2px;
+}
+a.list-group-item:hover {
+  color: #d45610;
+  text-decoration: underline;
+  background: #FFFFFF;
+  border: 0;
+}
+a.list-group-item:focus {
+  background: #FFFFFF;
+  outline: 2px dotted #d45610;
+  border: 0;
+  color: #000;
+  text-decoration: underline;
+}
+a.list-group-item {
+  margin: 0.4px;
+}
+form[action="/profile/"] .weblink[aria-label="Profile"]::after {
+  content: "";
+  height: 100%;
+  width: 4px;
+  background: #d45610;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .fa-warning {
   color: #d9534f;
 }
@@ -460,6 +501,9 @@ a.link-disabled::before {
 .skip-to-content a:hover {
   border: 2px solid #fff;
   outline: 0;
+}
+#skip-to-nav {
+  left: 200px;
 }
 #validationsuccess {
   margin-top: 24px;
@@ -675,13 +719,13 @@ body *::-webkit-scrollbar-thumb {
   float: left;
   background: url(../wa-gov-crest-white.svg) center left no-repeat;
   background-size: 34px 34px;
-  color: #fff;
+  color: #FFFFFF;
   text-indent: 28px;
   font-size: 1em;
   text-decoration: none;
 }
 .navbar .navbar-brand a {
-  color: #fff;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 1.25em;
   font-weight: 400;
@@ -736,7 +780,7 @@ body *::-webkit-scrollbar-thumb {
         align-self: flex-end;
   }
   .navbar .container > ul .dropdown > .dropdown-toggle + .dropdown-menu > li > a {
-    color: #fff;
+    color: #FFFFFF;
   }
   .navbar .container > ul .dropdown > .dropdown-toggle + .dropdown-menu > li > a:hover,
   .navbar .container > ul .dropdown > .dropdown-toggle + .dropdown-menu > li > a:focus {
@@ -748,7 +792,7 @@ body *::-webkit-scrollbar-thumb {
   .nav.navbar-nav > li > a {
     margin-top: 10px;
     border-left: 5px solid transparent;
-    color: #fff;
+    color: #FFFFFF;
     font-weight: 300;
     text-decoration: none;
   }
@@ -781,7 +825,6 @@ body *::-webkit-scrollbar-thumb {
     margin-left: 10px;
   }
   .navbar .navbar-collapse .dropdown > .dropdown-menu {
-    margin-top: 6px;
     padding: 0;
     background-color: #2d2f32;
     width: auto;
@@ -817,11 +860,20 @@ body *::-webkit-scrollbar-thumb {
     border-top: 7px solid transparent;
     text-decoration: none;
   }
-  .navbar .nav.navbar-nav a:hover,
-  .navbar .nav.navbar-nav a:focus,
+  .navbar .nav.navbar-nav a:hover:not([role="none"]) {
+    background-color: #d45610;
+    border-bottom: 7px solid #d45610;
+  }
+  .navbar .nav.navbar-nav a:hover:target([role="none"]) {
+    background-color: #d45610;
+  }
+  .navbar .nav.navbar-nav a:focus:not([role="none"]) {
+    border: 2px dotted #FFFFFF;
+    padding-bottom: 20px;
+    padding-top: 16px;
+  }
   .navbar .nav.navbar-nav a:focus:active {
-    color: #D14210;
-    border-top-color: #D14210;
+    color: #FFFFFF;
     text-decoration: none;
   }
   .navbar .nav.navbar-nav > li.active > a {
@@ -830,13 +882,18 @@ body *::-webkit-scrollbar-thumb {
     border-top-color: #D14210;
   }
   .navbar .nav.navbar-nav .dropdown > .dropdown-menu {
-    background-color: #2d2f32;
+    background-color: #d45610;
+  }
+  .navbar .nav.navbar-nav .dropdown:hover {
+    background-color: #d45610;
+  }
+  .navbar .nav.navbar-nav .dropdown:hover > a {
+    background-color: #d45610;
   }
   .navbar-inverse .navbar-nav > .open > a,
   .navbar-inverse .navbar-nav > .open > a:hover,
   .navbar-inverse .navbar-nav > .open > a:focus {
-    border-color: #D14210;
-    background-color: #2d2f32;
+    background-color: #d45610;
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -1346,6 +1403,10 @@ input[type="radio"]:hover {
 input[type="radio"] + label {
   margin-left: 0.25em;
   cursor: pointer;
+}
+.checkbox label:first-child input:focus {
+  outline: 2px dotted #d45610;
+  outline-offset: 2px;
 }
 label.control-checkbox,
 label.control-radio {
