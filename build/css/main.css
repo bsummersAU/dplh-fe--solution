@@ -438,6 +438,50 @@ td {
 [portal-modal] .modal-footer .btn-left {
   float: left;
 }
+.modal-content .modal-header {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.modal-content .modal-header .close {
+  margin-top: -25px;
+  padding-right: 15px;
+}
+.modal-content .modal-header .close:focus {
+  outline: 2px dotted #d45610;
+}
+.modal-content .modal-header .modal-body {
+  padding-bottom: 20px;
+}
+.modal-content .modal-footer #cancelBtn {
+  background-color: #000;
+  border: 0;
+}
+.modal-content .modal-footer #cancelBtn:focus {
+  background-color: #FFFFFF;
+  color: #d45610;
+  border: 2px dotted #d45610;
+}
+.modal-content .modal-footer #cancelBtn:hover {
+  background-color: #d45610;
+  color: #FFFFFF;
+  border: 0;
+}
+.modal-content .modal-footer #acceptBtn {
+  background-color: #000;
+}
+.modal-content .modal-footer #acceptBtn:focus {
+  background-color: #FFFFFF;
+  color: #d45610;
+  border: 2px dotted #d45610;
+}
+.modal-content .modal-footer #acceptBtn:hover {
+  background-color: #d45610;
+  color: #FFFFFF;
+  border: 0;
+}
+html {
+  overflow: hidden;
+}
 @media (min-width: 768px) {
   .context-dashboard {
     margin-top: 40px;

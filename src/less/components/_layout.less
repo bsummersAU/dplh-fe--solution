@@ -513,6 +513,67 @@ td {
   }
 }
 
+.modal-content{ 
+
+  .modal-header {
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  .close {
+    margin-top: -25px;
+    padding-right: 15px;
+
+    &:focus{
+      outline: 2px dotted #d45610;
+    }
+  }
+
+  .modal-body{
+    padding-bottom: 20px;
+  }
+
+  }
+
+  .modal-footer{
+    
+    #cancelBtn{
+      background-color: #000;
+      border: 0;
+      &:focus{
+        background-color: @white;
+        color: @brand-focus;
+        border: 2px dotted @brand-focus;
+      }
+      &:hover{  
+        background-color: @brand-focus;
+        color: @white;
+        border: 0;
+      }
+    }
+    
+    #acceptBtn{
+      background-color: #000;
+      &:focus{
+        background-color: @white;
+        color: @brand-focus;
+        border: 2px dotted @brand-focus;
+      }
+      &:hover{
+        background-color: @brand-focus;
+        color: @white;
+        border: 0;
+
+      }
+    }
+  }
+
+}
+
+
+html{
+  overflow: hidden;
+}               
+
 
 @media (min-width: @screen-sm-min) {
   .context-dashboard {
