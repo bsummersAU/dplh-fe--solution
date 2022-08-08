@@ -435,6 +435,9 @@ td {
 .context-dashboard td .dropdown ul .fa {
   display: none;
 }
+[portal-modal] .modal-footer .btn-left {
+  float: left;
+}
 @media (min-width: 768px) {
   .context-dashboard {
     margin-top: 40px;
