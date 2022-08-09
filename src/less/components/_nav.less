@@ -54,6 +54,10 @@
   }
 }
 
+.dropdown:not([role="none"]) {
+  padding-bottom: 2px;
+}
+
 // Mobile styles
 @media (max-width: @screen-xs-max) {
   .navbar {
@@ -117,6 +121,10 @@
       &.active {
         border-left: 5px solid @brand-info;
       }
+    }
+
+    .dropdown {
+      padding-bottom: 2px;
     }
 
     .dropdown {
@@ -192,7 +200,7 @@
       a {
         font-weight: 300;
         font-size: 1.1em;
-        border-top: 7px solid transparent;
+        border-top: 5px solid transparent;
         text-decoration: none;
 
         &:hover:not([role="none"]){
