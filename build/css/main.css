@@ -432,6 +432,9 @@ td {
 .context-dashboard td .dropdown ul a {
   color: #000;
 }
+.context-dashboard td .dropdown ul a:hover {
+  text-decoration: underline;
+}
 .context-dashboard td .dropdown ul .fa {
   display: none;
 }
@@ -451,33 +454,6 @@ td {
 }
 .modal-content .modal-header .modal-body {
   padding-bottom: 20px;
-}
-.modal-content .modal-footer #cancelBtn {
-  background-color: #000;
-  border: 0;
-}
-.modal-content .modal-footer #cancelBtn:focus {
-  background-color: #FFFFFF;
-  color: #d45610;
-  border: 2px dotted #d45610;
-}
-.modal-content .modal-footer #cancelBtn:hover {
-  background-color: #d45610;
-  color: #FFFFFF;
-  border: 0;
-}
-.modal-content .modal-footer #acceptBtn {
-  background-color: #000;
-}
-.modal-content .modal-footer #acceptBtn:focus {
-  background-color: #FFFFFF;
-  color: #d45610;
-  border: 2px dotted #d45610;
-}
-.modal-content .modal-footer #acceptBtn:hover {
-  background-color: #d45610;
-  color: #FFFFFF;
-  border: 0;
 }
 html {
   overflow: hidden;
@@ -757,7 +733,6 @@ body *::-webkit-scrollbar-thumb {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-bottom: none;
-  min-height: 64px;
 }
 .navbar .navbar-brand {
   margin-left: 15px !important;
@@ -915,15 +890,12 @@ body *::-webkit-scrollbar-thumb {
   }
   .navbar .nav.navbar-nav a:hover:not([role="none"]) {
     background-color: #d45610;
-    border-bottom: 7px solid #d45610;
   }
   .navbar .nav.navbar-nav a:hover:target([role="none"]) {
     background-color: #d45610;
   }
   .navbar .nav.navbar-nav a:focus:not([role="none"]) {
     border: 2px dotted #FFFFFF;
-    padding-bottom: 20px;
-    padding-top: 16px;
   }
   .navbar .nav.navbar-nav a:focus:active {
     color: #FFFFFF;
@@ -942,6 +914,9 @@ body *::-webkit-scrollbar-thumb {
   }
   .navbar .nav.navbar-nav .dropdown:hover > a {
     background-color: #d45610;
+  }
+  .homelink:focus {
+    border: 2px dotted #FFFFFF;
   }
   .navbar-inverse .navbar-nav > .open > a,
   .navbar-inverse .navbar-nav > .open > a:hover,
@@ -1133,6 +1108,33 @@ footer .footer-bottom {
   background-color: white;
   border-color: #D14210;
   color: #D14210;
+}
+#cancelBtn {
+  background-color: #000;
+  border: 0;
+}
+#cancelBtn:focus {
+  background-color: #FFFFFF;
+  color: #d45610;
+  border: 2px dotted #d45610;
+}
+#cancelBtn:hover {
+  background-color: #d45610;
+  color: #FFFFFF;
+  border: 0;
+}
+#acceptBtn {
+  background-color: #000;
+}
+#acceptBtn:focus {
+  background-color: #FFFFFF;
+  color: #d45610;
+  border: 2px dotted #d45610;
+  text-decoration: overline;
+}
+#acceptBtn:hover {
+  background-color: #d45610;
+  color: #FFFFFF;
 }
 @-webkit-keyframes spin {
   100% {
