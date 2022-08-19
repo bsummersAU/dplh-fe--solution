@@ -96,6 +96,15 @@ body {
   }
 }
 
+.col-md-3{
+  padding: 32px 15px 15vh 50px;
+}
+
+.col-md-9{
+  padding: 32px 50px 0px 15px;
+
+}
+
 .alt-bg {
   background-color: @alt-bg;
 }
@@ -125,6 +134,9 @@ ul.stepper-vertical {
       padding: 4px 8px 8px 40px !important;
       &:hover {
         cursor: pointer;
+      }
+      &:focus{
+        border: 2px dotted #000;
       }
     }
 
@@ -182,6 +194,30 @@ ul.stepper-vertical {
 #helpSection {
   h2 {
     font-size: 20px;
+  }
+}
+
+
+
+.data-loading-spinner{
+  position: absolute; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%;/* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+
+  .fa-spinner{
+    font-size: 100px;
+    color: black;
+    left: 48%;
+    top: 200px;
+
   }
 }
 
@@ -499,6 +535,9 @@ td {
         color:#000;
         &:hover{
           text-decoration: underline;
+        }
+        &:focus{
+          border: 2px dotted #000;
         }
       }
       .fa {

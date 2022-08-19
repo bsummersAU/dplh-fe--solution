@@ -9,12 +9,17 @@
   text-decoration: none;
   white-space: normal;
   border-radius: 0;
-  &:active:focus,
-  &:hover,
-  &:focus {
+  
+  &:hover {
     background-color: @brand-info;
     border-color: @brand-info;
     outline: 0;
+  }
+  &:focus{
+    outline: 2px dotted #000;
+    outline-offset: 2px;
+    border: 0;
+    background-color: @brand-info;
   }
 
   &:disabled {
@@ -25,6 +30,7 @@
   span + .fa {
     padding: 0 0 0 0.25em;
     margin: 0;
+
   }
 
   .fa + span {
@@ -38,10 +44,16 @@
   border-color: @brand-primary;
   color: @brand-primary;
 
-  &:active:focus,
-  &:hover,
-  &:focus {
+  &:active,
+  &:hover {
     outline: 0;
+    background-color: white;
+    border-color: @brand-info;
+    color: @brand-info;
+  }
+  &:focus{
+    outline: 2px dotted #000;
+    outline-offset: 2px;
     background-color: white;
     border-color: @brand-info;
     color: @brand-info;
@@ -53,10 +65,16 @@
   border-color: @brand-info;
   color: white;
 
-  &:active:focus,
-  &:hover,
-  &:focus {
+  &:active,
+  &:hover{
     outline: 0;
+    background-color: @brand-primary;
+    border-color: @brand-primary;
+    color: white;
+  }
+  &:focus{
+    outline: 2px dotted #000;
+    outline-offset: 2px;
     background-color: @brand-primary;
     border-color: @brand-primary;
     color: white;
@@ -115,6 +133,38 @@
     color: @white;
   }
 }
+
+.dplh--col #navigationbtns {
+  width: 75vw;
+height: 77px;
+padding: 16px;
+padding-right: 50px;
+ z-index: 10;
+ bottom: 0;
+ background: #F5F5F5;
+ -webkit-box-shadow: #ccc 0px 0px 4px;
+         box-shadow: #ccc 0px 0px 4px;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+         justify-content: space-between;
+ margin-left: -15px;
+ margin-right: -15px;
+ input[type="button"] + input[type="button"] {
+  margin-left: 8px;
+ }
+ #unlockappform {
+  width: 0;
+  input[title="Unlock Application"] {
+    position: absolute;
+    top: -45px;
+    white-space: nowrap;
+   }
+}
+}
+
 
 
 

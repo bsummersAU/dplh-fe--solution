@@ -112,6 +112,12 @@ body > form {
   top: -45px;
   white-space: nowrap;
 }
+.col-md-3 {
+  padding: 32px 15px 15vh 50px;
+}
+.col-md-9 {
+  padding: 32px 50px 0px 15px;
+}
 .alt-bg {
   background-color: #F5F5F5;
 }
@@ -142,6 +148,9 @@ ul.stepper-vertical li a {
 }
 ul.stepper-vertical li a:hover {
   cursor: pointer;
+}
+ul.stepper-vertical li a:focus {
+  border: 2px dotted #000;
 }
 ul.stepper-vertical li:not(:last-child):before {
   content: "";
@@ -186,6 +195,32 @@ ul.stepper-vertical li.active a {
 }
 #helpSection h2 {
   font-size: 20px;
+}
+.data-loading-spinner {
+  position: absolute;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 0;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+.data-loading-spinner .fa-spinner {
+  font-size: 100px;
+  color: black;
+  left: 48%;
+  top: 200px;
 }
 a[title="Profile"]:target {
   border-left: 5px solid #d45610;
@@ -434,6 +469,9 @@ td {
 }
 .context-dashboard td .dropdown ul a:hover {
   text-decoration: underline;
+}
+.context-dashboard td .dropdown ul a:focus {
+  border: 2px dotted #000;
 }
 .context-dashboard td .dropdown ul .fa {
   display: none;
@@ -1044,12 +1082,16 @@ footer .footer-bottom {
   white-space: normal;
   border-radius: 0;
 }
-.btn:active:focus,
-.btn:hover,
-.btn:focus {
+.btn:hover {
   background-color: #D14210;
   border-color: #D14210;
   outline: 0;
+}
+.btn:focus {
+  outline: 2px dotted #000;
+  outline-offset: 2px;
+  border: 0;
+  background-color: #D14210;
 }
 .btn:disabled {
   pointer-events: none;
@@ -1068,10 +1110,16 @@ footer .footer-bottom {
   border-color: #000;
   color: #000;
 }
-.btn-default:active:focus,
-.btn-default:hover,
-.btn-default:focus {
+.btn-default:active,
+.btn-default:hover {
   outline: 0;
+  background-color: white;
+  border-color: #D14210;
+  color: #D14210;
+}
+.btn-default:focus {
+  outline: 2px dotted #000;
+  outline-offset: 2px;
   background-color: white;
   border-color: #D14210;
   color: #D14210;
@@ -1081,10 +1129,16 @@ footer .footer-bottom {
   border-color: #D14210;
   color: white;
 }
-.btn-secondary:active:focus,
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary:active,
+.btn-secondary:hover {
   outline: 0;
+  background-color: #000;
+  border-color: #000;
+  color: white;
+}
+.btn-secondary:focus {
+  outline: 2px dotted #000;
+  outline-offset: 2px;
   background-color: #000;
   border-color: #000;
   color: white;
@@ -1135,6 +1189,36 @@ footer .footer-bottom {
 #acceptBtn:hover {
   background-color: #d45610;
   color: #FFFFFF;
+}
+.dplh--col #navigationbtns {
+  width: 75vw;
+  height: 77px;
+  padding: 16px;
+  padding-right: 50px;
+  z-index: 10;
+  bottom: 0;
+  background: #F5F5F5;
+  -webkit-box-shadow: #ccc 0px 0px 4px;
+  box-shadow: #ccc 0px 0px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.dplh--col #navigationbtns input[type="button"] + input[type="button"] {
+  margin-left: 8px;
+}
+.dplh--col #navigationbtns #unlockappform {
+  width: 0;
+}
+.dplh--col #navigationbtns #unlockappform input[title="Unlock Application"] {
+  position: absolute;
+  top: -45px;
+  white-space: nowrap;
 }
 @-webkit-keyframes spin {
   100% {
@@ -1852,6 +1936,34 @@ tr:last-of-type .cell {
 }
 .form-summary td.cell {
   padding: 0;
+}
+.ref {
+  margin-left: 30px;
+}
+.ref summary {
+  padding: 16px 315px 16px 24px;
+  gap: 10px;
+  width: 80%;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  margin: -1px 0px;
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.ref > div:first-of-type {
+  padding: 24px;
+  gap: 32px;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 227px;
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
+}
+.ref dt {
+  margin-bottom: 8px;
 }
 fieldset[aria-label$="fieldset-header"] {
   background: #e3e3e3;
