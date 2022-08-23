@@ -82,6 +82,21 @@ input[type="radio"] {
   }
 }
 
+// zebra stripping on lists
+details{
+dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
+  background: #0001;
+  }
+  
+  dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)){
+  background: #0001;
+  }
+  
+  tr:not(:nth-child(4n + 1)):not(:nth-child(4n + 3)){
+      background: #0001;
+      }
+
+}
 
 
 label.control-checkbox,
@@ -325,16 +340,16 @@ fieldset[aria-label="Pay by anyone"] table tr td .info label{
   border-bottom: none;
 }
 
-
-
-
-
 form {
   .description.above {
     margin-bottom: 10px;
     float: left;
     margin-top: -8px;
     font-size: @font-size-small;
+  }
+
+  fieldset[aria-label="Consent to Apply Checklist"] .section-title {
+    font-size: 30px;
   }
 
   fieldset {
@@ -421,11 +436,21 @@ form {
                 .fa-edit {
                   display: none;
                 }
+                &:focus{
+                  text-decoration: none;
+                  border: 2px dotted #000;
+                }
+                &:hover{
+                  text-decoration: underline;
+                }
               }
               > .btn {
                 background-color: @white;
                 border: none;
                 color: @brand-primary;
+                &:hover{
+                  color: @brand-focus;
+                }
               }
             }
           }
@@ -591,6 +616,42 @@ tr:last-of-type  .cell {
   }
 }
 
+.page-description p[role="p-body"]{
+  padding-left: 50px;
+}
+.page-description p:not([role="p-body"]){
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.list-styling{
+  summary{
+    padding: 16px 315px 16px 24px;
+    gap: 10px;
+    width: 80%;
+    height: 61px;
+    background: #E8E8E8;
+    border: 1px solid #D1D1D1;
+    margin: -1px 0px;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .info{
+    width: 50%;
+  }
+
+  .control:not(#hasGrid){
+    width: 50%;
+    float: right;
+    margin-top: -35px;
+    padding-left: 30%;
+  }
+
+}
+
 .ref{
   margin-left: 30px;
   summary{
@@ -611,7 +672,7 @@ tr:last-of-type  .cell {
     gap: 32px;
     width: 80%;
     height: 100%;
-    margin-bottom: 227px; 
+    margin-bottom: 10px; 
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
   }

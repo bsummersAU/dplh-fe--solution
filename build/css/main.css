@@ -71,6 +71,15 @@ body > form {
 .max-width-xl {
   max-width: 1640px;
 }
+.dplh--col .form-row {
+  height: 100%;
+}
+.dplh--col .form-row .col-centre {
+  height: calc(100% - 64px);
+}
+.dplh--col #mainContent {
+  min-height: calc(100% - 77px);
+}
 .dplh-3-col {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -117,6 +126,7 @@ body > form {
 }
 .col-md-9 {
   padding: 32px 50px 0px 15px;
+  height: 100%;
 }
 .alt-bg {
   background-color: #F5F5F5;
@@ -235,6 +245,15 @@ a[title="Profile"]:target {
   }
 }
 @media (min-width: 992px) {
+  .dplh--col .col-centre {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 64px) !important;
+    position: relative;
+  }
+  .dplh--col #mainContent {
+    min-height: calc(100% - 77px);
+  }
   .dplh-3-col .form-row {
     height: 100%;
   }
@@ -435,6 +454,15 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after {
 }
 td {
   font-weight: 400;
+}
+.readyOnlyInfo {
+  width: 50%;
+}
+.readOnlyControl {
+  width: 50%;
+  float: right;
+  margin-top: -35px;
+  padding-left: 30%;
 }
 .context-dashboard {
   margin-top: 24px;
@@ -1547,6 +1575,15 @@ input[type="radio"] + label {
   outline: 2px dotted #d45610;
   outline-offset: 2px;
 }
+details dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)) {
+  background: #0001;
+}
+details dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)) {
+  background: #0001;
+}
+details tr:not(:nth-child(4n + 1)):not(:nth-child(4n + 3)) {
+  background: #0001;
+}
 label.control-checkbox,
 label.control-radio {
   display: block;
@@ -1753,6 +1790,9 @@ form .description.above {
   margin-top: -8px;
   font-size: 14px;
 }
+form fieldset[aria-label="Consent to Apply Checklist"] .section-title {
+  font-size: 30px;
+}
 form fieldset legend {
   font-size: 14px;
   margin-bottom: 0;
@@ -1815,10 +1855,20 @@ form .view-grid table > tbody > tr > td .dropdown.action li a {
 form .view-grid table > tbody > tr > td .dropdown.action li a .fa-edit {
   display: none;
 }
+form .view-grid table > tbody > tr > td .dropdown.action li a:focus {
+  text-decoration: none;
+  border: 2px dotted #000;
+}
+form .view-grid table > tbody > tr > td .dropdown.action li a:hover {
+  text-decoration: underline;
+}
 form .view-grid table > tbody > tr > td .dropdown.action > .btn {
   background-color: #FFFFFF;
   border: none;
   color: #000;
+}
+form .view-grid table > tbody > tr > td .dropdown.action > .btn:hover {
+  color: #d45610;
 }
 .crmEntityFormView .boolean-radio input[type="radio"] {
   -webkit-appearance: none;
@@ -1937,6 +1987,35 @@ tr:last-of-type .cell {
 .form-summary td.cell {
   padding: 0;
 }
+.page-description p[role="p-body"] {
+  padding-left: 50px;
+}
+.page-description p:not([role="p-body"]) {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.list-styling summary {
+  padding: 16px 315px 16px 24px;
+  gap: 10px;
+  width: 80%;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  margin: -1px 0px;
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.list-styling .info {
+  width: 50%;
+}
+.list-styling .control:not(#hasGrid) {
+  width: 50%;
+  float: right;
+  margin-top: -35px;
+  padding-left: 30%;
+}
 .ref {
   margin-left: 30px;
 }
@@ -1958,7 +2037,7 @@ tr:last-of-type .cell {
   gap: 32px;
   width: 80%;
   height: 100%;
-  margin-bottom: 227px;
+  margin-bottom: 10px;
   background: #FFFFFF;
   border: 1px solid #D1D1D1;
 }
