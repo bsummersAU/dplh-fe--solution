@@ -643,12 +643,37 @@ tr:last-of-type  .cell {
     width: 50%;
   }
 
-  .control:not(#hasGrid){
+  .control:not(.hasGrid){
     width: 50%;
     float: right;
     margin-top: -35px;
-    padding-left: 30%;
+    padding-left: 25%;
   }
+    
+ >div:first-of-type{  
+    // // tr:not(:nth-child(4n + 1)):not(:nth-child(4n + 3)){
+    // //     background: #0001;
+    // // }
+    // tr:nth-child(2n + 1):not(:nth-child(4n + 2)){
+    //     background: #0001;
+    // }
+
+    // tr {
+    //   border-bottom: 2px solid #0001;
+      
+    // }
+
+    td tr{
+    padding-bottom: 0px!important;
+    border-bottom: 0 !important;
+    // border: 10px solid white !important;
+    
+    }
+
+    label{
+    padding: 10px 10px 0px 10px;
+    }
+}
 
 }
 
@@ -679,6 +704,17 @@ tr:last-of-type  .cell {
   dt{
     margin-bottom:8px;
   }
+
+  dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
+    background: #0001;
+    }
+    
+    dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)){
+    background: #0001;
+    height: 23px;;
+    }
+
+
 
 }
 

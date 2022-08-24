@@ -212,6 +212,9 @@ ul.stepper-vertical {
   }
 }
 
+p.page-description{
+  padding-left: 0!important
+}
 
 
 .data-loading-spinner{
@@ -252,7 +255,7 @@ a[title="Profile"]:target{
 
 @media (min-width: @screen-md-min) {
 .dplh--col{
-
+  .col-left,
   .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
@@ -262,6 +265,20 @@ a[title="Profile"]:target{
 
   #mainContent {
     min-height: calc(100% - @stepperFooterHeight);
+  }
+
+  // Container for Next, Previous, & Save buttons
+  #navigationbtns {
+    position: sticky;
+  }
+  .page-title {
+    display: flex;
+    align-items: center;
+      &.right-align-btn {
+        > .btn {
+          margin-left: auto;
+        }
+      }
   }
 
 }

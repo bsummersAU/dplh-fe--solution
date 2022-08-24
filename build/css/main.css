@@ -206,6 +206,9 @@ ul.stepper-vertical li.active a {
 #helpSection h2 {
   font-size: 20px;
 }
+p.page-description {
+  padding-left: 0 !important;
+}
 .data-loading-spinner {
   position: absolute;
   /* Sit on top of the page content */
@@ -245,6 +248,7 @@ a[title="Profile"]:target {
   }
 }
 @media (min-width: 992px) {
+  .dplh--col .col-left,
   .dplh--col .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
@@ -253,6 +257,20 @@ a[title="Profile"]:target {
   }
   .dplh--col #mainContent {
     min-height: calc(100% - 77px);
+  }
+  .dplh--col #navigationbtns {
+    position: sticky;
+  }
+  .dplh--col .page-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .dplh--col .page-title.right-align-btn > .btn {
+    margin-left: auto;
   }
   .dplh-3-col .form-row {
     height: 100%;
@@ -2010,11 +2028,18 @@ tr:last-of-type .cell {
 .list-styling .info {
   width: 50%;
 }
-.list-styling .control:not(#hasGrid) {
+.list-styling .control:not(.hasGrid) {
   width: 50%;
   float: right;
   margin-top: -35px;
-  padding-left: 30%;
+  padding-left: 25%;
+}
+.list-styling > div:first-of-type td tr {
+  padding-bottom: 0px!important;
+  border-bottom: 0 !important;
+}
+.list-styling > div:first-of-type label {
+  padding: 10px 10px 0px 10px;
 }
 .ref {
   margin-left: 30px;
@@ -2043,6 +2068,13 @@ tr:last-of-type .cell {
 }
 .ref dt {
   margin-bottom: 8px;
+}
+.ref dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)) {
+  background: #0001;
+}
+.ref dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)) {
+  background: #0001;
+  height: 23px;
 }
 fieldset[aria-label$="fieldset-header"] {
   background: #e3e3e3;
