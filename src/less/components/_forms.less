@@ -76,7 +76,7 @@ input[type="radio"] {
 }
 
 .checkbox label:first-child input{
-  &:focus{
+  &:focus-visible{
     outline: 2px dotted @brand-focus;
     outline-offset: 2px;
   }
@@ -138,6 +138,14 @@ label.control-radio {
 
     > li {
       margin-bottom: 0.5em;
+    >a.delete-link{
+      &:focus-visible{
+        outline:2px dotted black;
+      }
+      &:hover{
+        text-decoration: underline;
+      }
+    }
     }
   }
 }
@@ -436,7 +444,7 @@ form {
                 .fa-edit {
                   display: none;
                 }
-                &:focus{
+                &:focus-visible{
                   text-decoration: none;
                   border: 2px dotted #000;
                 }
@@ -649,19 +657,7 @@ tr:last-of-type  .cell {
     margin-top: -35px;
     padding-left: 25%;
   }
-    
- >div:first-of-type{  
-    // // tr:not(:nth-child(4n + 1)):not(:nth-child(4n + 3)){
-    // //     background: #0001;
-    // // }
-    // tr:nth-child(2n + 1):not(:nth-child(4n + 2)){
-    //     background: #0001;
-    // }
-
-    // tr {
-    //   border-bottom: 2px solid #0001;
-      
-    // }
+ 
 
     td tr{
     padding-bottom: 0px!important;
@@ -673,8 +669,6 @@ tr:last-of-type  .cell {
     label{
     padding: 10px 10px 0px 10px;
     }
-}
-
 }
 
 .ref{
@@ -692,7 +686,7 @@ tr:last-of-type  .cell {
     font-weight: 700;
     font-size: 24px;
   }
-  >div:first-of-type{
+  >div{
     padding: 24px;
     gap: 32px;
     width: 80%;
@@ -701,6 +695,13 @@ tr:last-of-type  .cell {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
   }
+  th[scope="col"] {
+    background-color: #F5F5F5;
+    >a{
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+}
   dt{
     margin-bottom:8px;
   }

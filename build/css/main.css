@@ -159,7 +159,7 @@ ul.stepper-vertical li a {
 ul.stepper-vertical li a:hover {
   cursor: pointer;
 }
-ul.stepper-vertical li a:focus {
+ul.stepper-vertical li a:focus-visible {
   border: 2px dotted #000;
 }
 ul.stepper-vertical li:not(:last-child):before {
@@ -433,7 +433,7 @@ fieldset[aria-label*="Required documents"] td.clearfix.cell:not(:empty) ul {
   text-decoration: underline;
   color: #000;
 }
-.view-grid > table > thead > tr > th a:focus {
+.view-grid > table > thead > tr > th a:focus-visible {
   text-decoration: none;
   border: 2px dotted #000;
   color: #000;
@@ -443,17 +443,13 @@ a.list-group-item:hover {
   color: #d45610;
   text-decoration: underline;
   background: #FFFFFF;
-  border: 0;
 }
-a.list-group-item:focus {
+a.list-group-item:focus-visible {
   background: #FFFFFF;
   outline: 2px dotted #d45610;
   border: 0;
   color: #000;
   text-decoration: underline;
-}
-a.list-group-item {
-  margin: 0.4px;
 }
 form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   content: "";
@@ -463,6 +459,16 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   position: absolute;
   left: 0;
   top: 0;
+}
+.list-group-item {
+  margin-bottom: 0!important;
+  border-width: 1px 1px!important;
+}
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 1px!important;
+}
+.panel > .list-group:last-child .list-group-item:last-child {
+  border-bottom-width: 1px!important;
 }
 .fa-warning {
   color: #d9534f;
@@ -516,7 +522,7 @@ td {
 .context-dashboard td .dropdown ul a:hover {
   text-decoration: underline;
 }
-.context-dashboard td .dropdown ul a:focus {
+.context-dashboard td .dropdown ul a:focus-visible {
   border: 2px dotted #000;
 }
 .context-dashboard td .dropdown ul .fa {
@@ -533,7 +539,7 @@ td {
   margin-top: -25px;
   padding-right: 15px;
 }
-.modal-content .modal-header .close:focus {
+.modal-content .modal-header .close:focus-visible {
   outline: 2px dotted #d45610;
 }
 .modal-content .modal-header .modal-body {
@@ -593,7 +599,7 @@ a.link-disabled::before {
   transition: top 1s ease-out;
   z-index: 999999;
 }
-.skip-to-content a:focus {
+.skip-to-content a:focus-visible {
   border: 2px solid #fff;
   outline: 2px dotted #d54614;
   outline-offset: 2px;
@@ -978,10 +984,10 @@ body *::-webkit-scrollbar-thumb {
   .navbar .nav.navbar-nav a:hover:target([role="none"]) {
     background-color: #d45610;
   }
-  .navbar .nav.navbar-nav a:focus:not([role="none"]) {
+  .navbar .nav.navbar-nav a:focus-visible:not([role="none"]) {
     border: 2px dotted #FFFFFF;
   }
-  .navbar .nav.navbar-nav a:focus:active {
+  .navbar .nav.navbar-nav a:focus-visible:active {
     color: #FFFFFF;
     text-decoration: none;
   }
@@ -999,7 +1005,7 @@ body *::-webkit-scrollbar-thumb {
   .navbar .nav.navbar-nav .dropdown:hover > a {
     background-color: #d45610;
   }
-  .homelink:focus {
+  .homelink:focus-visible {
     border: 2px dotted #FFFFFF;
   }
   .navbar-inverse .navbar-nav > .open > a,
@@ -1133,7 +1139,7 @@ footer .footer-bottom {
   border-color: #D14210;
   outline: 0;
 }
-.btn:focus {
+.btn:focus-visible {
   outline: 2px dotted #000;
   outline-offset: 2px;
   border: 0;
@@ -1163,7 +1169,7 @@ footer .footer-bottom {
   border-color: #D14210;
   color: #D14210;
 }
-.btn-default:focus {
+.btn-default:focus-visible {
   outline: 2px dotted #000;
   outline-offset: 2px;
   background-color: white;
@@ -1182,7 +1188,7 @@ footer .footer-bottom {
   border-color: #000;
   color: white;
 }
-.btn-secondary:focus {
+.btn-secondary:focus-visible {
   outline: 2px dotted #000;
   outline-offset: 2px;
   background-color: #000;
@@ -1213,7 +1219,7 @@ footer .footer-bottom {
   background-color: #000;
   border: 0;
 }
-#cancelBtn:focus {
+#cancelBtn:focus-visible {
   background-color: #FFFFFF;
   color: #d45610;
   border: 2px dotted #d45610;
@@ -1226,7 +1232,7 @@ footer .footer-bottom {
 #acceptBtn {
   background-color: #000;
 }
-#acceptBtn:focus {
+#acceptBtn:focus-visible {
   background-color: #FFFFFF;
   color: #d45610;
   border: 2px dotted #d45610;
@@ -1589,7 +1595,7 @@ input[type="radio"] + label {
   margin-left: 0.25em;
   cursor: pointer;
 }
-.checkbox label:first-child input:focus {
+.checkbox label:first-child input:focus-visible {
   outline: 2px dotted #d45610;
   outline-offset: 2px;
 }
@@ -1641,6 +1647,12 @@ label.control-radio > span {
 }
 .fieldset ul > li {
   margin-bottom: 0.5em;
+}
+.fieldset ul > li > a.delete-link:focus-visible {
+  outline: 2px dotted black;
+}
+.fieldset ul > li > a.delete-link:hover {
+  text-decoration: underline;
 }
 .control-large > span,
 .control-large > label {
@@ -1873,7 +1885,7 @@ form .view-grid table > tbody > tr > td .dropdown.action li a {
 form .view-grid table > tbody > tr > td .dropdown.action li a .fa-edit {
   display: none;
 }
-form .view-grid table > tbody > tr > td .dropdown.action li a:focus {
+form .view-grid table > tbody > tr > td .dropdown.action li a:focus-visible {
   text-decoration: none;
   border: 2px dotted #000;
 }
@@ -2034,11 +2046,11 @@ tr:last-of-type .cell {
   margin-top: -35px;
   padding-left: 25%;
 }
-.list-styling > div:first-of-type td tr {
+.list-styling td tr {
   padding-bottom: 0px!important;
   border-bottom: 0 !important;
 }
-.list-styling > div:first-of-type label {
+.list-styling label {
   padding: 10px 10px 0px 10px;
 }
 .ref {
@@ -2057,7 +2069,7 @@ tr:last-of-type .cell {
   font-weight: 700;
   font-size: 24px;
 }
-.ref > div:first-of-type {
+.ref > div {
   padding: 24px;
   gap: 32px;
   width: 80%;
@@ -2065,6 +2077,13 @@ tr:last-of-type .cell {
   margin-bottom: 10px;
   background: #FFFFFF;
   border: 1px solid #D1D1D1;
+}
+.ref th[scope="col"] {
+  background-color: #F5F5F5;
+}
+.ref th[scope="col"] > a {
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 .ref dt {
   margin-bottom: 8px;

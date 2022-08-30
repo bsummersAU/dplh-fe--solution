@@ -150,7 +150,7 @@ ul.stepper-vertical {
       &:hover {
         cursor: pointer;
       }
-      &:focus{
+      &:focus-visible{
         border: 2px dotted #000;
       }
     }
@@ -484,7 +484,7 @@ fieldset[aria-label*="Required documents"] {
               text-decoration: underline;
               color: #000;
             }
-             &:focus {
+             &:focus-visible {
               text-decoration: none;
               border: 2px dotted #000;
               color: #000;
@@ -502,10 +502,9 @@ a.list-group-item:hover {
   color: @brand-focus;
   text-decoration:underline;
   background: @white;
-  border: 0;
 }
 
-a.list-group-item:focus{
+a.list-group-item:focus-visible{
     background:  @white;
     outline: 2px dotted @brand-focus;
     border: 0;
@@ -513,9 +512,6 @@ a.list-group-item:focus{
     text-decoration: underline;
 }
 
-a.list-group-item{
-margin:0.4px
-}
 
 form[action="/profile/"] .weblink[aria-label="Profile"]::after{
   content: "";
@@ -527,6 +523,21 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after{
   top: 0;
 
 };
+
+// mdoifying profile page
+
+.list-group-item {
+  margin-bottom: 0!important;
+  border-width: 1px 1px!important;
+}
+
+.panel-heading + .list-group .list-group-item:first-child {
+border-top-width: 1px!important;
+}
+
+.panel > .list-group:last-child .list-group-item:last-child{
+  border-bottom-width: 1px!important;
+}
 
 // Icons
 .fa-warning {
@@ -594,7 +605,7 @@ td {
         &:hover{
           text-decoration: underline;
         }
-        &:focus{
+        &:focus-visible{
           border: 2px dotted #000;
         }
       }
@@ -623,7 +634,7 @@ td {
     margin-top: -25px;
     padding-right: 15px;
 
-    &:focus{
+    &:focus-visible{
       outline: 2px dotted #d45610;
     }
   }
@@ -699,7 +710,7 @@ a.link-disabled {
   z-index: 999999;
 }
 
-.skip-to-content a:focus {
+.skip-to-content a:focus-visible {
   border: 2px solid #fff;
   outline: 2px dotted #d54614;
   outline-offset: 2px;

@@ -93,7 +93,7 @@
                 > a {
                   color: @white;
                   &:hover,
-                  &:focus {
+                  &:focus{
                     background-color: #000;
                   }
                 }
@@ -210,10 +210,10 @@
           background-color: @brand-focus;
         }
 
-        &:focus:not([role="none"]){  
+        &:focus-visible:not([role="none"]){  
           border: 2px dotted @white;
         }
-        &:focus:active {
+        &:focus-visible:active {
           color: @white;
           text-decoration: none;
         }
@@ -245,7 +245,7 @@
   }
 
   .homelink{
-    &:focus{
+    &:focus-visible{
       border: 2px dotted @white;
     }
   }
