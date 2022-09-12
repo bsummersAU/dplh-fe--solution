@@ -226,7 +226,7 @@ p.page-description {
   /* Black background with opacity */
   z-index: 0;
   /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer;
+  cursor: progress;
   /* Add a pointer on hover */
 }
 .data-loading-spinner .fa-spinner {
@@ -234,6 +234,51 @@ p.page-description {
   color: black;
   left: 48%;
   top: 200px;
+}
+input#dplh_phonenumber::-webkit-input-placeholder {
+  color: white;
+}
+input#dplh_phonenumber::-moz-placeholder {
+  color: white;
+}
+input#dplh_phonenumber:-ms-input-placeholder {
+  color: white;
+}
+input#dplh_phonenumber::-ms-input-placeholder {
+  color: white;
+}
+input#dplh_phonenumber::placeholder {
+  color: white;
+}
+input#dplh_email::-webkit-input-placeholder {
+  color: white;
+}
+input#dplh_email::-moz-placeholder {
+  color: white;
+}
+input#dplh_email:-ms-input-placeholder {
+  color: white;
+}
+input#dplh_email::-ms-input-placeholder {
+  color: white;
+}
+input#dplh_email::placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber::-webkit-input-placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber::-moz-placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber:-ms-input-placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber::-ms-input-placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber::placeholder {
+  color: white;
 }
 a[title="Profile"]:target {
   border-left: 5px solid #d45610;
@@ -552,6 +597,9 @@ html {
   .context-dashboard {
     margin-top: 40px;
   }
+}
+.form-nav__toggle {
+  display: none;
 }
 a.link-disabled {
   color: #919191;
@@ -1496,6 +1544,7 @@ footer .footer-bottom {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 10px;
 }
 .actions input[type="button"] {
   margin-right: 0 !important;
@@ -1713,7 +1762,7 @@ label.control-radio > span {
   color: #000;
   border-color: #000;
 }
-fieldset[aria-label="Pay by anyone"] legend {
+fieldset[aria-label="Payment details"] legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -1739,7 +1788,7 @@ fieldset[aria-label="Pay by anyone"] legend {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-fieldset[aria-label="Pay by anyone"] table {
+fieldset[aria-label="Payment details"] table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1759,19 +1808,65 @@ fieldset[aria-label="Pay by anyone"] table {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-fieldset[aria-label="Pay by anyone"] table tr td .control input {
-  width: 39vw;
-  outline: 1px solid #4D4D4D;
-}
-fieldset[aria-label="Pay by anyone"] table tr td .control input:focus {
-  width: 39vw;
-}
-fieldset[aria-label="Pay by anyone"] table tr td .info label {
+fieldset[aria-label="Payment details"] table tr td .info label {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 300;
   font-size: 17.92px;
   line-height: 150%;
+}
+fieldset[aria-label="Payment details"] table tr td .control input:not([type="radio"]) {
+  width: 39vw;
+  outline: 1px solid #4D4D4D;
+}
+fieldset[aria-label="Payment details"] table tr td .control input:not([type="radio"]):focus {
+  width: 39vw;
+}
+fieldset[aria-label="Submit application"] legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 16px 24px;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+}
+fieldset[aria-label="Submit application"] table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 24px;
+  background: white;
+  margin-top: -5px;
+  border: 1px solid #D1D1D1;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media (min-width: 992px) {
   label {
@@ -2017,10 +2112,10 @@ tr:last-of-type .cell {
 .form-summary td.cell {
   padding: 0;
 }
-.page-description p[role="p-body"] {
+.page-description p:nth-child(3) {
   padding-left: 50px;
 }
-.page-description p:not([role="p-body"]) {
+.page-description p:not(:nth-child(3)) {
   padding-left: 20px;
   padding-top: 20px;
 }

@@ -232,47 +232,77 @@ label.control-radio {
   }
 }
 
-fieldset[aria-label="Pay by anyone"] legend{
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 16px 24px;
-  height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+fieldset[aria-label="Payment details"] {
+  legend{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px 24px;
+    height: 61px;
+    background: #E8E8E8;
+    border: 1px solid #D1D1D1;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  table {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background: white;
+    margin-top: -5px;
+    border: 1px solid #D1D1D1;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    tr td .info label{
+      font-family: 'Heebo';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 17.92px;
+      line-height: 150%;
+    }
+
+    tr td .control input:not([type="radio"]){
+      width: 39vw;
+      outline: 1px solid #4D4D4D;
+      &:focus{
+        width: 39vw;
+      }
+    }
+  }
 }
 
-fieldset[aria-label="Pay by anyone"] table {
-  display: flex;
-  justify-content: center;
-  padding: 24px;
-  background: white;
-  margin-top: -5px;
-  border: 1px solid #D1D1D1;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
 
-fieldset[aria-label="Pay by anyone"] table tr td .control input{
-  width: 39vw;
-  outline: 1px solid #4D4D4D;
-}
+fieldset[aria-label="Submit application"]{
+  legend{
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 24px;
+    height: 61px;
+    background: #E8E8E8;
+    border: 1px solid #D1D1D1;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
 
-fieldset[aria-label="Pay by anyone"] table tr td .control input:focus{
-  width: 39vw;
-}
-
-fieldset[aria-label="Pay by anyone"] table tr td .info label{
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 17.92px;
-  line-height: 150%;
+  table {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background: white;
+    margin-top: -5px;
+    border: 1px solid #D1D1D1;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: @screen-md-min) {
@@ -624,10 +654,10 @@ tr:last-of-type  .cell {
   }
 }
 
-.page-description p[role="p-body"]{
+.page-description p:nth-child(3){
   padding-left: 50px;
 }
-.page-description p:not([role="p-body"]){
+.page-description p:not(:nth-child(3)){
   padding-left: 20px;
   padding-top: 20px;
 }

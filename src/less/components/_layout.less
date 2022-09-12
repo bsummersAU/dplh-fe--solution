@@ -228,8 +228,8 @@ p.page-description{
   bottom: 0;
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-
+  cursor: progress; /* Add a pointer on hover */
+    
   .fa-spinner{
     font-size: 100px;
     color: black;
@@ -238,6 +238,11 @@ p.page-description{
 
   }
 }
+
+// change placeholder text colour
+input#dplh_phonenumber::placeholder {color: white}
+input#dplh_email::placeholder {color: white}
+input#dplh_additionalphonenumber::placeholder {color: white}
 
 a[title="Profile"]:target{
   border-left: 5px solid @brand-focus;
@@ -657,6 +662,10 @@ html{
   .context-dashboard {
     margin-top: 40px;
   }
+}
+
+.form-nav__toggle {
+  display: none;
 }
 
 
