@@ -398,7 +398,8 @@ form {
       &.section-title {
         font-family: @headings-font-family;
         font-size: @font-size-h4;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        margin-bottom: 30px!important ;
         > label.field-label {
           font-size: 2.2rem;
         }
@@ -623,6 +624,20 @@ tr:last-of-type  .cell {
     display:none !important;
   }
 
+  fieldset[aria-label="Consent to apply"]{
+   legend{ display: block!important;
+    padding: 16px 315px 16px 24px;
+    gap: 10px;
+    height: 61px;
+    background: #E8E8E8;
+    border: 1px solid #D1D1D1;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;}
+
+  }
+
   details {
     + * {
       margin-top: 32px;
@@ -677,15 +692,35 @@ tr:last-of-type  .cell {
     font-size: 24px;
   }
 
+  legend{
+    display: block!important;
+    margin-top: 50px!important;
+    font-size: 24px!important;
+    font-weight: 700!important;
+
+  }
+
+  fieldset[aria-label="General"]{
+    legend{
+      display: none!important;
+    }
+  }
+  fieldset[aria-label="Lot details"]{
+    legend{
+      display: none!important;
+    }
+  }
+
   .info{
     width: 50%;
   }
 
   .control:not(.hasGrid){
-    width: 50%;
+    width: 30%;
     float: right;
     margin-top: -35px;
-    padding-left: 25%;
+    padding-left: 10%;
+
   }
  
 
@@ -717,14 +752,34 @@ tr:last-of-type  .cell {
     font-size: 24px;
   }
   >div{
-    padding: 24px;
-    gap: 32px;
-    width: 80%;
-    height: 100%;
-    margin-bottom: 10px; 
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
+   
+    fieldset{
+      gap: 32px;
+      width: 80%;
+      height: 100%;
+      margin-bottom: 10px; 
+      background: #FFFFFF;
+      border: 1px solid #D1D1D1;
+      legend{
+        padding: 16px 315px 16px 24px;
+        gap: 10px;
+        height: 61px;
+        background: #E8E8E8;
+        border: 1px solid #D1D1D1;
+        font-family: 'Heebo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .subgrid:first-of-type{
+        padding: 12px;
+      }
+  
+    }
   }
+
+
   th[scope="col"] {
     background-color: #F5F5F5;
     >a{
@@ -736,17 +791,51 @@ tr:last-of-type  .cell {
     margin-bottom:8px;
   }
 
-  dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
-    background: #0001;
-    }
+  // dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
+  //   background: #0001;
+  //   }
     
-    dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)){
-    background: #0001;
-    height: 23px;;
+  //   dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)){
+  //   background: #0001;
+  //   height: 23px;;
+  //   }
+
+
+
+}
+
+.table-display{
+  summary{
+    padding: 16px 315px 16px 24px;
+    margin: -1px 0px;
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .info{
+    width: 50%;
+  }
+
+  .control:not(.hasGrid){
+    width: 50%;
+    float: right;
+    margin-top: -35px;
+    padding-left: 25%;
+  }
+ 
+
+    td tr{
+    padding-bottom: 0px!important;
+    border-bottom: 0 !important;
+    // border: 10px solid white !important;
+    
     }
 
-
-
+    label{
+    padding: 10px 10px 0px 10px;
+    }
 }
 
 

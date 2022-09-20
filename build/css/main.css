@@ -1926,7 +1926,8 @@ form fieldset legend {
 form fieldset legend.section-title {
   font-family: inherit;
   font-size: 20px;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
+  margin-bottom: 30px!important ;
 }
 form fieldset legend.section-title > label.field-label {
   font-size: 2.2rem;
@@ -2089,6 +2090,18 @@ tr:last-of-type .cell {
 .form-summary fieldset[aria-label*="Required documents"] {
   display: none !important;
 }
+.form-summary fieldset[aria-label="Consent to apply"] legend {
+  display: block!important;
+  padding: 16px 315px 16px 24px;
+  gap: 10px;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
 .form-summary details + * {
   margin-top: 32px;
 }
@@ -2132,6 +2145,18 @@ tr:last-of-type .cell {
   font-weight: 700;
   font-size: 24px;
 }
+.list-styling legend {
+  display: block!important;
+  margin-top: 50px!important;
+  font-size: 24px!important;
+  font-weight: 700!important;
+}
+.list-styling fieldset[aria-label="General"] legend {
+  display: none!important;
+}
+.list-styling fieldset[aria-label="Lot details"] legend {
+  display: none!important;
+}
 .list-styling .info {
   width: 50%;
 }
@@ -2164,14 +2189,27 @@ tr:last-of-type .cell {
   font-weight: 700;
   font-size: 24px;
 }
-.ref > div {
-  padding: 24px;
+.ref > div fieldset {
   gap: 32px;
   width: 80%;
   height: 100%;
   margin-bottom: 10px;
   background: #FFFFFF;
   border: 1px solid #D1D1D1;
+}
+.ref > div fieldset legend {
+  padding: 16px 315px 16px 24px;
+  gap: 10px;
+  height: 61px;
+  background: #E8E8E8;
+  border: 1px solid #D1D1D1;
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.ref > div fieldset .subgrid:first-of-type {
+  padding: 12px;
 }
 .ref th[scope="col"] {
   background-color: #F5F5F5;
@@ -2183,12 +2221,29 @@ tr:last-of-type .cell {
 .ref dt {
   margin-bottom: 8px;
 }
-.ref dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)) {
-  background: #0001;
+.table-display summary {
+  padding: 16px 315px 16px 24px;
+  margin: -1px 0px;
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
 }
-.ref dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)) {
-  background: #0001;
-  height: 23px;
+.table-display .info {
+  width: 50%;
+}
+.table-display .control:not(.hasGrid) {
+  width: 50%;
+  float: right;
+  margin-top: -35px;
+  padding-left: 25%;
+}
+.table-display td tr {
+  padding-bottom: 0px!important;
+  border-bottom: 0 !important;
+}
+.table-display label {
+  padding: 10px 10px 0px 10px;
 }
 fieldset[aria-label$="fieldset-header"] {
   background: #e3e3e3;
