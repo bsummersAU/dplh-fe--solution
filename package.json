@@ -19,8 +19,7 @@
   },
   "homepage": "https://github.com/pyrliu/bootstrap-3-less-gulp-boilerplate#readme",
   "dependencies": {
-    "bootstrap": "3.3.6",
-    "gulp": "^4.0.2"
+    "bootstrap": "3.3.6"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
