@@ -84,11 +84,6 @@ body > form {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.dplh-3-col fieldset[aria-label$="fieldset-header"] {
-  background: #e3e3e3;
-  padding: 16px;
-  margin-bottom: 0;
-}
 .dplh-3-col fieldset[aria-label$="fieldset-body"] {
   background: white;
   padding: 16px;
@@ -2413,11 +2408,6 @@ tr:last-of-type .cell {
 }
 .table-display label {
   padding: 10px 10px 0px 10px;
-}
-fieldset[aria-label$="fieldset-header"] {
-  background: #e3e3e3;
-  padding: 16px;
-  margin-bottom: 0;
 }
 fieldset[aria-label$="fieldset-body"] {
   background: white;
