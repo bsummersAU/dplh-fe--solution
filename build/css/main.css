@@ -56,8 +56,7 @@ body {
 }
 body > form {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
 }
 .breadcrumb {
   margin-bottom: 0;
@@ -84,6 +83,49 @@ body > form {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"] {
+  background: #e3e3e3;
+  padding: 16px;
+  margin-bottom: 0;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-body"] {
+  background: white;
+  padding: 16px;
+  margin-bottom: 0;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"] ~ fieldset[aria-label$="fieldset-header"] {
+  margin-top: 24px;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) legend {
+  padding: 16px 315px 16px 24px;
+  height: 61px;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
+  margin: -1px 0px;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  width: 100.3%;
+  margin-left: -1px;
+  color: black;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
+  height: 100% !important;
+  margin-bottom: 10px !important;
+  background: #ffffff !important;
+  border: 1px solid #d1d1d1 !important;
+  padding: 0px 0px 10px 0px !important;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) .alert-success {
+  margin: 15px !important;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #form_success_summary {
+  margin: 15px !important;
+}
+.dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #returntoapplication {
+  margin: 15px !important;
 }
 .dplh-3-col .form-row {
   height: 100%;
@@ -280,8 +322,17 @@ input#dplh_additionalphonenumber::-ms-input-placeholder {
 input#dplh_additionalphonenumber::placeholder {
   color: white;
 }
+input[disabled="disabled"],
+.sr-only {
+  cursor: default !important;
+}
 a[title="Profile"]:target {
   border-left: 5px solid #d45610;
+}
+@media (min-width: 1700px) {
+  .dplh--col #navigationbtns {
+    width: 106% !important;
+  }
 }
 @media (max-width: 991px) {
   .page-actions {
@@ -506,14 +557,14 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   top: 0;
 }
 .list-group-item {
-  margin-bottom: 0!important;
-  border-width: 1px 1px!important;
+  margin-bottom: 0 !important;
+  border-width: 1px 1px !important;
 }
 .panel-heading + .list-group .list-group-item:first-child {
-  border-top-width: 1px!important;
+  border-top-width: 1px !important;
 }
 .panel > .list-group:last-child .list-group-item:last-child {
-  border-bottom-width: 1px!important;
+  border-bottom-width: 1px !important;
 }
 .fa-warning {
   color: #d9534f;
@@ -614,14 +665,14 @@ a.link-disabled::before {
   left: -1px;
   z-index: 100;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: "Glyphicons Halflings";
   font-style: normal;
   font-weight: normal;
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-right: 0;
-  content: '\e033';
+  content: "\e033";
   font-size: small;
   border-radius: 50%;
   height: 24px;
@@ -676,6 +727,9 @@ a.link-disabled::before {
 }
 #validationsuccess .alert {
   color: black;
+}
+.fee-summary {
+  max-width: 800px;
 }
 .fee-summary dl {
   font-size: 1.8rem;
@@ -1358,12 +1412,28 @@ footer .footer-bottom {
   display: -ms-flexbox;
   display: flex;
 }
+.recommendations-data legend {
+  display: block !important;
+  margin-left: 15px;
+}
+.recommendations-data label {
+  margin-left: 15px;
+}
 .alert-message {
   padding-left: 0;
   padding-right: 0;
 }
 .alert-message > span {
   font-weight: normal;
+}
+.validation-accordion .active span {
+  font-size: 20px;
+}
+.ag-cell-wrapper .ag-cell-value span {
+  font-size: 20px;
+}
+.alert-success {
+  margin: 0 5px;
 }
 .progress.list-group.top {
   min-height: 60px;
@@ -1591,6 +1661,7 @@ label > span {
 }
 .control {
   margin-bottom: 18px;
+  padding: 0 15px;
 }
 .control > input[type="text"],
 .control > input[type="number"],
@@ -1656,6 +1727,12 @@ details dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)) {
 }
 details tr:not(:nth-child(4n + 1)):not(:nth-child(4n + 3)) {
   background: #0001;
+}
+.control .aspNetDisabled label {
+  cursor: default;
+}
+.non-acc-input {
+  background-color: grey;
 }
 label.control-checkbox,
 label.control-radio {
@@ -1762,7 +1839,7 @@ label.control-radio > span {
   color: #000;
   border-color: #000;
 }
-fieldset[aria-label="Payment details"] legend {
+fieldset[aria-label="Payer details"] legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -1777,8 +1854,8 @@ fieldset[aria-label="Payment details"] legend {
           align-items: flex-start;
   padding: 16px 24px;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1788,7 +1865,7 @@ fieldset[aria-label="Payment details"] legend {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-fieldset[aria-label="Payment details"] table {
+fieldset[aria-label="Payer details"] table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1798,7 +1875,7 @@ fieldset[aria-label="Payment details"] table {
   padding: 24px;
   background: white;
   margin-top: -5px;
-  border: 1px solid #D1D1D1;
+  border: 1px solid #d1d1d1;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1808,18 +1885,18 @@ fieldset[aria-label="Payment details"] table {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-fieldset[aria-label="Payment details"] table tr td .info label {
-  font-family: 'Heebo';
+fieldset[aria-label="Payer details"] table tr td .info label {
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 300;
   font-size: 17.92px;
   line-height: 150%;
 }
-fieldset[aria-label="Payment details"] table tr td .control input:not([type="radio"]) {
+fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]) {
   width: 39vw;
-  outline: 1px solid #4D4D4D;
+  outline: 1px solid #4d4d4d;
 }
-fieldset[aria-label="Payment details"] table tr td .control input:not([type="radio"]):focus {
+fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]):focus {
   width: 39vw;
 }
 fieldset[aria-label="Submit application"] legend {
@@ -1833,8 +1910,8 @@ fieldset[aria-label="Submit application"] legend {
           align-items: flex-start;
   padding: 16px 24px;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1854,7 +1931,7 @@ fieldset[aria-label="Submit application"] table {
   padding: 24px;
   background: white;
   margin-top: -5px;
-  border: 1px solid #D1D1D1;
+  border: 1px solid #d1d1d1;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1867,6 +1944,54 @@ fieldset[aria-label="Submit application"] table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
+  height: 100% !important;
+  margin-bottom: 10px !important;
+  background: #ffffff !important;
+  border: 1px solid #d1d1d1 !important;
+  padding: 0px 0px 10px 0px !important;
+}
+fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) legend {
+  padding: 16px 315px 16px 24px;
+  height: 61px;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
+  margin: -1px 0px;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  width: 100.3%;
+  margin-left: -1px;
+  color: black;
+}
+fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) .alert-success {
+  margin: 15px !important;
+}
+fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #form_success_summary {
+  margin: 15px !important;
+}
+fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #returntoapplication {
+  margin: 15px !important;
+}
+.list-styling fieldset[aria-label="Applicants"] legend {
+  display: none !important;
+}
+.list-styling fieldset[aria-label="Applicants"] .hasGrid:first-of-type {
+  display: none;
+}
+.list-styling fieldset[aria-label="Applicants"] .control {
+  padding: 0px 15px 0px 15px;
+}
+.list-styling fieldset[aria-label="General"] legend {
+  display: none !important;
+}
+.list-styling fieldset[aria-label="Lot details"] legend {
+  display: none !important;
+}
+.list-styling fieldset[aria-label="Transport impacts"] legend {
+  display: none !important;
 }
 @media (min-width: 992px) {
   label {
@@ -1893,7 +2018,7 @@ fieldset[aria-label="Submit application"] table {
 .input-group .input-group-btn:last-child > .btn .fa {
   padding-left: 0;
 }
-.crmEntityFormView .cell .picklist input[type=radio] {
+.crmEntityFormView .cell .picklist input[type="radio"] {
   margin: 6px 5px 5px 0;
   vertical-align: top;
 }
@@ -1918,6 +2043,18 @@ form .description.above {
 form fieldset[aria-label="Consent to Apply Checklist"] .section-title {
   font-size: 30px;
 }
+form fieldset .panel-title {
+  display: block !important;
+  padding: 16px 24px 16px 24px;
+  height: 61px;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: -20px;
+}
 form fieldset legend {
   font-size: 14px;
   margin-bottom: 0;
@@ -1927,7 +2064,7 @@ form fieldset legend.section-title {
   font-family: inherit;
   font-size: 20px;
   font-weight: 700 !important;
-  margin-bottom: 30px!important ;
+  margin-bottom: 30px !important ;
 }
 form fieldset legend.section-title > label.field-label {
   font-size: 2.2rem;
@@ -2091,13 +2228,13 @@ tr:last-of-type .cell {
   display: none !important;
 }
 .form-summary fieldset[aria-label="Consent to apply"] legend {
-  display: block!important;
+  display: block !important;
   padding: 16px 315px 16px 24px;
   gap: 10px;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
-  font-family: 'Heebo';
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2132,42 +2269,57 @@ tr:last-of-type .cell {
   padding-left: 20px;
   padding-top: 20px;
 }
+.list-styling fieldset[aria-label="Applicants"] {
+  padding-top: 15px;
+}
+.list-styling fieldset[aria-label="Applicants"] .hasGrid:first-of-type {
+  display: none;
+}
+.list-styling fieldset[aria-label="Applicants"] .control {
+  padding: 0px 15px 0px 15px;
+}
 .list-styling summary {
   padding: 16px 315px 16px 24px;
   gap: 10px;
   width: 80%;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
   margin: -1px 0px;
-  font-family: 'Heebo';
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
 }
 .list-styling legend {
-  display: block!important;
-  margin-top: 50px!important;
-  font-size: 24px!important;
-  font-weight: 700!important;
+  display: block !important;
+  margin-top: 50px !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
 }
 .list-styling fieldset[aria-label="General"] legend {
-  display: none!important;
+  display: none !important;
 }
 .list-styling fieldset[aria-label="Lot details"] legend {
-  display: none!important;
+  display: none !important;
 }
 .list-styling .info {
   width: 50%;
 }
 .list-styling .control:not(.hasGrid) {
-  width: 50%;
+  padding: 0px 15px 0px 15px;
   float: right;
   margin-top: -35px;
-  padding-left: 25%;
+}
+.list-styling fieldset[aria-label="Community Schemes"] legend {
+  width: 100.2%;
+  margin-left: -1px;
+}
+.list-styling fieldset[aria-label="Community Schemes"] .control dl {
+  padding: 20px;
 }
 .list-styling td tr {
-  padding-bottom: 0px!important;
+  padding-bottom: 0px !important;
   border-bottom: 0 !important;
 }
 .list-styling label {
@@ -2181,10 +2333,10 @@ tr:last-of-type .cell {
   gap: 10px;
   width: 80%;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
   margin: -1px 0px;
-  font-family: 'Heebo';
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2194,16 +2346,16 @@ tr:last-of-type .cell {
   width: 80%;
   height: 100%;
   margin-bottom: 10px;
-  background: #FFFFFF;
-  border: 1px solid #D1D1D1;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
 }
 .ref > div fieldset legend {
   padding: 16px 315px 16px 24px;
   gap: 10px;
   height: 61px;
-  background: #E8E8E8;
-  border: 1px solid #D1D1D1;
-  font-family: 'Heebo';
+  background: #e8e8e8;
+  border: 1px solid #d1d1d1;
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2211,8 +2363,25 @@ tr:last-of-type .cell {
 .ref > div fieldset .subgrid:first-of-type {
   padding: 12px;
 }
+.ref input[type="text"] {
+  padding-right: 35px !important;
+  text-align: right;
+}
+.ref select {
+  text-align: right;
+  padding-right: 35px !important;
+}
+.ref textarea {
+  text-align: right;
+  padding-right: 35px !important;
+}
+.ref .boolean-radio[readonly="readonly"] {
+  text-align: right;
+  float: right;
+  margin-right: 30px;
+}
 .ref th[scope="col"] {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .ref th[scope="col"] > a {
   font-size: 1.75rem;
@@ -2224,7 +2393,7 @@ tr:last-of-type .cell {
 .table-display summary {
   padding: 16px 315px 16px 24px;
   margin: -1px 0px;
-  font-family: 'Heebo';
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2239,7 +2408,7 @@ tr:last-of-type .cell {
   padding-left: 25%;
 }
 .table-display td tr {
-  padding-bottom: 0px!important;
+  padding-bottom: 0px !important;
   border-bottom: 0 !important;
 }
 .table-display label {
@@ -2260,6 +2429,9 @@ fieldset[aria-label$="fieldset-header"] ~ fieldset[aria-label$="fieldset-header"
 }
 fieldset[aria-label="Additional Information"] ol {
   list-style: none;
+}
+div#form1a_success_summary {
+  padding-left: 15px;
 }
 details {
   border: 1px solid #aaa;

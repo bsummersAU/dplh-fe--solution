@@ -26,7 +26,8 @@ body {
 // watch out for the <form> element!
 body {
   > form {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
   }
 }
 
@@ -48,21 +49,74 @@ body {
   max-width: 1640px;
 }
 
-.dplh--col{
+.dplh--col {
   .form-row {
     height: 100%;
     .col-centre {
-      height: calc(100% - 64px) ;
+      height: calc(100% - 64px);
     }
   }
 
   #mainContent {
     min-height: calc(100% - @stepperFooterHeight);
   }
-
 }
 
 .dplh-3-col {
+  fieldset[aria-label$="fieldset-header"] {
+    background: #e3e3e3;
+    padding: 16px;
+    margin-bottom: 0;
+  }
+
+  fieldset[aria-label$="fieldset-body"] {
+    background: white;
+    padding: 16px;
+    margin-bottom: 0;
+  }
+
+  fieldset[aria-label$="fieldset-header"]
+    ~ fieldset[aria-label$="fieldset-header"] {
+    margin-top: 24px;
+  }
+
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) legend {
+    padding: 16px 315px 16px 24px;
+    height: 61px;
+    background: #e8e8e8;
+    border: 1px solid #d1d1d1;
+    margin: -1px 0px;
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100.3%;
+    margin-left: -1px;
+    color: black;
+  }
+
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
+    height: 100% !important;
+    margin-bottom: 10px !important;
+    background: #ffffff !important;
+    border: 1px solid #d1d1d1 !important;
+    padding: 0px 0px 10px 0px !important;
+  }
+
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
+    .alert-success {
+    margin: 15px !important;
+  }
+
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
+    #form_success_summary {
+    margin: 15px !important;
+  }
+
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
+    #returntoapplication {
+    margin: 15px !important;
+  }
   flex-grow: 1;
 
   .form-row {
@@ -110,14 +164,13 @@ body {
   }
 }
 
-.col-md-3{
+.col-md-3 {
   padding: 32px 15px 15vh 50px;
 }
 
-.col-md-9{
+.col-md-9 {
   padding: 32px 50px 0px 15px;
   height: 100%;
-
 }
 
 .alt-bg {
@@ -150,7 +203,7 @@ ul.stepper-vertical {
       &:hover {
         cursor: pointer;
       }
-      &:focus-visible{
+      &:focus-visible {
         border: 2px dotted #000;
       }
     }
@@ -202,7 +255,6 @@ ul.stepper-vertical {
     &.active a {
       font-weight: 600;
     }
-
   }
 }
 
@@ -212,40 +264,55 @@ ul.stepper-vertical {
   }
 }
 
-p.page-description{
-  padding-left: 0!important
+p.page-description {
+  padding-left: 0 !important;
 }
 
-
-.data-loading-spinner{
+.data-loading-spinner {
   position: absolute; /* Sit on top of the page content */
   display: block; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 100%;/* Full height (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
   z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
   cursor: progress; /* Add a pointer on hover */
-    
-  .fa-spinner{
+
+  .fa-spinner {
     font-size: 100px;
     color: black;
     left: 48%;
     top: 200px;
-
   }
 }
 
 // change placeholder text colour
-input#dplh_phonenumber::placeholder {color: white}
-input#dplh_email::placeholder {color: white}
-input#dplh_additionalphonenumber::placeholder {color: white}
+input#dplh_phonenumber::placeholder {
+  color: white;
+}
+input#dplh_email::placeholder {
+  color: white;
+}
+input#dplh_additionalphonenumber::placeholder {
+  color: white;
+}
 
-a[title="Profile"]:target{
+input[disabled="disabled"],
+.sr-only {
+  cursor: default !important;
+}
+
+a[title="Profile"]:target {
   border-left: 5px solid @brand-focus;
+}
+
+@media (min-width: 1700px) {
+  .dplh--col #navigationbtns {
+    width: 106% !important;
+  }
 }
 
 @media (max-width: @screen-sm-max) {
@@ -259,34 +326,33 @@ a[title="Profile"]:target{
 }
 
 @media (min-width: @screen-md-min) {
-.dplh--col{
-  .col-left,
-  .col-centre {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: calc(100vh - 64px) !important;
-    position: relative;
-  }
+  .dplh--col {
+    .col-left,
+    .col-centre {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: calc(100vh - 64px) !important;
+      position: relative;
+    }
 
-  #mainContent {
-    min-height: calc(100% - @stepperFooterHeight);
-  }
+    #mainContent {
+      min-height: calc(100% - @stepperFooterHeight);
+    }
 
-  // Container for Next, Previous, & Save buttons
-  #navigationbtns {
-    position: sticky;
-  }
-  .page-title {
-    display: flex;
-    align-items: center;
+    // Container for Next, Previous, & Save buttons
+    #navigationbtns {
+      position: sticky;
+    }
+    .page-title {
+      display: flex;
+      align-items: center;
       &.right-align-btn {
         > .btn {
           margin-left: auto;
         }
       }
+    }
   }
-
-}
 
   .dplh-3-col {
     .form-row {
@@ -326,9 +392,6 @@ a[title="Profile"]:target{
   }
 }
 
-
-
-
 .toggle-side-nav {
   position: fixed;
   z-index: 2;
@@ -354,7 +417,8 @@ a[title="Profile"]:target{
   padding: 10px 10px 10px 0;
   background-color: #fff;
   border: 1px solid @input-border;
-  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -388,7 +452,7 @@ fieldset[aria-label*="Required documents"] {
     ul {
       padding-left: 28px;
       margin-bottom: 0;
-      margin-top:0;
+      margin-top: 0;
     }
   }
 }
@@ -403,18 +467,18 @@ fieldset[aria-label*="Required documents"] {
   .panel-title {
     color: @brand-primary;
     font-size: 2rem;
-   }
-   h2 {
+  }
+  h2 {
     font-size: 1.8rem;
-   }
-   &.dplh-panel {
-     margin: 32px auto;
-     width: 90%;
-   }
-   [aria-label="DisclosureContent"] {
+  }
+  &.dplh-panel {
+    margin: 32px auto;
+    width: 90%;
+  }
+  [aria-label="DisclosureContent"] {
     margin-left: 0 !important;
     margin-right: 0 !important;
-   }
+  }
 }
 
 @media (min-width: @screen-md-min) {
@@ -425,17 +489,12 @@ fieldset[aria-label*="Required documents"] {
     h2 {
       font-size: 2rem;
     }
-     &.dplh-panel {
-       margin: 48px auto;
-       width: 60%;
-     }
-     
+    &.dplh-panel {
+      margin: 48px auto;
+      width: 60%;
+    }
   }
-
 }
-
-
-
 
 // Modal styles
 // close button on modals
@@ -456,11 +515,11 @@ fieldset[aria-label*="Required documents"] {
   }
 }
 
-.form-close:focus, .form-close:hover {
+.form-close:focus,
+.form-close:hover {
   color: @brand-info;
   opacity: 1;
 }
-
 
 .modal-title .fa-pencil-square-o {
   display: none;
@@ -473,52 +532,48 @@ fieldset[aria-label*="Required documents"] {
   display: none;
 }
 
-
-
 // Table not inside a <form>
 
-.view-grid{
-  > table{
-    > thead{
-      > tr{
-        > th{
-            a{
-              text-decoration: none;
-            
+.view-grid {
+  > table {
+    > thead {
+      > tr {
+        > th {
+          a {
+            text-decoration: none;
+
             &:hover {
               text-decoration: underline;
               color: #000;
             }
-             &:focus-visible {
+            &:focus-visible {
               text-decoration: none;
               border: 2px dotted #000;
               color: #000;
-               padding: 2px;
-              }
+              padding: 2px;
             }
+          }
         }
       }
     }
   }
 }
 
-
 a.list-group-item:hover {
   color: @brand-focus;
-  text-decoration:underline;
+  text-decoration: underline;
   background: @white;
 }
 
-a.list-group-item:focus-visible{
-    background:  @white;
-    outline: 2px dotted @brand-focus;
-    border: 0;
-    color: #000;
-    text-decoration: underline;
+a.list-group-item:focus-visible {
+  background: @white;
+  outline: 2px dotted @brand-focus;
+  border: 0;
+  color: #000;
+  text-decoration: underline;
 }
 
-
-form[action="/profile/"] .weblink[aria-label="Profile"]::after{
+form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   content: "";
   height: 100%;
   width: 4px;
@@ -526,22 +581,21 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after{
   position: absolute;
   left: 0;
   top: 0;
-
-};
+}
 
 // mdoifying profile page
 
 .list-group-item {
-  margin-bottom: 0!important;
-  border-width: 1px 1px!important;
+  margin-bottom: 0 !important;
+  border-width: 1px 1px !important;
 }
 
 .panel-heading + .list-group .list-group-item:first-child {
-border-top-width: 1px!important;
+  border-top-width: 1px !important;
 }
 
-.panel > .list-group:last-child .list-group-item:last-child{
-  border-bottom-width: 1px!important;
+.panel > .list-group:last-child .list-group-item:last-child {
+  border-bottom-width: 1px !important;
 }
 
 // Icons
@@ -553,17 +607,16 @@ border-top-width: 1px!important;
   color: @brand-success;
 }
 
-
 // General Table
 td {
   font-weight: 400;
 }
 
 // readonly forms display
-.readyOnlyInfo{
+.readyOnlyInfo {
   width: 50%;
 }
-.readOnlyControl{
+.readOnlyControl {
   width: 50%;
   float: right;
   margin-top: -35px;
@@ -592,9 +645,9 @@ td {
     padding-top: 12px;
     padding-bottom: 12px;
     .fa {
-      top:0;
+      top: 0;
     }
-    a { 
+    a {
       font-weight: 600;
     }
   }
@@ -606,11 +659,11 @@ td {
     }
     ul {
       a {
-        color:#000;
-        &:hover{
+        color: #000;
+        &:hover {
           text-decoration: underline;
         }
-        &:focus-visible{
+        &:focus-visible {
           border: 2px dotted #000;
         }
       }
@@ -629,34 +682,29 @@ td {
   }
 }
 
-.modal-content{ 
-
+.modal-content {
   .modal-header {
-  margin-bottom: 20px;
-  margin-top: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 
-  .close {
-    margin-top: -25px;
-    padding-right: 15px;
+    .close {
+      margin-top: -25px;
+      padding-right: 15px;
 
-    &:focus-visible{
-      outline: 2px dotted #d45610;
+      &:focus-visible {
+        outline: 2px dotted #d45610;
+      }
+    }
+
+    .modal-body {
+      padding-bottom: 20px;
     }
   }
-
-  .modal-body{
-    padding-bottom: 20px;
-  }
-
-  }
-
 }
 
-
-html{
+html {
   overflow: hidden;
-}               
-
+}
 
 @media (min-width: @screen-sm-min) {
   .context-dashboard {
@@ -667,7 +715,6 @@ html{
 .form-nav__toggle {
   display: none;
 }
-
 
 a.link-disabled {
   color: #919191;
@@ -681,14 +728,14 @@ a.link-disabled {
     left: -1px;
     z-index: 100;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
+    font-family: "Glyphicons Halflings";
     font-style: normal;
     font-weight: normal;
     line-height: 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin-right: 0;
-    content: '\e033';
+    content: "\e033";
     font-size: small;
     border-radius: 50%;
     height: 24px;
@@ -698,7 +745,6 @@ a.link-disabled {
     color: black;
   }
 }
-
 
 // Included in preform css but sometimes disappears?
 .skip-to-content a {
@@ -732,12 +778,12 @@ a.link-disabled {
   transition: top 0.1s ease-in;
 }
 
-.skip-to-content a:hover{
-border: 2px solid #fff;
-outline: 0;
+.skip-to-content a:hover {
+  border: 2px solid #fff;
+  outline: 0;
 }
 
-#skip-to-nav{
+#skip-to-nav {
   left: 200px;
 }
 
@@ -755,13 +801,13 @@ outline: 0;
   }
 }
 
-
-// Extract into fee component 
+// Extract into fee component
 .fee-summary {
+  max-width: 800px;
   dl {
     font-size: 1.8rem;
   }
-  dd ~ dd, 
+  dd ~ dd,
   dt ~ dt {
     margin-top: 8px;
   }
@@ -776,7 +822,6 @@ outline: 0;
   }
 }
 
-
 .rotating.fa-spinner::before {
   display: inline-block;
   margin-left: 3px;
@@ -789,7 +834,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     padding-left: 0;
   }
 }
-
 
 // Shame.css
 [aria-label="Additional Supporting Documents"] {
