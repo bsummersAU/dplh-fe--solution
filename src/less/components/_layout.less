@@ -25,7 +25,7 @@ body {
 
 // watch out for the <form> element!
 body {
-  > form {
+  >form {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
   }
@@ -52,6 +52,7 @@ body {
 .dplh--col {
   .form-row {
     height: 100%;
+
     .col-centre {
       height: calc(100% - 64px);
     }
@@ -59,24 +60,25 @@ body {
 
   #mainContent {
     min-height: calc(100% - @stepperFooterHeight);
+
     textarea {
-      height: 10vh;
+      height: 8vh;
     }
   }
 }
 
 .dplh-3-col {
   textarea {
-    height: 10vh;
+    height: 8vh;
   }
+
   fieldset[aria-label$="fieldset-body"] {
     background: white;
     padding: 16px;
     margin-bottom: 0;
   }
 
-  fieldset[aria-label$="fieldset-header"]
-    ~ fieldset[aria-label$="fieldset-header"] {
+  fieldset[aria-label$="fieldset-header"]~fieldset[aria-label$="fieldset-header"] {
     margin-top: 24px;
   }
 
@@ -103,24 +105,23 @@ body {
     padding: 0px 0px 10px 0px !important;
   }
 
-  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
-    .alert-success {
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) .alert-success {
     margin: 15px !important;
   }
 
-  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
-    #form_success_summary {
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #form_success_summary {
     margin: 15px !important;
   }
 
-  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication)
-    #returntoapplication {
+  fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) #returntoapplication {
     margin: 15px !important;
   }
+
   flex-grow: 1;
 
   .form-row {
     height: 100%;
+
     .col-left,
     .col-right,
     .col-centre {
@@ -148,7 +149,8 @@ body {
     justify-content: space-between;
     margin-left: -15px;
     margin-right: -15px;
-    input[type="button"] + input[type="button"] {
+
+    input[type="button"]+input[type="button"] {
       margin-left: 8px;
     }
 
@@ -177,7 +179,7 @@ body {
   background-color: @alt-bg;
 }
 
-.form-nav__header > * {
+.form-nav__header>* {
   font-size: 20px;
 }
 
@@ -200,9 +202,11 @@ ul.stepper-vertical {
       font-size: inherit;
       display: block;
       padding: 4px 8px 8px 40px !important;
+
       &:hover {
         cursor: pointer;
       }
+
       &:focus-visible {
         border: 2px dotted #000;
       }
@@ -233,6 +237,7 @@ ul.stepper-vertical {
     &:not(:first-child) {
       margin-top: 24px;
     }
+
     margin-bottom: 4px;
     padding-bottom: 8px;
 
@@ -269,17 +274,24 @@ p.page-description {
 }
 
 .data-loading-spinner {
-  position: absolute; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: absolute;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: progress; /* Add a pointer on hover */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 0;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: progress;
+  /* Add a pointer on hover */
 
   .fa-spinner {
     font-size: 100px;
@@ -293,9 +305,11 @@ p.page-description {
 input#dplh_phonenumber::placeholder {
   color: white;
 }
+
 input#dplh_email::placeholder {
   color: white;
 }
+
 input#dplh_additionalphonenumber::placeholder {
   color: white;
 }
@@ -318,7 +332,8 @@ a[title="Profile"]:target {
 @media (max-width: @screen-sm-max) {
   .page-actions {
     margin-top: 2em;
-    > .btn {
+
+    >.btn {
       width: 100%;
       margin-bottom: 5px;
     }
@@ -327,6 +342,7 @@ a[title="Profile"]:target {
 
 @media (min-width: @screen-md-min) {
   .dplh--col {
+
     .col-left,
     .col-centre {
       overflow-y: auto;
@@ -343,11 +359,13 @@ a[title="Profile"]:target {
     #navigationbtns {
       position: sticky;
     }
+
     .page-title {
       display: flex;
       align-items: center;
+
       &.right-align-btn {
-        > .btn {
+        >.btn {
           margin-left: auto;
         }
       }
@@ -357,6 +375,7 @@ a[title="Profile"]:target {
   .dplh-3-col {
     .form-row {
       height: 100%;
+
       .col-left,
       .col-right,
       .col-centre {
@@ -365,27 +384,33 @@ a[title="Profile"]:target {
         height: calc(100vh - 64px) !important;
         position: relative;
       }
+
       // .col-left {
       //   position: relative;
       //   width: 25%;
       // }
     }
+
     .form-nav__toggle {
       display: none;
     }
+
     #mainContent {
       min-height: calc(100% - @stepperFooterHeight);
     }
+
     // Container for Next, Previous, & Save buttons
     #navigationbtns {
       position: sticky;
     }
   }
+
   .page-title {
     display: flex;
     align-items: center;
+
     &.right-align-btn {
-      > .btn {
+      >.btn {
         margin-left: auto;
       }
     }
@@ -430,11 +455,13 @@ fieldset[aria-label*="Required documents"] {
   margin-bottom: 20px;
   padding: 16px;
   border-radius: 4px;
+
   legend {
     padding: 0;
     position: absolute;
     top: 16px;
   }
+
   ul {
     margin-top: 16px;
     margin-bottom: 0;
@@ -444,11 +471,13 @@ fieldset[aria-label*="Required documents"] {
   td.clearfix.cell:not(:empty) {
     padding: 16px !important;
     background-color: @alert-warning-bg;
+
     h4 {
       font-weight: 600;
       font-size: 18px;
       margin-bottom: -8px;
     }
+
     ul {
       padding-left: 28px;
       margin-bottom: 0;
@@ -459,22 +488,27 @@ fieldset[aria-label*="Required documents"] {
 
 .panel {
   border-radius: 4px;
-  > .panel-heading {
+
+  >.panel-heading {
     padding: 16px;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
   }
+
   .panel-title {
     color: @brand-primary;
     font-size: 2rem;
   }
+
   h2 {
     font-size: 1.8rem;
   }
+
   &.dplh-panel {
     margin: 32px auto;
     width: 90%;
   }
+
   [aria-label="DisclosureContent"] {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -486,9 +520,11 @@ fieldset[aria-label*="Required documents"] {
     .panel-title {
       font-size: 2.5rem;
     }
+
     h2 {
       font-size: 2rem;
     }
+
     &.dplh-panel {
       margin: 48px auto;
       width: 60%;
@@ -535,10 +571,10 @@ fieldset[aria-label*="Required documents"] {
 // Table not inside a <form>
 
 .view-grid {
-  > table {
-    > thead {
-      > tr {
-        > th {
+  >table {
+    >thead {
+      >tr {
+        >th {
           a {
             text-decoration: none;
 
@@ -546,6 +582,7 @@ fieldset[aria-label*="Required documents"] {
               text-decoration: underline;
               color: #000;
             }
+
             &:focus-visible {
               text-decoration: none;
               border: 2px dotted #000;
@@ -590,11 +627,11 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   border-width: 1px 1px !important;
 }
 
-.panel-heading + .list-group .list-group-item:first-child {
+.panel-heading+.list-group .list-group-item:first-child {
   border-top-width: 1px !important;
 }
 
-.panel > .list-group:last-child .list-group-item:last-child {
+.panel>.list-group:last-child .list-group-item:last-child {
   border-bottom-width: 1px !important;
 }
 
@@ -616,6 +653,7 @@ td {
 .readyOnlyInfo {
   width: 50%;
 }
+
 .readOnlyControl {
   width: 50%;
   float: right;
@@ -644,29 +682,35 @@ td {
     background-color: @panel-heading-color;
     padding-top: 12px;
     padding-bottom: 12px;
+
     .fa {
       top: 0;
     }
+
     a {
       font-weight: 600;
     }
   }
 
   td .dropdown {
-    > .btn {
+    >.btn {
       border: none;
       background-color: transparent;
     }
+
     ul {
       a {
         color: #000;
+
         &:hover {
           text-decoration: underline;
         }
+
         &:focus-visible {
           border: 2px dotted #000;
         }
       }
+
       .fa {
         display: none;
       }
@@ -718,10 +762,12 @@ html {
 
 a.link-disabled {
   color: #919191;
+
   &:hover {
     cursor: unset !important;
     color: #919191;
   }
+
   &::before {
     position: absolute;
     top: 4px;
@@ -804,19 +850,23 @@ a.link-disabled {
 // Extract into fee component
 .fee-summary {
   max-width: 800px;
+
   dl {
     font-size: 1.8rem;
   }
-  dd ~ dd,
-  dt ~ dt {
+
+  dd~dd,
+  dt~dt {
     margin-top: 8px;
   }
+
   .fee-amount {
     font-size: 18px;
     display: flex;
     color: black;
     margin-bottom: 0;
   }
+
   .fee-method {
     font-weight: 600;
   }
@@ -829,7 +879,7 @@ a.link-disabled {
 
 // Extract into lists file
 fieldset[aria-label="Required documents"] [class="list-required-documents"] {
-  > ul {
+  >ul {
     list-style: none;
     padding-left: 0;
   }
@@ -844,19 +894,23 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
 .home {
   height: 170px !important;
+
   .section-landing-heading {
     margin-top: 40px;
   }
+
   .col-md-12 {
     margin-bottom: 0 !important;
   }
 }
 
 .section-landing {
-  background-color: @gray-light-title!important;
+  background-color: @gray-light-title  !important;
+
   .section-landing-heading {
     padding: 0px 0 0px 0 !important;
   }
+
   .section-landing-sub-heading {
     font-weight: 500;
     padding: 0px 0 20px 0;
@@ -865,6 +919,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
 .page_section {
   background-color: @white;
+
   .entitylist {
     margin-top: 80px;
   }
@@ -874,34 +929,44 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     justify-content: flex-end;
   }
 
-  .input-group {
+  #subgrid_fir_outstanding .input-group {
     position: relative;
     top: -60px;
-    right: -15px;
+  }
+
+  .input-group {
+    position: relative;
     width: 260px;
-    margin-bottom: -50px;
+
+    // margin-bottom: -50px;
     a.btn.action {
       margin-top: -70px !important;
     }
   }
+
   .section-landing-heading {
     padding: 50px 0 0px 0;
   }
+
   .section-landing-sub-heading {
     font-weight: 500;
   }
+
   .col-md-12 {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
-  #dashboard {
-    margin-top: 50px;
-  }
+
+  // .revisedplansubgrid {
+  //   margin-top: 50px;
+  //   }
   .row {
     .col-md-3 {
       padding: 0px !important;
+
       .btn {
         margin-top: 25px;
         margin-left: 115px;
+
         .glyphicon-plus {
           margin-right: 5px;
           font-size: 18px;
@@ -911,13 +976,16 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
     .dropdown-menu li {
       padding: 8px 0px;
+
       &:hover {
         background-color: white;
       }
+
       a {
         text-decoration: none;
         transition: 0.3s;
         margin-left: -5px;
+
         &:hover {
           background-color: white;
           border: 0px !important;
@@ -933,20 +1001,24 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 
   table {
+    width: 99.8%;
+
     thead {
       background-color: @gray-light-title;
       border: 1px solid @gray-light-title;
+
       tr {
         th {
           width: 10% !important;
         }
       }
     }
+
     tbody {
-      border: 1px solid @gray-light-title!important;
+      border: 1px solid @gray-light-title  !important;
 
       tr {
-        background-color: @white!important;
+        background-color: @white  !important;
       }
     }
   }
@@ -958,6 +1030,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
 .nav-tabs {
   border: 0;
+
   li {
     margin-top: 0 !important;
   }
@@ -968,7 +1041,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 .active .landing-tab:hover {
-  color: @brand-focus!important;
+  color: @brand-focus  !important;
 }
 
 // .active .landing-tab::after {
@@ -985,6 +1058,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 // }
 .nav-tabs .active {
   border-bottom: 3px solid #d45610 !important;
+
   &:hover {
     border: 0 !important;
   }
@@ -992,13 +1066,16 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
 .tab-content {
   margin-top: -30px;
+
   .col-md-8 {
     margin-top: 30px;
+
     .btn {
       position: absolute;
       margin-top: 20px;
     }
   }
+
   .tab-pane h4 {
     margin-top: 60px;
     margin-bottom: -60px;
@@ -1013,6 +1090,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       border: 1px solid @gray-light-tabs;
       padding: 20px 15px;
       height: 200px;
+
       div {
         border: 0;
         position: absolute;
@@ -1020,6 +1098,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
         margin-left: -15px;
       }
     }
+
     h4 {
       box-sizing: border-box;
       display: flex;
@@ -1036,22 +1115,30 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 .lodgement-info {
-  background-color: @white!important;
+  background-color: @white  !important;
   border: 1px solid @gray-light-tabs;
   margin-left: 15px;
   width: 70%;
+  margin-bottom: 50px;
+
   .row {
     .col-md-3 {
       padding: 15px !important;
+      overflow: auto;
+      height: 91px;
+      overflow-x: hidden;
+
       div:first-child {
         color: @gray;
       }
+
       div:last-child {
         padding-top: 15px !important;
         font-weight: 600;
       }
     }
   }
+
   .row::after {
     content: "";
     height: 0.51%;
@@ -1063,25 +1150,62 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 }
 
+.form-lodgement-info {
+  background-color: @white  !important;
+  border: 1px solid @gray-light-tabs;
+  margin-left: 15px;
+  width: 95%;
+  margin-bottom: 50px;
+
+  .row {
+    .col-md-3 {
+      padding: 15px !important;
+      overflow: auto;
+      height: 115px;
+      overflow-x: hidden;
+
+      div:first-child {
+        color: @gray;
+      }
+
+      div:last-child {
+        padding-top: 15px !important;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
 .edit-form {
   margin-left: 30px;
   background-color: white !important;
   padding: 20px 0px;
   border: 1px solid @gray-light-tabs;
   width: 305px;
-  > div {
+
+  >div {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 15px 5px 15px;
+
     img {
       height: 25px;
       margin-right: 10px;
     }
+
     a {
       font-weight: 700;
       text-decoration: none;
       font-size: 20px;
       top: 3.5px;
+
       &:hover {
         text-decoration: underline;
       }
@@ -1090,7 +1214,8 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 #dashboard {
-  margin-top: 50px;
+
+  // margin-top: 50px;
   .view-grid {
     margin-left: -16px;
     margin-right: -16px;
@@ -1099,8 +1224,9 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 .page_section fieldset {
-  border: 1px solid @gray-light-tabs !important;
+  border: 1px solid @gray-light-tabs  !important;
   width: 72%;
+
   table {
     thead {
       border: 0;
@@ -1120,15 +1246,18 @@ div[data-name="tab_fir"] {
         all: unset;
         margin-top: 80px;
         width: 80%;
+
         legend {
           all: unset;
           position: relative;
         }
+
         .entity-grid {
           background: white;
           border: 1px solid @gray-light-tabs;
           margin-left: -25px;
         }
+
         th {
           background: @white;
         }
@@ -1139,35 +1268,44 @@ div[data-name="tab_fir"] {
 
 .fir-container {
   background-color: @gray-light-title;
+
   fieldset {
     margin: 0px;
+
     .section-title {
       h3 {
         margin-top: 40px;
       }
     }
   }
+
   #mainContent {
     margin-top: 150px;
   }
+
   .panel {
     background-color: @gray-light-title;
     border: 0px !important;
   }
+
   .panel-heading {
     border: 0;
     width: 78vw;
     margin-bottom: 70px;
     margin-top: -100px;
+    width: 140%;
+
     h1 {
       font-size: 35px;
       margin-left: -15px;
     }
+
     .col-md-4 {
       div:first-of-type {
         margin-top: 15px;
         color: @gray-base;
       }
+
       div:last-of-type {
         font-weight: bold;
         color: @gray-base;
@@ -1175,38 +1313,58 @@ div[data-name="tab_fir"] {
       }
     }
   }
+
   tr td {
     width: 14vw;
     padding: 0px !important;
   }
+
   table {
     background-color: white;
     border: 1px solid @gray-light-tabs;
     width: 53vw;
-    // tbody {
-    //   padding: 15px 0px 0px 15px;
-    //   display: flex;
-    //   flex-wrap: wrap;
-    //   margin-bottom: 20px;
-    // }
+
+    tbody {
+      padding: 15px 0px 0px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+  }
+
+  table[data-name="section_responsedetails"] tbody {
+    width: 500px;
+
+    tr {
+      width: 14vw
+    }
   }
 
   table[data-name="section_requesttext"],
   table[data-name="section_responsedetails"],
   table[data-name="section_responsetext"],
-  table[data-name="section_response"] {
+  table[data-name="section_response"],
+  table[data-name="section_requestdocuments"] {
     tbody {
       .control {
         width: 56vw;
+
+        @media (min-width: 1640px) {
+          resize: none;
+          width: 920px !important;
+        }
+
         @media (min-width: 1600px) {
           width: 46.5vw;
         }
+
         @media (max-width: 450px) {
           width: 95%;
         }
       }
     }
   }
+
 
   table[data-name="section_requestdocuments"] {
     margin-bottom: 20px !important;
@@ -1220,6 +1378,7 @@ div[data-name="tab_fir"] {
         }
       }
     }
+
     label {
       margin-bottom: 30px;
       margin-top: 25px;
@@ -1228,29 +1387,35 @@ div[data-name="tab_fir"] {
 }
 
 .fir-decision-container {
-  > div {
+  >div {
     background-color: @gray-light-title;
   }
+
   .panel-heading {
     border: 0;
-    width: 80vw;
     margin-bottom: 70px;
     margin-top: -100px;
     background-color: @gray-light-title;
+    width: 140%;
+
     h1 {
       font-size: 35px;
       margin-left: -15px;
     }
+
   }
+
   .panel-body {
     background: @gray-light-title;
   }
+
   #mainContent {
     margin-top: 150px;
 
     .panel {
       border: 0 !important;
       background-color: @gray-light-title;
+
       td.cell {
         padding: 0px !important;
       }
@@ -1262,6 +1427,7 @@ div[data-name="tab_fir"] {
   background: white;
   padding: 15px;
   border: 1px solid @gray-light-tabs;
+
   table {
     tbody {
       display: flex;
@@ -1270,14 +1436,22 @@ div[data-name="tab_fir"] {
 }
 
 .fir-decision-container {
+  label[for="qvc_subdivisiondetails"] {
+    padding: 15px;
+  }
+
   fieldset[aria-label="Documents"] {
     background: white;
     border: 1px solid @gray-light-tabs;
     margin-top: 70px;
+    position: relative;
+
     legend {
-      position: relative;
-      top: -50px;
+      position: absolute;
+      top: -45px;
+      margin: auto;
     }
+
     tbody {
       tr {
         td {
@@ -1290,9 +1464,11 @@ div[data-name="tab_fir"] {
   table[data-name="section_details"] {
     background: white;
     border: 1px solid @gray-light-tabs;
+
     .control {
       padding: 0 !important;
     }
+
     tbody {
       tr {
         td {
@@ -1307,15 +1483,19 @@ table[data-name="section_decision_subdivsiondetails"] tbody {
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
+
   tr {
     .label {
       padding: 10px;
     }
+
     td {
       padding: 15px !important;
+
       input {
         width: 22vw !important;
       }
+
       select {
         width: 22vw !important;
       }

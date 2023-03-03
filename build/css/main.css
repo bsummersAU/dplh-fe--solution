@@ -80,7 +80,7 @@ body > form {
   min-height: calc(100% - 77px);
 }
 .dplh--col #mainContent textarea {
-  height: 10vh;
+  height: 8vh;
 }
 .dplh-3-col {
   -webkit-box-flex: 1;
@@ -88,7 +88,7 @@ body > form {
           flex-grow: 1;
 }
 .dplh-3-col textarea {
-  height: 10vh;
+  height: 8vh;
 }
 .dplh-3-col fieldset[aria-label$="fieldset-body"] {
   background: white;
@@ -794,12 +794,13 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.page_section .input-group {
+.page_section #subgrid_fir_outstanding .input-group {
   position: relative;
   top: -60px;
-  right: -15px;
+}
+.page_section .input-group {
+  position: relative;
   width: 260px;
-  margin-bottom: -50px;
 }
 .page_section .input-group a.btn.action {
   margin-top: -70px !important;
@@ -809,12 +810,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 }
 .page_section .section-landing-sub-heading {
   font-weight: 500;
-}
-.page_section .col-md-12 {
-  margin-bottom: 30px;
-}
-.page_section #dashboard {
-  margin-top: 50px;
 }
 .page_section .row .col-md-3 {
   padding: 0px !important;
@@ -847,6 +842,9 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 .page_section .grid-actions {
   border: 0 !important;
   margin-bottom: 0 !important;
+}
+.page_section table {
+  width: 99.8%;
 }
 .page_section table thead {
   background-color: #f5f5f5;
@@ -937,9 +935,13 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   border: 1px solid #d1d1d1;
   margin-left: 15px;
   width: 70%;
+  margin-bottom: 50px;
 }
 .lodgement-info .row .col-md-3 {
   padding: 15px !important;
+  overflow: auto;
+  height: 91px;
+  overflow-x: hidden;
 }
 .lodgement-info .row .col-md-3 div:first-child {
   color: #7f848b;
@@ -956,6 +958,26 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   position: absolute;
   left: 0;
   top: 50%;
+}
+.form-lodgement-info {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d1d1;
+  margin-left: 15px;
+  width: 95%;
+  margin-bottom: 50px;
+}
+.form-lodgement-info .row .col-md-3 {
+  padding: 15px !important;
+  overflow: auto;
+  height: 115px;
+  overflow-x: hidden;
+}
+.form-lodgement-info .row .col-md-3 div:first-child {
+  color: #7f848b;
+}
+.form-lodgement-info .row .col-md-3 div:last-child {
+  padding-top: 15px !important;
+  font-weight: 600;
 }
 .edit-form {
   margin-left: 30px;
@@ -974,6 +996,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0px 15px 5px 15px;
 }
 .edit-form > div img {
   height: 25px;
@@ -987,9 +1010,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 }
 .edit-form > div a:hover {
   text-decoration: underline;
-}
-#dashboard {
-  margin-top: 50px;
 }
 #dashboard .view-grid {
   margin-left: -16px;
@@ -1049,6 +1069,7 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   width: 78vw;
   margin-bottom: 70px;
   margin-top: -100px;
+  width: 140%;
 }
 .fir-container .panel-heading h1 {
   font-size: 35px;
@@ -1072,17 +1093,44 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   border: 1px solid #d1d1d1;
   width: 53vw;
 }
+.fir-container table tbody {
+  padding: 15px 0px 0px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.fir-container table[data-name="section_responsedetails"] tbody {
+  width: 500px;
+}
+.fir-container table[data-name="section_responsedetails"] tbody tr {
+  width: 14vw;
+}
 .fir-container table[data-name="section_requesttext"] tbody .control,
 .fir-container table[data-name="section_responsedetails"] tbody .control,
 .fir-container table[data-name="section_responsetext"] tbody .control,
-.fir-container table[data-name="section_response"] tbody .control {
+.fir-container table[data-name="section_response"] tbody .control,
+.fir-container table[data-name="section_requestdocuments"] tbody .control {
   width: 56vw;
+}
+@media (min-width: 1640px) {
+  .fir-container table[data-name="section_requesttext"] tbody .control,
+  .fir-container table[data-name="section_responsedetails"] tbody .control,
+  .fir-container table[data-name="section_responsetext"] tbody .control,
+  .fir-container table[data-name="section_response"] tbody .control,
+  .fir-container table[data-name="section_requestdocuments"] tbody .control {
+    resize: none;
+    width: 920px !important;
+  }
 }
 @media (min-width: 1600px) {
   .fir-container table[data-name="section_requesttext"] tbody .control,
   .fir-container table[data-name="section_responsedetails"] tbody .control,
   .fir-container table[data-name="section_responsetext"] tbody .control,
-  .fir-container table[data-name="section_response"] tbody .control {
+  .fir-container table[data-name="section_response"] tbody .control,
+  .fir-container table[data-name="section_requestdocuments"] tbody .control {
     width: 46.5vw;
   }
 }
@@ -1090,7 +1138,8 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   .fir-container table[data-name="section_requesttext"] tbody .control,
   .fir-container table[data-name="section_responsedetails"] tbody .control,
   .fir-container table[data-name="section_responsetext"] tbody .control,
-  .fir-container table[data-name="section_response"] tbody .control {
+  .fir-container table[data-name="section_response"] tbody .control,
+  .fir-container table[data-name="section_requestdocuments"] tbody .control {
     width: 95%;
   }
 }
@@ -1111,10 +1160,10 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
 }
 .fir-decision-container .panel-heading {
   border: 0;
-  width: 80vw;
   margin-bottom: 70px;
   margin-top: -100px;
   background-color: #f5f5f5;
+  width: 140%;
 }
 .fir-decision-container .panel-heading h1 {
   font-size: 35px;
@@ -1143,14 +1192,19 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   display: -ms-flexbox;
   display: flex;
 }
+.fir-decision-container label[for="qvc_subdivisiondetails"] {
+  padding: 15px;
+}
 .fir-decision-container fieldset[aria-label="Documents"] {
   background: white;
   border: 1px solid #d1d1d1;
   margin-top: 70px;
+  position: relative;
 }
 .fir-decision-container fieldset[aria-label="Documents"] legend {
-  position: relative;
-  top: -50px;
+  position: absolute;
+  top: -45px;
+  margin: auto;
 }
 .fir-decision-container fieldset[aria-label="Documents"] tbody tr td {
   padding: 15px;
@@ -2321,7 +2375,7 @@ fieldset[aria-label="Payer details"] table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 24px;
+  padding: 35px 24px;
   background: #ffffff;
   margin-top: -5px;
   border: 1px solid #d1d1d1;
@@ -2334,6 +2388,12 @@ fieldset[aria-label="Payer details"] table {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
+fieldset[aria-label="Payer details"] table tbody {
+  max-width: 100%;
+}
+fieldset[aria-label="Payer details"] table tbody td {
+  width: 100vw;
+}
 fieldset[aria-label="Payer details"] table tr td .info label {
   font-family: "Heebo";
   font-style: normal;
@@ -2343,7 +2403,6 @@ fieldset[aria-label="Payer details"] table tr td .info label {
   padding: 0px 15px;
 }
 fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]) {
-  width: 39vw;
   outline: 1px solid #4d4d4d;
 }
 fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]):focus {
@@ -2767,6 +2826,8 @@ tr:last-of-type .cell {
   padding: 0px 15px 0px 15px;
   float: right;
   margin-top: -35px;
+  width: 40%;
+  height: 4vh;
 }
 .list-styling fieldset[aria-label="Community Schemes"] legend {
   width: 100.2%;
@@ -2816,6 +2877,7 @@ tr:last-of-type .cell {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
+  outline: 1px solid #d1d1d1;
 }
 .ref > div fieldset .subgrid:first-of-type {
   padding: 12px;
@@ -2846,6 +2908,11 @@ tr:last-of-type .cell {
 }
 .ref dt {
   margin-bottom: 8px;
+}
+.ref #subgrid_fir_outstanding .input-group {
+  position: relative;
+  top: -70px;
+  right: -12px;
 }
 .table-display summary {
   padding: 16px 315px 16px 24px;
@@ -2884,6 +2951,19 @@ fieldset[aria-label="Additional Information"] ol {
 }
 div#form1a_success_summary {
   padding-left: 15px;
+}
+.form-container #disclosurecontent {
+  margin-top: -50px;
+}
+.form-container table.table {
+  border: 1px solid #d1d1d1;
+}
+.form-container fieldset h3 {
+  font-size: 34px;
+}
+.form-container fieldset .info label {
+  font-weight: 400;
+  width: 80%;
 }
 details {
   border: 1px solid #aaa;

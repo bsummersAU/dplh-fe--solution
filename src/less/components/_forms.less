@@ -6,7 +6,7 @@ label {
   font-weight: 600;
   font-size: 1.6rem;
 
-  > span {
+  >span {
     font-weight: 300;
   }
 }
@@ -19,13 +19,13 @@ label {
   margin-bottom: 18px;
   padding: 0 15px;
 
-  > input[type="text"],
-  > input[type="number"],
-  > input[type="tel"],
-  > input[type="password"],
-  > input[type="search"],
-  > input[type="email"],
-  > input[type="date"] {
+  >input[type="text"],
+  >input[type="number"],
+  >input[type="tel"],
+  >input[type="password"],
+  >input[type="search"],
+  >input[type="email"],
+  >input[type="date"] {
     height: 50px;
     font-size: 18px;
     font-weight: 400;
@@ -45,7 +45,7 @@ label {
   height: 50px;
   font-size: 18px;
   font-weight: 400;
-  border-color: @input-border !important;
+  border-color: @input-border  !important;
 
   &:placeholder {
     color: lighten(@gray-base, 20%);
@@ -70,7 +70,7 @@ input[type="radio"] {
     cursor: pointer;
   }
 
-  + label {
+  +label {
     margin-left: 0.25em;
     cursor: pointer;
   }
@@ -120,20 +120,20 @@ label.control-radio {
     color: @brand-info;
   }
 
-  > input[type="checkbox"],
-  > input[type="radio"] {
+  >input[type="checkbox"],
+  >input[type="radio"] {
     position: absolute;
     top: 2px;
   }
 
-  > span {
+  >span {
     display: block;
     margin-left: 20px;
   }
 }
 
 .fieldset {
-  > legend {
+  >legend {
     border: none;
     font-weight: 600;
     font-size: 18px;
@@ -143,12 +143,14 @@ label.control-radio {
     list-style: none;
     padding-left: 0;
 
-    > li {
+    >li {
       margin-bottom: 0.5em;
-      > a.delete-link {
+
+      >a.delete-link {
         &:focus-visible {
           outline: 2px dotted @brand-primary;
         }
+
         &:hover {
           text-decoration: underline;
         }
@@ -158,15 +160,16 @@ label.control-radio {
 }
 
 .control-large {
-  > span,
-  > label {
+
+  >span,
+  >label {
     position: relative;
     font-weight: 900;
     margin-left: 35px;
     cursor: pointer;
   }
 
-  > label {
+  >label {
     &:before {
       position: absolute;
       top: 1px;
@@ -183,7 +186,7 @@ label.control-radio {
     }
   }
 
-  > input[type="checkbox"] {
+  >input[type="checkbox"] {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -195,7 +198,7 @@ label.control-radio {
 
     &:focus,
     &:hover {
-      + label {
+      +label {
         color: @brand-info;
 
         &:before {
@@ -206,7 +209,7 @@ label.control-radio {
     }
 
     &:checked {
-      + label {
+      +label {
         &:before {
           position: absolute;
           content: "\f058"; // @fa-var-check;
@@ -217,7 +220,7 @@ label.control-radio {
     &:disabled {
       pointer-events: none;
 
-      + label {
+      +label {
         pointer-events: none;
 
         &:before {
@@ -227,7 +230,7 @@ label.control-radio {
 
       &:focus,
       &:hover {
-        + label {
+        +label {
           &:before {
             opacity: 0.25;
             color: @brand-primary;
@@ -258,13 +261,21 @@ fieldset[aria-label="Payer details"] {
   table {
     display: flex;
     justify-content: center;
-    padding: 24px;
+    padding: 35px 24px;
     background: @white;
     margin-top: -5px;
     border: 1px solid @gray-light-tabs;
     flex: none;
     order: 1;
     flex-grow: 0;
+
+    tbody {
+      max-width: 100%;
+
+      td {
+        width: 100vw;
+      }
+    }
 
     tr td .info label {
       font-family: "Heebo";
@@ -276,8 +287,8 @@ fieldset[aria-label="Payer details"] {
     }
 
     tr td .control input:not([type="radio"]) {
-      width: 39vw;
       outline: 1px solid @gray-links;
+
       &:focus {
         width: 39vw;
       }
@@ -317,8 +328,8 @@ fieldset[aria-label="Submit application"] {
 fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
   height: 100% !important;
   margin-bottom: 10px !important;
-  background: @white !important;
-  border: 1px solid @gray-light-tabs !important;
+  background: @white  !important;
+  border: 1px solid @gray-light-tabs  !important;
   padding: 0px 0px 10px 0px !important;
 
   legend {
@@ -381,13 +392,14 @@ fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
   }
 
   .control-large {
-    > span,
-    > label {
+
+    >span,
+    >label {
       font-size: 2.35rem;
       margin-left: 40px;
     }
 
-    > label {
+    >label {
       &:before {
         width: 24px;
         height: 24px;
@@ -403,9 +415,10 @@ fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
 // Override of BS input-group styles
 .input-group {
   .input-group-btn {
-    &:last-child > .btn {
+    &:last-child>.btn {
       height: 48px;
       border-color: @input-border;
+
       .fa {
         padding-left: 0;
       }
@@ -481,12 +494,14 @@ form {
       font-size: @font-size-small;
       margin-bottom: 0;
       color: @brand-primary;
+
       &.section-title {
         font-family: @headings-font-family;
         font-size: @font-size-h4;
         font-weight: 700 !important;
         margin-bottom: 30px;
-        > label.field-label {
+
+        >label.field-label {
           font-size: 2.2rem;
         }
 
@@ -501,6 +516,7 @@ form {
           font-family: @font-family-sans-serif;
           font-size: 1.6rem;
           font-weight: 100;
+
           b {
             font-size: 2rem;
           }
@@ -521,21 +537,24 @@ form {
     padding-bottom: 0;
     margin-bottom: 16px;
   }
+
   .view-grid {
     table {
       background-color: @white;
 
-      > thead {
+      >thead {
         a {
           text-decoration: none;
         }
-        > tr {
-          > th {
+
+        >tr {
+          >th {
             font-size: 14px;
             white-space: nowrap;
             padding-top: 15px;
             padding-bottom: 15px;
             border-bottom: none;
+
             &:first-child {
               padding-left: 16px;
             }
@@ -543,14 +562,15 @@ form {
         }
       }
 
-      > tbody {
-        > tr {
+      >tbody {
+        >tr {
           &:nth-child(odd) {
             background-color: transparent;
           }
 
-          > td {
+          >td {
             font-size: 14px;
+
             &:first-child {
               padding-left: 16px !important;
             }
@@ -558,21 +578,26 @@ form {
             .dropdown.action {
               li a {
                 text-decoration: none;
+
                 .fa-edit {
                   display: none;
                 }
+
                 &:focus-visible {
                   text-decoration: none;
                   border: 2px dotted @gray-base;
                 }
+
                 &:hover {
                   text-decoration: underline;
                 }
               }
-              > .btn {
+
+              >.btn {
                 background-color: @white;
                 border: none;
                 color: @brand-primary;
+
                 &:hover {
                   color: @brand-focus;
                 }
@@ -617,9 +642,11 @@ form {
 
   &:checked {
     border: 1px solid @brand-info;
+
     &:disabled {
       border: 1px solid @gray;
     }
+
     &::before {
       transform: scale(1);
     }
@@ -663,20 +690,20 @@ form {
 .boolean-radio {
   display: flex;
 
-  > span:first-of-type {
+  >span:first-of-type {
     order: 2;
   }
 
-  > [value="0"] {
+  >[value="0"] {
     margin-left: 20px !important;
     order: 3;
   }
 
-  > [value="0"] + label {
+  >[value="0"]+label {
     order: 4;
   }
 
-  > [value="1"] {
+  >[value="1"] {
     margin-left: 0 !important;
   }
 
@@ -684,6 +711,7 @@ form {
     &:first-child {
       margin-left: 10px;
     }
+
     input[type="radio"] {
       margin-left: 0 !important;
     }
@@ -697,7 +725,8 @@ tr:last-of-type .cell {
 
 // Readonly form styles
 .form-summary {
-  .control > *:not(:last-child):not(dl),
+
+  .control>*:not(:last-child):not(dl),
   .info,
   p,
   .table-striped,
@@ -725,13 +754,14 @@ tr:last-of-type .cell {
   }
 
   details {
-    + * {
+    +* {
       margin-top: 32px;
     }
 
     .page-description {
       display: none;
     }
+
     .tab {
       margin: 0;
     }
@@ -759,6 +789,7 @@ tr:last-of-type .cell {
 .page-description p:nth-child(3) {
   padding-left: 50px;
 }
+
 .page-description p:not(:nth-child(3)) {
   padding-left: 20px;
   padding-top: 20px;
@@ -768,9 +799,11 @@ tr:last-of-type .cell {
   h3 {
     width: 100vw;
   }
+
   fieldset[aria-label="Applicants"] {
     padding-top: 15px;
   }
+
   fieldset[aria-label="Applicants"] .hasGrid:first-of-type {
     display: none;
   }
@@ -805,6 +838,7 @@ tr:last-of-type .cell {
       display: none !important;
     }
   }
+
   fieldset[aria-label="Lot details"] {
     legend {
       display: none !important;
@@ -819,7 +853,10 @@ tr:last-of-type .cell {
     padding: 0px 15px 0px 15px;
     float: right;
     margin-top: -35px;
+    width: 40%;
+    height: 4vh;
   }
+
   fieldset[aria-label="Community Schemes"] legend {
     width: 100.2%;
     margin-left: -1px;
@@ -841,6 +878,7 @@ tr:last-of-type .cell {
 
 .ref {
   margin-left: 30px;
+
   summary {
     padding: 16px 315px 16px 24px;
     gap: 10px;
@@ -854,7 +892,8 @@ tr:last-of-type .cell {
     font-weight: 700;
     font-size: 24px;
   }
-  > div {
+
+  >div {
     fieldset {
       gap: 32px;
       width: 80%;
@@ -862,6 +901,7 @@ tr:last-of-type .cell {
       margin-bottom: 10px;
       background: @white;
       border: 1px solid @gray-light-tabs;
+
       legend {
         padding: 16px 315px 16px 24px;
         gap: 10px;
@@ -872,6 +912,7 @@ tr:last-of-type .cell {
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
+        outline: 1px solid @gray-light-tabs;
       }
 
       .subgrid:first-of-type {
@@ -884,6 +925,7 @@ tr:last-of-type .cell {
     padding-right: 35px !important;
     text-align: right;
   }
+
   select {
     text-align: right;
     padding-right: 35px !important;
@@ -902,11 +944,13 @@ tr:last-of-type .cell {
 
   th[scope="col"] {
     background-color: @gray-light-title;
-    > a {
+
+    >a {
       font-size: 1.75rem;
       font-weight: 600;
     }
   }
+
   dt {
     margin-bottom: 8px;
   }
@@ -919,6 +963,14 @@ tr:last-of-type .cell {
   //   background: #0001;
   //   height: 23px;;
   //   }
+  #subgrid_fir_outstanding {
+    .input-group {
+      position: relative;
+      top: -70px;
+      right: -12px;
+    }
+  }
+
 }
 
 .table-display {
@@ -945,7 +997,6 @@ tr:last-of-type .cell {
   td tr {
     padding-bottom: 0px !important;
     border-bottom: 0 !important;
-    // border: 10px solid white !important;
   }
 
   label {
@@ -953,32 +1004,13 @@ tr:last-of-type .cell {
   }
 }
 
-// .subgrid-cell {
-//   .info {
-//     position: relative;
-//     label {
-//       position: absolute;
-//       top: 24px;
-//       font-weight: 600;
-//       font-size: 20px;
-//     }
-//   }
-//   .view-empty.message,
-//   .view-access-denied.message,
-//   .view-error.message {
-//     position: relative;
-//     margin-top: -72px;
-//   }
-// }
-
 fieldset[aria-label$="fieldset-body"] {
   background: white;
   padding: 16px;
   margin-bottom: 0;
 }
 
-fieldset[aria-label$="fieldset-header"]
-  ~ fieldset[aria-label$="fieldset-header"] {
+fieldset[aria-label$="fieldset-header"]~fieldset[aria-label$="fieldset-header"] {
   margin-top: 24px;
 }
 
@@ -988,4 +1020,28 @@ fieldset[aria-label="Additional Information"] ol {
 
 div#form1a_success_summary {
   padding-left: 15px;
+}
+
+.form-container {
+
+  #disclosurecontent {
+    margin-top: -50px
+  }
+
+  table.table {
+    border: 1px solid @gray-light-tabs;
+  }
+
+  fieldset {
+    h3 {
+      font-size: 34px
+    }
+
+    .info {
+      label {
+        font-weight: 400;
+        width: 80%;
+      }
+    }
+  }
 }
