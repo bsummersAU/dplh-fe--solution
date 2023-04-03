@@ -15,6 +15,7 @@
     border-color: @brand-info;
     outline: 0;
   }
+
   &:focus-visible {
     outline: 2px dotted #000;
     outline-offset: 2px;
@@ -27,12 +28,12 @@
     opacity: 0.25;
   }
 
-  span + .fa {
+  span+.fa {
     padding: 0 0 0 0.25em;
     margin: 0;
   }
 
-  .fa + span {
+  .fa+span {
     padding: 0 0.25em 0 0;
     margin: 0;
   }
@@ -50,6 +51,7 @@
     border-color: @brand-info;
     color: @brand-info;
   }
+
   &:focus-visible {
     outline: 2px dotted #000;
     outline-offset: 2px;
@@ -71,6 +73,7 @@
     border-color: @brand-primary;
     color: white;
   }
+
   &:focus-visible {
     outline: 2px dotted #000;
     outline-offset: 2px;
@@ -107,11 +110,13 @@
 #cancelBtn {
   background-color: #000;
   border: 0;
+
   &:focus-visible {
     background-color: @white;
     color: @brand-focus;
     border: 2px dotted @brand-focus;
   }
+
   &:hover {
     background-color: @brand-focus;
     color: @white;
@@ -121,12 +126,14 @@
 
 #acceptBtn {
   background-color: #000;
+
   &:focus-visible {
     background-color: @white;
     color: @brand-focus;
     border: 2px dotted @brand-focus;
     text-decoration: overline;
   }
+
   &:hover {
     background-color: @brand-focus;
     color: @white;
@@ -151,11 +158,14 @@
   justify-content: space-between;
   margin-left: -15px;
   margin-right: -15px;
-  input[type="button"] + input[type="button"] {
+
+  input[type="button"]+input[type="button"] {
     margin-left: 8px;
   }
+
   #unlockappform {
     width: 0;
+
     input[title="Unlock Application"] {
       position: absolute;
       top: -45px;
@@ -262,6 +272,38 @@
 
   button[aria-label="Search Results"] {
     border-left: 0;
-    border-color: @brand-primary!important;
+    border-color: @brand-primary  !important;
+  }
+}
+
+
+.edit-form {
+  margin-left: 15px;
+  background-color: white !important;
+  border: 1px solid @gray-light-tabs;
+  width: 305px;
+  margin-bottom: 40px;
+
+  >div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+
+    img {
+      height: 25px;
+      margin-right: 10px;
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 20px;
+      top: 3.5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

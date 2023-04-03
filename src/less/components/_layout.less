@@ -920,8 +920,13 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 .page_section {
   background-color: @white;
 
+  .fir-title {
+    margin-bottom: -60px;
+    margin-top: 40px;
+  }
+
   .entitylist {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 
   .view-pagination {
@@ -929,19 +934,23 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     justify-content: flex-end;
   }
 
-  #subgrid_fir_outstanding .input-group {
-    position: relative;
-    top: -60px;
+  #subgrid_form2a,
+  #subgrid_revisedplan,
+  #subgrid_form3a {
+    .input-group {
+      margin-top: -85px !important;
+    }
   }
 
-  .input-group {
-    position: relative;
-    width: 260px;
+  .entitylist-search {
+    margin-right: 5px;
+  }
 
-    // margin-bottom: -50px;
-    a.btn.action {
-      margin-top: -70px !important;
-    }
+  .input-group:not(.entitylist-search) {
+    position: absolute;
+    width: 260px;
+    left: 575px;
+    margin-top: -125px;
   }
 
   .section-landing-heading {
@@ -952,13 +961,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     font-weight: 500;
   }
 
-  .col-md-12 {
-    // margin-bottom: 30px;
-  }
 
-  // .revisedplansubgrid {
-  //   margin-top: 50px;
-  //   }
   .row {
     .col-md-3 {
       padding: 0px !important;
@@ -1001,7 +1004,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 
   table {
-    width: 99.8%;
+    // width: 99.8%;
 
     thead {
       background-color: @gray-light-title;
@@ -1044,18 +1047,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   color: @brand-focus  !important;
 }
 
-// .active .landing-tab::after {
-//   content: "";
-//   height: 10%;
-//   width: 100%;
-//   background: @brand-focus;
-//   position: absolute;
-//   left: 0;
-//   top: 100%;
-//   &:hover {
-//     display: none;
-//   }
-// }
 .nav-tabs .active {
   border-bottom: 3px solid #d45610 !important;
 
@@ -1115,18 +1106,30 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 .lodgement-info {
-  background-color: @white  !important;
+
+  // new
+  background-color: white !important;
   border: 1px solid @gray-light-tabs;
   margin-left: 15px;
   width: 70%;
   margin-bottom: 50px;
+  padding-left: 40px;
 
   .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col-md-10 {
+      height: 90px;
+
+      div {
+        margin-top: 15px;
+      }
+    }
+
     .col-md-3 {
       padding: 15px !important;
-      overflow: auto;
-      height: 91px;
-      overflow-x: hidden;
+
 
       div:first-child {
         color: @gray;
@@ -1139,15 +1142,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     }
   }
 
-  .row::after {
-    content: "";
-    height: 0.51%;
-    width: 100%;
-    background: @gray-light-tabs;
-    position: absolute;
-    left: 0;
-    top: 50%;
-  }
+
 }
 
 .form-lodgement-info {
@@ -1174,51 +1169,14 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       }
     }
   }
-
-
 }
 
 
-
-
-
-.edit-form {
-  margin-left: 30px;
-  background-color: white !important;
-  padding: 20px 0px;
-  border: 1px solid @gray-light-tabs;
-  width: 305px;
-
-  >div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 15px 5px 15px;
-
-    img {
-      height: 25px;
-      margin-right: 10px;
-    }
-
-    a {
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 20px;
-      top: 3.5px;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
 
 #dashboard {
-
-  // margin-top: 50px;
   .view-grid {
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -15px;
+    margin-right: -15px;
     overflow: hidden;
   }
 }
@@ -1232,11 +1190,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       border: 0;
     }
   }
-}
-
-.force-right {
-  display: flex;
-  justify-content: flex-end;
 }
 
 div[data-name="tab_fir"] {
@@ -1269,6 +1222,10 @@ div[data-name="tab_fir"] {
 .fir-container {
   background-color: @gray-light-title;
 
+  textarea {
+    resize: none;
+  }
+
   fieldset {
     margin: 0px;
 
@@ -1288,12 +1245,26 @@ div[data-name="tab_fir"] {
     border: 0px !important;
   }
 
+  .bread-crumb {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+
+    @media (max-width: 737px) {
+      margin-top: -100px;
+      margin-bottom: 100px;
+    }
+  }
+
   .panel-heading {
     border: 0;
-    width: 78vw;
-    margin-bottom: 70px;
     margin-top: -100px;
-    width: 140%;
+    padding-left: 25px;
+
+    @media (max-width: 700px) {
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
 
     h1 {
       font-size: 35px;
@@ -1301,6 +1272,22 @@ div[data-name="tab_fir"] {
     }
 
     .col-md-4 {
+      margin-left: -7px !important;
+      width: 100px !important;
+      margin-bottom: 10px;
+
+      @media (max-width: 1500px) {
+        margin-left: 130px !important;
+      }
+
+      @media (max-width: 1250px) {
+        margin-left: 120px !important;
+      }
+
+      @media (max-width: 990px) {
+        margin-left: -10px !important;
+      }
+
       div:first-of-type {
         margin-top: 15px;
         color: @gray-base;
@@ -1314,9 +1301,10 @@ div[data-name="tab_fir"] {
     }
   }
 
-  tr td {
-    width: 14vw;
-    padding: 0px !important;
+  tr {
+    td {
+      padding: 0px !important;
+    }
   }
 
   table {
@@ -1325,26 +1313,144 @@ div[data-name="tab_fir"] {
     width: 53vw;
 
     tbody {
-      padding: 15px 0px 0px 15px;
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+
+      tr {
+        padding: 15px !important;
+      }
+    }
+
+    #subgrid_outstanding,
+    #subgrid_subgrid_pending {
+      table {
+        margin-left: 1px;
+      }
+    }
+
+    #Subgrid_fir_request,
+    #subgrid_firrequestdocument,
+    #subgrid_firresponsedocument {
+      table {
+        tbody {
+          display: revert !important;
+
+          tr {
+            td {
+              padding-top: 20px !important;
+            }
+
+            td:last-of-type {
+              padding-top: 10px !important;
+            }
+          }
+        }
+      }
     }
   }
 
-  table[data-name="section_responsedetails"] tbody {
-    width: 500px;
+  #conditionadviceform div table[data-name="section_Details"] {
+    position: relative;
 
-    tr {
-      width: 14vw
+    input,
+    select {
+      margin-left: -15px;
+    }
+
+    tbody tr:first-of-type {
+      display: none;
     }
   }
+
+  table[data-name="section_conditions"],
+  table[data-name="section_advicenotes"] {
+    >tbody {
+      all: revert;
+
+      [role="alert"] {
+        padding: 0px 15px;
+      }
+
+      #Subgrid_conditions,
+      #Subgrid_advicenotes {
+        table {
+          border: 0px;
+          width: 100%;
+
+          thead {
+            border-bottom: 1px solid @gray-light-tabs;
+          }
+
+          tbody {
+            all: revert;
+
+            td {
+              border-top: 0px !important;
+              padding: 10px 10px 10px 20px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  table[data-name="section_conditions"],
+  table[data-name="section_advicenotes"] {
+    tbody {
+      padding: 0px !important;
+
+      tr {
+        width: 99.9% !important;
+      }
+
+      .control {
+        padding: 0px !important;
+      }
+    }
+  }
+
+
 
   table[data-name="section_requesttext"],
+  table[data-name="section_responsetext"] {
+    tbody {
+      display: revert !important;
+      width: 100%;
+
+      tr {
+        display: block;
+        padding: 10px 15px 0px 15px;
+
+        td {
+          width: 100vw;
+        }
+      }
+    }
+  }
+
+  fieldset[aria-label="Request"],
+  fieldset[aria-label="Response"] {
+    table {
+      tr {
+        width: 210px;
+
+      }
+    }
+  }
+
   table[data-name="section_responsedetails"],
-  table[data-name="section_responsetext"],
+  table[data-name="section_requestdetails"] {
+
+    input,
+    select {
+      margin-left: -15px;
+    }
+  }
+
   table[data-name="section_response"],
-  table[data-name="section_requestdocuments"] {
+  table[data-name="section_requestdocuments"],
+  table[data-name="section_responsedocuments"],
+  table[data-name="section_responsedetails"] {
     tbody {
       .control {
         width: 56vw;
@@ -1365,6 +1471,9 @@ div[data-name="tab_fir"] {
     }
   }
 
+  table[data-name="section_response"] tbody tr {
+    width: 100%;
+  }
 
   table[data-name="section_requestdocuments"] {
     margin-bottom: 20px !important;
@@ -1374,7 +1483,7 @@ div[data-name="tab_fir"] {
     tbody {
       .control {
         @media (min-width: 1600px) {
-          width: 85%;
+          width: 90%;
         }
       }
     }
@@ -1385,6 +1494,85 @@ div[data-name="tab_fir"] {
     }
   }
 }
+
+
+
+
+.eot-container {
+  position: relative;
+  margin-top: 90px;
+
+  .bread-crumb {
+    position: absolute;
+    top: -70px;
+    font-size: 1.8rem;
+
+    @media (max-width: 737px) {
+      margin-top: -100px;
+      margin-bottom: 100px;
+    }
+  }
+
+  .panel-heading {
+    background: white;
+    border: 0px;
+    padding: 0px;
+    position: absolute;
+    width: 100rem;
+    top: -25px;
+
+    .col-md-4 {
+      div:first-of-type {
+        margin-top: 15px;
+        color: @gray-base;
+      }
+
+      div:last-of-type {
+        font-weight: bold;
+        color: @gray-base;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .panel-body {
+    fieldset {
+      border-bottom: 1px solid @gray-light-tabs;
+      margin: 5px -15px -15px -15px;
+      padding: 15px 15px 0 15px;
+      margin-bottom: 20px;
+    }
+
+    fieldset:first-of-type {
+
+      tbody {
+        display: flex;
+        flex-wrap: wrap;
+
+        td input,
+        select {
+          margin-left: -15px;
+          width: 210px
+        }
+      }
+    }
+
+    fieldset:last-of-type {
+      .view-grid {
+        border: 1px solid @gray-light-tabs;
+      }
+
+      border: 0px;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+}
+
+
+
 
 .fir-decision-container {
   >div {
@@ -1402,11 +1590,6 @@ div[data-name="tab_fir"] {
       font-size: 35px;
       margin-left: -15px;
     }
-
-  }
-
-  .panel-body {
-    background: @gray-light-title;
   }
 
   #mainContent {
@@ -1421,23 +1604,25 @@ div[data-name="tab_fir"] {
       }
     }
   }
-}
 
-.fir-decision-container .panel-body fieldset:first-of-type {
-  background: white;
-  padding: 15px;
-  border: 1px solid @gray-light-tabs;
+  .panel-body {
+    background: @gray-light-title;
 
-  table {
-    tbody {
-      display: flex;
+    fieldset:first-of-type {
+      background: white;
+      padding: 15px;
+      border: 1px solid @gray-light-tabs;
+
+      table {
+        tbody {
+          display: flex;
+        }
+      }
     }
   }
-}
 
-.fir-decision-container {
-  label[for="qvc_subdivisiondetails"] {
-    padding: 15px;
+  textarea {
+    resize: none;
   }
 
   fieldset[aria-label="Documents"] {
@@ -1479,27 +1664,50 @@ div[data-name="tab_fir"] {
   }
 }
 
-table[data-name="section_decision_subdivsiondetails"] tbody {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vw;
+label[for="qvc_subdivisiondetails"],
+label[for="qvc_finalapprovaldetails"] {
+  padding: 15px;
+}
 
-  tr {
-    .label {
-      padding: 10px;
-    }
+table[data-name="section_decision_subdivsiondetails"],
+table[data-name="section_decision_finalapproval"] {
+  tbody {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100vw;
 
-    td {
-      padding: 15px !important;
-
-      input {
-        width: 22vw !important;
+    tr {
+      .label {
+        padding: 10px;
       }
 
-      select {
-        width: 22vw !important;
+      td {
+        padding: 15px !important;
+
+        input {
+          width: 22vw !important;
+        }
+
+        select {
+          width: 22vw !important;
+        }
       }
     }
+  }
+}
+
+.profile {
+  fieldset {
+    margin-top: 20px;
+
+    .page-description {
+      margin-bottom: 30px;
+    }
+  }
+
+  .actions {
+    float: left;
+    margin-top: -10px;
   }
 }
 

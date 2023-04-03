@@ -783,8 +783,12 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 .page_section {
   background-color: #ffffff;
 }
+.page_section .fir-title {
+  margin-bottom: -60px;
+  margin-top: 40px;
+}
 .page_section .entitylist {
-  margin-top: 80px;
+  margin-top: 20px;
 }
 .page_section .view-pagination {
   display: -webkit-box;
@@ -794,16 +798,19 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.page_section #subgrid_fir_outstanding .input-group {
-  position: relative;
-  top: -60px;
+.page_section #subgrid_form2a .input-group,
+.page_section #subgrid_revisedplan .input-group,
+.page_section #subgrid_form3a .input-group {
+  margin-top: -85px !important;
 }
-.page_section .input-group {
-  position: relative;
+.page_section .entitylist-search {
+  margin-right: 5px;
+}
+.page_section .input-group:not(.entitylist-search) {
+  position: absolute;
   width: 260px;
-}
-.page_section .input-group a.btn.action {
-  margin-top: -70px !important;
+  left: 575px;
+  margin-top: -125px;
 }
 .page_section .section-landing-heading {
   padding: 50px 0 0px 0;
@@ -842,9 +849,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 .page_section .grid-actions {
   border: 0 !important;
   margin-bottom: 0 !important;
-}
-.page_section table {
-  width: 99.8%;
 }
 .page_section table thead {
   background-color: #f5f5f5;
@@ -931,17 +935,28 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   margin: 0 !important;
 }
 .lodgement-info {
-  background-color: #ffffff !important;
+  background-color: white !important;
   border: 1px solid #d1d1d1;
   margin-left: 15px;
   width: 70%;
   margin-bottom: 50px;
+  padding-left: 40px;
+}
+.lodgement-info .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.lodgement-info .row .col-md-10 {
+  height: 90px;
+}
+.lodgement-info .row .col-md-10 div {
+  margin-top: 15px;
 }
 .lodgement-info .row .col-md-3 {
   padding: 15px !important;
-  overflow: auto;
-  height: 91px;
-  overflow-x: hidden;
 }
 .lodgement-info .row .col-md-3 div:first-child {
   color: #7f848b;
@@ -949,15 +964,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 .lodgement-info .row .col-md-3 div:last-child {
   padding-top: 15px !important;
   font-weight: 600;
-}
-.lodgement-info .row::after {
-  content: "";
-  height: 0.51%;
-  width: 100%;
-  background: #d1d1d1;
-  position: absolute;
-  left: 0;
-  top: 50%;
 }
 .form-lodgement-info {
   background-color: #ffffff !important;
@@ -979,41 +985,9 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   padding-top: 15px !important;
   font-weight: 600;
 }
-.edit-form {
-  margin-left: 30px;
-  background-color: white !important;
-  padding: 20px 0px;
-  border: 1px solid #d1d1d1;
-  width: 305px;
-}
-.edit-form > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0px 15px 5px 15px;
-}
-.edit-form > div img {
-  height: 25px;
-  margin-right: 10px;
-}
-.edit-form > div a {
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 20px;
-  top: 3.5px;
-}
-.edit-form > div a:hover {
-  text-decoration: underline;
-}
 #dashboard .view-grid {
-  margin-left: -16px;
-  margin-right: -16px;
+  margin-left: -15px;
+  margin-right: -15px;
   overflow: hidden;
 }
 .page_section fieldset {
@@ -1022,14 +996,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 }
 .page_section fieldset table thead {
   border: 0;
-}
-.force-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 div[data-name="tab_fir"] .tab-column div fieldset {
   all: unset;
@@ -1051,6 +1017,9 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
 .fir-container {
   background-color: #f5f5f5;
 }
+.fir-container textarea {
+  resize: none;
+}
 .fir-container fieldset {
   margin: 0px;
 }
@@ -1064,16 +1033,51 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   background-color: #f5f5f5;
   border: 0px !important;
 }
+.fir-container .bread-crumb {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+@media (max-width: 737px) {
+  .fir-container .bread-crumb {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+}
 .fir-container .panel-heading {
   border: 0;
-  width: 78vw;
-  margin-bottom: 70px;
   margin-top: -100px;
-  width: 140%;
+  padding-left: 25px;
+}
+@media (max-width: 700px) {
+  .fir-container .panel-heading {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
 }
 .fir-container .panel-heading h1 {
   font-size: 35px;
   margin-left: -15px;
+}
+.fir-container .panel-heading .col-md-4 {
+  margin-left: -7px !important;
+  width: 100px !important;
+  margin-bottom: 10px;
+}
+@media (max-width: 1500px) {
+  .fir-container .panel-heading .col-md-4 {
+    margin-left: 130px !important;
+  }
+}
+@media (max-width: 1250px) {
+  .fir-container .panel-heading .col-md-4 {
+    margin-left: 120px !important;
+  }
+}
+@media (max-width: 990px) {
+  .fir-container .panel-heading .col-md-4 {
+    margin-left: -10px !important;
+  }
 }
 .fir-container .panel-heading .col-md-4 div:first-of-type {
   margin-top: 15px;
@@ -1085,7 +1089,6 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   margin-top: 10px;
 }
 .fir-container tr td {
-  width: 14vw;
   padding: 0px !important;
 }
 .fir-container table {
@@ -1094,66 +1097,218 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   width: 53vw;
 }
 .fir-container table tbody {
-  padding: 15px 0px 0px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 20px;
 }
-.fir-container table[data-name="section_responsedetails"] tbody {
-  width: 500px;
+.fir-container table tbody tr {
+  padding: 15px !important;
 }
-.fir-container table[data-name="section_responsedetails"] tbody tr {
-  width: 14vw;
+.fir-container table #subgrid_outstanding table,
+.fir-container table #subgrid_subgrid_pending table {
+  margin-left: 1px;
 }
-.fir-container table[data-name="section_requesttext"] tbody .control,
-.fir-container table[data-name="section_responsedetails"] tbody .control,
-.fir-container table[data-name="section_responsetext"] tbody .control,
+.fir-container table #Subgrid_fir_request table tbody,
+.fir-container table #subgrid_firrequestdocument table tbody,
+.fir-container table #subgrid_firresponsedocument table tbody {
+  display: revert !important;
+}
+.fir-container table #Subgrid_fir_request table tbody tr td,
+.fir-container table #subgrid_firrequestdocument table tbody tr td,
+.fir-container table #subgrid_firresponsedocument table tbody tr td {
+  padding-top: 20px !important;
+}
+.fir-container table #Subgrid_fir_request table tbody tr td:last-of-type,
+.fir-container table #subgrid_firrequestdocument table tbody tr td:last-of-type,
+.fir-container table #subgrid_firresponsedocument table tbody tr td:last-of-type {
+  padding-top: 10px !important;
+}
+.fir-container #conditionadviceform div table[data-name="section_Details"] {
+  position: relative;
+}
+.fir-container #conditionadviceform div table[data-name="section_Details"] input,
+.fir-container #conditionadviceform div table[data-name="section_Details"] select {
+  margin-left: -15px;
+}
+.fir-container #conditionadviceform div table[data-name="section_Details"] tbody tr:first-of-type {
+  display: none;
+}
+.fir-container table[data-name="section_conditions"] > tbody,
+.fir-container table[data-name="section_advicenotes"] > tbody {
+  all: revert;
+}
+.fir-container table[data-name="section_conditions"] > tbody [role="alert"],
+.fir-container table[data-name="section_advicenotes"] > tbody [role="alert"] {
+  padding: 0px 15px;
+}
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table,
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table {
+  border: 0px;
+  width: 100%;
+}
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table thead,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table thead,
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table thead,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table thead {
+  border-bottom: 1px solid #d1d1d1;
+}
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table tbody,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table tbody,
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table tbody,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table tbody {
+  all: revert;
+}
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table tbody td,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table tbody td,
+.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table tbody td,
+.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table tbody td {
+  border-top: 0px !important;
+  padding: 10px 10px 10px 20px !important;
+}
+.fir-container table[data-name="section_conditions"] tbody,
+.fir-container table[data-name="section_advicenotes"] tbody {
+  padding: 0px !important;
+}
+.fir-container table[data-name="section_conditions"] tbody tr,
+.fir-container table[data-name="section_advicenotes"] tbody tr {
+  width: 99.9% !important;
+}
+.fir-container table[data-name="section_conditions"] tbody .control,
+.fir-container table[data-name="section_advicenotes"] tbody .control {
+  padding: 0px !important;
+}
+.fir-container table[data-name="section_requesttext"] tbody,
+.fir-container table[data-name="section_responsetext"] tbody {
+  display: revert !important;
+  width: 100%;
+}
+.fir-container table[data-name="section_requesttext"] tbody tr,
+.fir-container table[data-name="section_responsetext"] tbody tr {
+  display: block;
+  padding: 10px 15px 0px 15px;
+}
+.fir-container table[data-name="section_requesttext"] tbody tr td,
+.fir-container table[data-name="section_responsetext"] tbody tr td {
+  width: 100vw;
+}
+.fir-container fieldset[aria-label="Request"] table tr,
+.fir-container fieldset[aria-label="Response"] table tr {
+  width: 210px;
+}
+.fir-container table[data-name="section_responsedetails"] input,
+.fir-container table[data-name="section_requestdetails"] input,
+.fir-container table[data-name="section_responsedetails"] select,
+.fir-container table[data-name="section_requestdetails"] select {
+  margin-left: -15px;
+}
 .fir-container table[data-name="section_response"] tbody .control,
-.fir-container table[data-name="section_requestdocuments"] tbody .control {
+.fir-container table[data-name="section_requestdocuments"] tbody .control,
+.fir-container table[data-name="section_responsedocuments"] tbody .control,
+.fir-container table[data-name="section_responsedetails"] tbody .control {
   width: 56vw;
 }
 @media (min-width: 1640px) {
-  .fir-container table[data-name="section_requesttext"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control,
-  .fir-container table[data-name="section_responsetext"] tbody .control,
   .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control {
+  .fir-container table[data-name="section_requestdocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedetails"] tbody .control {
     resize: none;
     width: 920px !important;
   }
 }
 @media (min-width: 1600px) {
-  .fir-container table[data-name="section_requesttext"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control,
-  .fir-container table[data-name="section_responsetext"] tbody .control,
   .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control {
+  .fir-container table[data-name="section_requestdocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedetails"] tbody .control {
     width: 46.5vw;
   }
 }
 @media (max-width: 450px) {
-  .fir-container table[data-name="section_requesttext"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control,
-  .fir-container table[data-name="section_responsetext"] tbody .control,
   .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control {
+  .fir-container table[data-name="section_requestdocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedocuments"] tbody .control,
+  .fir-container table[data-name="section_responsedetails"] tbody .control {
     width: 95%;
   }
+}
+.fir-container table[data-name="section_response"] tbody tr {
+  width: 100%;
 }
 .fir-container table[data-name="section_requestdocuments"] {
   margin-bottom: 20px !important;
 }
 @media (min-width: 1600px) {
   .fir-container table[data-name="section_responsedocuments"] tbody .control {
-    width: 85%;
+    width: 90%;
   }
 }
 .fir-container table[data-name="section_responsedocuments"] label {
   margin-bottom: 30px;
   margin-top: 25px;
+}
+.eot-container {
+  position: relative;
+  margin-top: 90px;
+}
+.eot-container .bread-crumb {
+  position: absolute;
+  top: -70px;
+  font-size: 1.8rem;
+}
+@media (max-width: 737px) {
+  .eot-container .bread-crumb {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+}
+.eot-container .panel-heading {
+  background: white;
+  border: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 100rem;
+  top: -25px;
+}
+.eot-container .panel-heading .col-md-4 div:first-of-type {
+  margin-top: 15px;
+  color: #000;
+}
+.eot-container .panel-heading .col-md-4 div:last-of-type {
+  font-weight: bold;
+  color: #000;
+  margin-top: 10px;
+}
+.eot-container .panel-body fieldset {
+  border-bottom: 1px solid #d1d1d1;
+  margin: 5px -15px -15px -15px;
+  padding: 15px 15px 0 15px;
+  margin-bottom: 20px;
+}
+.eot-container .panel-body fieldset:first-of-type tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.eot-container .panel-body fieldset:first-of-type tbody td input,
+.eot-container .panel-body fieldset:first-of-type tbody select {
+  margin-left: -15px;
+  width: 210px;
+}
+.eot-container .panel-body fieldset:last-of-type {
+  border: 0px;
+}
+.eot-container .panel-body fieldset:last-of-type .view-grid {
+  border: 1px solid #d1d1d1;
+}
+.eot-container .panel-body textarea {
+  resize: none;
 }
 .fir-decision-container > div {
   background-color: #f5f5f5;
@@ -1169,9 +1324,6 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   font-size: 35px;
   margin-left: -15px;
 }
-.fir-decision-container .panel-body {
-  background: #f5f5f5;
-}
 .fir-decision-container #mainContent {
   margin-top: 150px;
 }
@@ -1181,6 +1333,9 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
 }
 .fir-decision-container #mainContent .panel td.cell {
   padding: 0px !important;
+}
+.fir-decision-container .panel-body {
+  background: #f5f5f5;
 }
 .fir-decision-container .panel-body fieldset:first-of-type {
   background: white;
@@ -1192,8 +1347,8 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   display: -ms-flexbox;
   display: flex;
 }
-.fir-decision-container label[for="qvc_subdivisiondetails"] {
-  padding: 15px;
+.fir-decision-container textarea {
+  resize: none;
 }
 .fir-decision-container fieldset[aria-label="Documents"] {
   background: white;
@@ -1219,25 +1374,44 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
 .fir-decision-container table[data-name="section_details"] tbody tr td {
   padding: 15px;
 }
-table[data-name="section_decision_subdivsiondetails"] tbody {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+label[for="qvc_subdivisiondetails"],
+label[for="qvc_finalapprovaldetails"] {
+  padding: 15px;
+}
+table[data-name="section_decision_subdivsiondetails"] tbody,
+table[data-name="section_decision_finalapproval"] tbody {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
   width: 100vw;
 }
-table[data-name="section_decision_subdivsiondetails"] tbody tr .label {
+table[data-name="section_decision_subdivsiondetails"] tbody tr .label,
+table[data-name="section_decision_finalapproval"] tbody tr .label {
   padding: 10px;
 }
-table[data-name="section_decision_subdivsiondetails"] tbody tr td {
+table[data-name="section_decision_subdivsiondetails"] tbody tr td,
+table[data-name="section_decision_finalapproval"] tbody tr td {
   padding: 15px !important;
 }
-table[data-name="section_decision_subdivsiondetails"] tbody tr td input {
+table[data-name="section_decision_subdivsiondetails"] tbody tr td input,
+table[data-name="section_decision_finalapproval"] tbody tr td input {
   width: 22vw !important;
 }
-table[data-name="section_decision_subdivsiondetails"] tbody tr td select {
+table[data-name="section_decision_subdivsiondetails"] tbody tr td select,
+table[data-name="section_decision_finalapproval"] tbody tr td select {
   width: 22vw !important;
+}
+.profile fieldset {
+  margin-top: 20px;
+}
+.profile fieldset .page-description {
+  margin-bottom: 30px;
+}
+.profile .actions {
+  float: left;
+  margin-top: -10px;
 }
 .non-italic {
   font-style: normal;
@@ -1888,6 +2062,38 @@ footer .footer-bottom {
   border-left: 0;
   border-color: #000 !important;
 }
+.edit-form {
+  margin-left: 15px;
+  background-color: white !important;
+  border: 1px solid #d1d1d1;
+  width: 305px;
+  margin-bottom: 40px;
+}
+.edit-form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 10px;
+}
+.edit-form > div img {
+  height: 25px;
+  margin-right: 10px;
+}
+.edit-form > div a {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 20px;
+  top: 3.5px;
+}
+.edit-form > div a:hover {
+  text-decoration: underline;
+}
 .alert {
   border-radius: 4px;
 }
@@ -2119,6 +2325,7 @@ footer .footer-bottom {
   margin-bottom: 10px;
 }
 .actions input[type="button"] {
+  margin-top: 50px;
   margin-right: 0 !important;
 }
 .actions input[type="button"] + input[type="button"] {
@@ -2341,7 +2548,8 @@ label.control-radio > span {
   color: #000;
   border-color: #000;
 }
-fieldset[aria-label="Payer details"] legend {
+fieldset[aria-label="Payer details"] legend,
+fieldset[aria-label="Payment details"] legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -2368,7 +2576,8 @@ fieldset[aria-label="Payer details"] legend {
       flex-grow: 0;
   margin: 0 !important;
 }
-fieldset[aria-label="Payer details"] table {
+fieldset[aria-label="Payer details"] table,
+fieldset[aria-label="Payment details"] table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2388,13 +2597,16 @@ fieldset[aria-label="Payer details"] table {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-fieldset[aria-label="Payer details"] table tbody {
+fieldset[aria-label="Payer details"] table tbody,
+fieldset[aria-label="Payment details"] table tbody {
   max-width: 100%;
 }
-fieldset[aria-label="Payer details"] table tbody td {
+fieldset[aria-label="Payer details"] table tbody td,
+fieldset[aria-label="Payment details"] table tbody td {
   width: 100vw;
 }
-fieldset[aria-label="Payer details"] table tr td .info label {
+fieldset[aria-label="Payer details"] table tr td .info label,
+fieldset[aria-label="Payment details"] table tr td .info label {
   font-family: "Heebo";
   font-style: normal;
   font-weight: 300;
@@ -2402,13 +2614,12 @@ fieldset[aria-label="Payer details"] table tr td .info label {
   line-height: 150%;
   padding: 0px 15px;
 }
-fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]) {
+fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]),
+fieldset[aria-label="Payment details"] table tr td .control input:not([type="radio"]) {
   outline: 1px solid #4d4d4d;
 }
-fieldset[aria-label="Payer details"] table tr td .control input:not([type="radio"]):focus {
-  width: 39vw;
-}
-fieldset[aria-label="Submit application"] legend {
+fieldset[aria-label="Submit application"] legend,
+fieldset[aria-label="Submit Application"] legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -2431,7 +2642,8 @@ fieldset[aria-label="Submit application"] legend {
       flex-grow: 0;
   margin: 0 !important;
 }
-fieldset[aria-label="Submit application"] table {
+fieldset[aria-label="Submit application"] table,
+fieldset[aria-label="Submit Application"] table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -242,7 +242,8 @@ label.control-radio {
   }
 }
 
-fieldset[aria-label="Payer details"] {
+fieldset[aria-label="Payer details"],
+fieldset[aria-label="Payment details"] {
   legend {
     box-sizing: border-box;
     display: flex;
@@ -289,14 +290,15 @@ fieldset[aria-label="Payer details"] {
     tr td .control input:not([type="radio"]) {
       outline: 1px solid @gray-links;
 
-      &:focus {
-        width: 39vw;
-      }
+      // &:focus {
+      //   width: 39vw;
+      // }
     }
   }
 }
 
-fieldset[aria-label="Submit application"] {
+fieldset[aria-label="Submit application"],
+fieldset[aria-label="Submit Application"] {
   legend {
     box-sizing: border-box;
     display: flex;

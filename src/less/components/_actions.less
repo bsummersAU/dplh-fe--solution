@@ -4,9 +4,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+
   input[type="button"] {
+    margin-top: 50px;
     margin-right: 0 !important;
-    + input[type="button"] {
+
+    +input[type="button"] {
       margin-left: 16px;
     }
   }
@@ -16,7 +19,7 @@
     float: none;
     clear: both;
 
-    > .btn-group {
+    >.btn-group {
       &:last-child {
         float: right;
       }
@@ -32,8 +35,10 @@ iframe .actions {
 .crmEntityFormView .actions {
   border-top: none;
   padding: 0.5em 0.5em;
+
   [class*="col-"] {
     padding: 0;
+
     .entity-action-button input {
       margin-right: 0;
     }
