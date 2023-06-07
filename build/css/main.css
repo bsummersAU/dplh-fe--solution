@@ -54,6 +54,9 @@ body {
 .site-container {
   min-height: 100%;
 }
+.site-container #dplh_landownerscommunitycorporationdetails {
+  min-height: 200px;
+}
 body > form {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -90,6 +93,17 @@ body > form {
 .dplh-3-col textarea {
   height: 8vh;
 }
+.dplh-3-col fieldset[aria-label="Certificates of Title Description"] p {
+  padding-left: 0px;
+}
+.dplh-3-col fieldset[aria-label="Certificates Of Title Section"] label {
+  margin-top: 20px;
+  margin-bottom: -35px;
+}
+.dplh-3-col fieldset[aria-label="Upload Certificate/s of Title"] label {
+  margin-top: 20px;
+  margin-bottom: -35px;
+}
 .dplh-3-col fieldset[aria-label$="fieldset-body"] {
   background: white;
   padding: 16px;
@@ -115,6 +129,7 @@ body > form {
 .dplh-3-col fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
   height: 100% !important;
   margin-bottom: 10px !important;
+  margin-left: 15px;
   background: #ffffff !important;
   border: 1px solid #d1d1d1 !important;
   padding: 0px 0px 10px 0px !important;
@@ -272,11 +287,63 @@ p.page-description {
   cursor: progress;
   /* Add a pointer on hover */
 }
-.data-loading-spinner .fa-spinner {
-  font-size: 100px;
-  color: black;
-  left: 48%;
-  top: 200px;
+.data-loading-spinner .spinner {
+  position: absolute;
+  height: 125px;
+  width: 125px;
+  border: 5px solid transparent;
+  border-top-color: #4d4d4d;
+  top: 50%;
+  left: 45%;
+  margin: -30px;
+  border-radius: 50%;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+.data-loading-spinner .spinner:before,
+.data-loading-spinner .spinner:after {
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+  border-radius: 50%;
+}
+.data-loading-spinner .spinner:before {
+  border-top-color: #d45610;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+.data-loading-spinner .spinner:after {
+  border-top-color: #FFFBFE;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 input#dplh_phonenumber::-webkit-input-placeholder {
   color: white;
@@ -1014,303 +1081,310 @@ div[data-name="tab_fir"] .tab-column div fieldset .entity-grid {
 div[data-name="tab_fir"] .tab-column div fieldset th {
   background: #ffffff;
 }
-.fir-container {
+.fir-container #mainContent {
+  padding-top: 12px;
   background-color: #f5f5f5;
 }
-.fir-container textarea {
-  resize: none;
-}
-.fir-container fieldset {
-  margin: 0px;
-}
-.fir-container fieldset .section-title h3 {
-  margin-top: 40px;
-}
-.fir-container #mainContent {
-  margin-top: 150px;
-}
-.fir-container .panel {
+.fir-container #mainContent .panel.dplh-panel {
   background-color: #f5f5f5;
   border: 0px !important;
+  width: 90% !important;
+  max-width: 1030px;
 }
-.fir-container .bread-crumb {
+.fir-container #mainContent .panel.dplh-panel .bread-crumb {
   margin-top: -30px;
   margin-bottom: 30px;
   font-size: 1.8rem;
 }
 @media (max-width: 737px) {
-  .fir-container .bread-crumb {
+  .fir-container #mainContent .panel.dplh-panel .bread-crumb {
     margin-top: -100px;
     margin-bottom: 100px;
   }
 }
-.fir-container .panel-heading {
+.fir-container #mainContent .panel.dplh-panel .panel-heading {
   border: 0;
-  margin-top: -100px;
   padding-left: 25px;
+  padding-bottom: 100px;
+}
+.fir-container #mainContent .panel.dplh-panel .panel-heading h1 {
+  font-size: 35px;
+  margin-left: -15px;
 }
 @media (max-width: 700px) {
-  .fir-container .panel-heading {
+  .fir-container #mainContent .panel.dplh-panel .panel-heading {
     margin-bottom: 0px;
     margin-top: 0px;
   }
 }
-.fir-container .panel-heading h1 {
-  font-size: 35px;
-  margin-left: -15px;
+.fir-container #mainContent .panel.dplh-panel .panel-heading .col-md-4 {
+  text-align: right;
+  padding-right: 0 !important;
+  margin-bottom: 25px;
+  margin-top: -30px;
 }
-.fir-container .panel-heading .col-md-4 {
-  margin-left: -7px !important;
-  width: 100px !important;
-  margin-bottom: 10px;
-}
-@media (max-width: 1500px) {
-  .fir-container .panel-heading .col-md-4 {
-    margin-left: 130px !important;
-  }
-}
-@media (max-width: 1250px) {
-  .fir-container .panel-heading .col-md-4 {
-    margin-left: 120px !important;
-  }
-}
-@media (max-width: 990px) {
-  .fir-container .panel-heading .col-md-4 {
-    margin-left: -10px !important;
-  }
-}
-.fir-container .panel-heading .col-md-4 div:first-of-type {
+.fir-container #mainContent .panel.dplh-panel .panel-heading .col-md-4 div:first-of-type {
   margin-top: 15px;
   color: #000;
 }
-.fir-container .panel-heading .col-md-4 div:last-of-type {
+.fir-container #mainContent .panel.dplh-panel .panel-heading .col-md-4 div:last-of-type {
   font-weight: bold;
   color: #000;
   margin-top: 10px;
 }
-.fir-container tr td {
-  padding: 0px !important;
+.fir-container #mainContent .panel-body fieldset {
+  margin: 0px;
 }
-.fir-container table {
+.fir-container #mainContent .panel-body fieldset .section-title h3 {
+  margin-top: 40px;
+}
+.fir-container #mainContent .panel-body table {
   background-color: white;
   border: 1px solid #d1d1d1;
-  width: 53vw;
+  width: 60vw;
+  max-width: 1000px;
 }
-.fir-container table tbody {
+.fir-container #mainContent .panel-body table[data-name="section_responsedetails"] tbody,
+.fir-container #mainContent .panel-body table[data-name="section_requestdetails"] tbody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.fir-container table tbody tr {
+.fir-container #mainContent .panel-body table[data-name="section_responsedetails"] tbody tr,
+.fir-container #mainContent .panel-body table[data-name="section_requestdetails"] tbody tr {
   padding: 15px !important;
 }
-.fir-container table #subgrid_outstanding table,
-.fir-container table #subgrid_subgrid_pending table {
-  margin-left: 1px;
+.fir-container #mainContent .panel-body table[data-name="section_responsedetails"] tr,
+.fir-container #mainContent .panel-body table[data-name="section_requestdetails"] tr {
+  min-width: 210px;
 }
-.fir-container table #Subgrid_fir_request table tbody,
-.fir-container table #subgrid_firrequestdocument table tbody,
-.fir-container table #subgrid_firresponsedocument table tbody {
+.fir-container #mainContent .panel-body table[data-name="section_responsedetails"] input,
+.fir-container #mainContent .panel-body table[data-name="section_requestdetails"] input,
+.fir-container #mainContent .panel-body table[data-name="section_responsedetails"] select,
+.fir-container #mainContent .panel-body table[data-name="section_requestdetails"] select {
+  margin-left: -15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 210px;
+}
+.fir-container #mainContent .panel-body table[data-name="section_requesttext"] tbody,
+.fir-container #mainContent .panel-body table[data-name="section_responsetext"] tbody {
   display: revert !important;
+  width: 100%;
 }
-.fir-container table #Subgrid_fir_request table tbody tr td,
-.fir-container table #subgrid_firrequestdocument table tbody tr td,
-.fir-container table #subgrid_firresponsedocument table tbody tr td {
+.fir-container #mainContent .panel-body table[data-name="section_requesttext"] tbody tr,
+.fir-container #mainContent .panel-body table[data-name="section_responsetext"] tbody tr {
+  display: block;
+}
+.fir-container #mainContent .panel-body table[data-name="section_requesttext"] tbody tr td,
+.fir-container #mainContent .panel-body table[data-name="section_responsetext"] tbody tr td {
+  width: 100vw;
+  padding: 10px 15px 15px 15px !important;
+}
+.fir-container #mainContent .panel-body table[data-name="section_requesttext"] tbody tr td textarea,
+.fir-container #mainContent .panel-body table[data-name="section_responsetext"] tbody tr td textarea {
+  resize: none;
+}
+.fir-container #mainContent .panel-body fieldset[aria-label="Response"] {
+  margin-top: 20px;
+}
+.fir-container #mainContent .panel-body table[data-name="section_response"] tbody tr {
+  width: 100%;
+}
+.fir-container #mainContent .panel-body table[data-name="section_responsedocuments"] tbody td,
+.fir-container #mainContent .panel-body table[data-name="section_requestdocuments"] tbody td,
+.fir-container #mainContent .panel-body table[data-name="section_response"] tbody td {
+  padding: 15px !important;
+}
+.fir-container #mainContent .panel-body #subgrid_firrequestdocument,
+.fir-container #mainContent .panel-body #subgrid_firresponsedocument,
+.fir-container #mainContent .panel-body #Subgrid_fir_request {
+  padding-top: 15px;
+}
+.fir-container #mainContent .panel-body #subgrid_firrequestdocument table,
+.fir-container #mainContent .panel-body #subgrid_firresponsedocument table,
+.fir-container #mainContent .panel-body #Subgrid_fir_request table {
+  width: 100%;
+}
+.fir-container #mainContent .panel-body #subgrid_firrequestdocument table tbody tr td,
+.fir-container #mainContent .panel-body #subgrid_firresponsedocument table tbody tr td,
+.fir-container #mainContent .panel-body #Subgrid_fir_request table tbody tr td {
   padding-top: 20px !important;
 }
-.fir-container table #Subgrid_fir_request table tbody tr td:last-of-type,
-.fir-container table #subgrid_firrequestdocument table tbody tr td:last-of-type,
-.fir-container table #subgrid_firresponsedocument table tbody tr td:last-of-type {
+.fir-container #mainContent .panel-body #subgrid_firrequestdocument table tbody tr td:last-of-type,
+.fir-container #mainContent .panel-body #subgrid_firresponsedocument table tbody tr td:last-of-type,
+.fir-container #mainContent .panel-body #Subgrid_fir_request table tbody tr td:last-of-type {
   padding-top: 10px !important;
 }
-.fir-container #conditionadviceform div table[data-name="section_Details"] {
-  position: relative;
-}
-.fir-container #conditionadviceform div table[data-name="section_Details"] input,
-.fir-container #conditionadviceform div table[data-name="section_Details"] select {
-  margin-left: -15px;
-}
-.fir-container #conditionadviceform div table[data-name="section_Details"] tbody tr:first-of-type {
-  display: none;
-}
-.fir-container table[data-name="section_conditions"] > tbody,
-.fir-container table[data-name="section_advicenotes"] > tbody {
-  all: revert;
-}
-.fir-container table[data-name="section_conditions"] > tbody [role="alert"],
-.fir-container table[data-name="section_advicenotes"] > tbody [role="alert"] {
-  padding: 0px 15px;
-}
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table,
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table {
-  border: 0px;
-  width: 100%;
-}
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table thead,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table thead,
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table thead,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table thead {
-  border-bottom: 1px solid #d1d1d1;
-}
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table tbody,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table tbody,
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table tbody,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table tbody {
-  all: revert;
-}
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_conditions table tbody td,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_conditions table tbody td,
-.fir-container table[data-name="section_conditions"] > tbody #Subgrid_advicenotes table tbody td,
-.fir-container table[data-name="section_advicenotes"] > tbody #Subgrid_advicenotes table tbody td {
-  border-top: 0px !important;
-  padding: 10px 10px 10px 20px !important;
-}
-.fir-container table[data-name="section_conditions"] tbody,
-.fir-container table[data-name="section_advicenotes"] tbody {
-  padding: 0px !important;
-}
-.fir-container table[data-name="section_conditions"] tbody tr,
-.fir-container table[data-name="section_advicenotes"] tbody tr {
-  width: 99.9% !important;
-}
-.fir-container table[data-name="section_conditions"] tbody .control,
-.fir-container table[data-name="section_advicenotes"] tbody .control {
-  padding: 0px !important;
-}
-.fir-container table[data-name="section_requesttext"] tbody,
-.fir-container table[data-name="section_responsetext"] tbody {
-  display: revert !important;
-  width: 100%;
-}
-.fir-container table[data-name="section_requesttext"] tbody tr,
-.fir-container table[data-name="section_responsetext"] tbody tr {
-  display: block;
-  padding: 10px 15px 0px 15px;
-}
-.fir-container table[data-name="section_requesttext"] tbody tr td,
-.fir-container table[data-name="section_responsetext"] tbody tr td {
-  width: 100vw;
-}
-.fir-container fieldset[aria-label="Request"] table tr,
-.fir-container fieldset[aria-label="Response"] table tr {
-  width: 210px;
-}
-.fir-container table[data-name="section_responsedetails"] input,
-.fir-container table[data-name="section_requestdetails"] input,
-.fir-container table[data-name="section_responsedetails"] select,
-.fir-container table[data-name="section_requestdetails"] select {
-  margin-left: -15px;
-}
-.fir-container table[data-name="section_response"] tbody .control,
-.fir-container table[data-name="section_requestdocuments"] tbody .control,
-.fir-container table[data-name="section_responsedocuments"] tbody .control,
-.fir-container table[data-name="section_responsedetails"] tbody .control {
-  width: 56vw;
-}
-@media (min-width: 1640px) {
-  .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control {
-    resize: none;
-    width: 920px !important;
-  }
-}
-@media (min-width: 1600px) {
-  .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control {
-    width: 46.5vw;
-  }
-}
-@media (max-width: 450px) {
-  .fir-container table[data-name="section_response"] tbody .control,
-  .fir-container table[data-name="section_requestdocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedocuments"] tbody .control,
-  .fir-container table[data-name="section_responsedetails"] tbody .control {
-    width: 95%;
-  }
-}
-.fir-container table[data-name="section_response"] tbody tr {
-  width: 100%;
-}
-.fir-container table[data-name="section_requestdocuments"] {
-  margin-bottom: 20px !important;
-}
-@media (min-width: 1600px) {
-  .fir-container table[data-name="section_responsedocuments"] tbody .control {
-    width: 90%;
-  }
-}
-.fir-container table[data-name="section_responsedocuments"] label {
-  margin-bottom: 30px;
-  margin-top: 25px;
+.fir-container .fir-help {
+  padding: 32px 15px 15vh 30px;
 }
 .eot-container {
-  position: relative;
-  margin-top: 90px;
+  background-color: #f5f5f5;
 }
-.eot-container .bread-crumb {
-  position: absolute;
-  top: -70px;
+@media (min-width: 768px) {
+  .eot-container .row.form-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.eot-container .row.form-row .col-6#mainContent {
+  width: 100%;
+  height: 100%;
+}
+.eot-container .row.form-row #mainContent {
+  padding-top: 12px;
+}
+.eot-container .row.form-row #mainContent .panel.dplh-panel {
+  background-color: #f5f5f5;
+  border: 0px !important;
+  width: 90% !important;
+  max-width: 1030px;
+}
+.eot-container .row.form-row #mainContent .panel.dplh-panel .bread-crumb {
+  margin-top: -30px;
+  margin-bottom: 30px;
   font-size: 1.8rem;
 }
 @media (max-width: 737px) {
-  .eot-container .bread-crumb {
+  .eot-container .row.form-row #mainContent .panel.dplh-panel .bread-crumb {
     margin-top: -100px;
     margin-bottom: 100px;
   }
 }
-.eot-container .panel-heading {
-  background: white;
-  border: 0px;
-  padding: 0px;
-  position: absolute;
-  width: 100rem;
-  top: -25px;
+.eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading {
+  border: 0;
+  padding-left: 25px;
+  padding-bottom: 100px;
 }
-.eot-container .panel-heading .col-md-4 div:first-of-type {
+.eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading h1 {
+  font-size: 35px;
+  margin-left: -15px;
+}
+@media (max-width: 700px) {
+  .eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+}
+.eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading .col-md-4 {
+  text-align: right;
+  padding-right: 0 !important;
+  margin-bottom: 25px;
+  margin-top: -30px;
+}
+.eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading .col-md-4 div:first-of-type {
   margin-top: 15px;
   color: #000;
 }
-.eot-container .panel-heading .col-md-4 div:last-of-type {
+.eot-container .row.form-row #mainContent .panel.dplh-panel .panel-heading .col-md-4 div:last-of-type {
   font-weight: bold;
   color: #000;
   margin-top: 10px;
 }
-.eot-container .panel-body fieldset {
-  border-bottom: 1px solid #d1d1d1;
-  margin: 5px -15px -15px -15px;
-  padding: 15px 15px 0 15px;
-  margin-bottom: 20px;
+.eot-container .row.form-row .fir-help {
+  background-color: #ffffff;
 }
-.eot-container .panel-body fieldset:first-of-type tbody {
+.eot-container .panel-body fieldset[aria-label="Summary"] {
+  margin-bottom: 0px !important;
+}
+.eot-container .panel-body fieldset[aria-label="Summary"] table {
+  background-color: white;
+  border: 1px solid #d1d1d1;
+  width: 60vw;
+  max-width: 1000px;
+}
+.eot-container .panel-body fieldset[aria-label="Summary"] table tbody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.eot-container .panel-body fieldset:first-of-type tbody td input,
-.eot-container .panel-body fieldset:first-of-type tbody select {
+.eot-container .panel-body fieldset[aria-label="Summary"] table tbody td {
+  padding: 20px;
+}
+.eot-container .panel-body fieldset[aria-label="Summary"] table tbody td input,
+.eot-container .panel-body fieldset[aria-label="Summary"] table tbody td select {
   margin-left: -15px;
   width: 210px;
 }
-.eot-container .panel-body fieldset:last-of-type {
-  border: 0px;
+.eot-container .panel-body fieldset[aria-label="Summary"] .datetimepicker.new-tag-control {
+  margin-left: -15px !important;
 }
-.eot-container .panel-body fieldset:last-of-type .view-grid {
+.eot-container .panel-body fieldset[aria-label="Summary"] .new-tag-control {
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  width: 240px;
+  padding-left: 0 !important;
+}
+.eot-container .panel-body fieldset[aria-label="Summary"] .new-tag-control .new-tag {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-right: 35px;
+  text-align: left !important;
+  padding-top: 13px;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+.eot-container .panel-body fieldset[aria-label="Justification"] legend {
+  padding-top: 20px !important;
+}
+.eot-container .panel-body fieldset[aria-label="Justification"] .label {
+  font-size: 20px;
+}
+.eot-container .panel-body fieldset[aria-label="Justification"] table {
+  background-color: white;
   border: 1px solid #d1d1d1;
+  width: 60vw;
+  max-width: 1000px;
 }
-.eot-container .panel-body textarea {
+.eot-container .panel-body fieldset[aria-label="Justification"] table td {
+  padding: 20px;
+}
+.eot-container .panel-body fieldset[aria-label="Justification"] table td textarea {
   resize: none;
 }
-.fir-decision-container > div {
+.eot-container .panel-body fieldset[aria-label="Disclaimer"] {
+  padding: 20px;
+  border: 1px solid #d1d1d1;
+  background-color: #ffffff;
+  margin-top: 80px;
+  position: relative;
+}
+.eot-container .panel-body fieldset[aria-label="Disclaimer"] legend {
+  all: unset;
+  position: absolute;
+  top: -50px;
+  margin-left: -15px;
+}
+.eot-container .panel-body fieldset[aria-label="Supporting documents"] table {
+  background-color: white;
+  border: 1px solid #d1d1d1;
+  width: 60vw;
+  max-width: 1000px;
+}
+.eot-container .panel-body fieldset[aria-label="Supporting documents"] table tr td {
+  padding-top: 20px !important;
+}
+.eot-container .panel-body fieldset[aria-label="Supporting documents"] #subgrid_eot_supportingdocuments table {
+  width: 100%;
+}
+.eot-container .panel-body fieldset[aria-label="Supporting documents"] #subgrid_eot_supportingdocuments table tbody tr td {
+  padding-top: 20px !important;
+}
+.eot-container .panel-body fieldset[aria-label="Supporting documents"] #subgrid_eot_supportingdocuments table tbody tr td:last-of-type {
+  padding-top: 10px !important;
+}
+.fir-decision-container {
   background-color: #f5f5f5;
 }
 .fir-decision-container .panel-heading {
@@ -1318,7 +1392,7 @@ div[data-name="tab_fir"] .tab-column div fieldset th {
   margin-bottom: 70px;
   margin-top: -100px;
   background-color: #f5f5f5;
-  width: 140%;
+  width: 100%;
 }
 .fir-decision-container .panel-heading h1 {
   font-size: 35px;
@@ -1403,18 +1477,253 @@ table[data-name="section_decision_subdivsiondetails"] tbody tr td select,
 table[data-name="section_decision_finalapproval"] tbody tr td select {
   width: 22vw !important;
 }
-.profile fieldset {
+.profile-container .row.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr {
+  margin-right: 40px;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr td {
+  width: 25vw;
+  min-width: 250px;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control {
+  margin-left: -15px !important;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control input[id="emailaddress1"] {
+  display: block !important;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control > .control .text-primary {
+  display: none;
+}
+.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control input[readonly="readonly"] {
+  padding-left: 15px !important;
+  background: #f5f5f5 !important;
+  border: 1px solid #d1d1d1 !important;
+}
+.profile-container fieldset[aria-label="Preferred communication method"] label.field-label {
+  width: 100%;
+  max-width: 1000px;
+  padding-bottom: 40px;
+}
+.profile-container .form-custom-actions {
+  width: 100%;
+  max-width: 1000px;
+}
+.profile-container fieldset {
   margin-top: 20px;
 }
-.profile fieldset .page-description {
+.profile-container fieldset .page-description {
   margin-bottom: 30px;
 }
-.profile .actions {
+.profile-container .actions {
   float: left;
   margin-top: -10px;
 }
+.profile-container .fir-help {
+  background-color: #f5f5f5;
+  padding: 32px 30px;
+}
 .non-italic {
   font-style: normal;
+}
+.new-tag-control {
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+.new-tag-control .new-tag {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: end;
+  padding-right: 35px;
+}
+.tab-ref .tab-pane h4 {
+  margin-bottom: 0px !important;
+}
+.ca-container {
+  background-color: #f5f5f5;
+}
+.ca-container .panel.dplh-panel {
+  border: 0px !important;
+  width: 90% !important;
+  max-width: 1030px;
+}
+.ca-container .panel.dplh-panel .bread-crumb {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+@media (max-width: 737px) {
+  .ca-container .panel.dplh-panel .bread-crumb {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+}
+.ca-container .panel.dplh-panel .panel-heading {
+  border: 0;
+  padding-left: 25px;
+  background-color: #f5f5f5 !important;
+}
+.ca-container .panel.dplh-panel .panel-heading h1 {
+  font-size: 35px;
+  margin-left: -15px;
+}
+.ca-container .panel.dplh-panel .panel-body {
+  background-color: #f5f5f5;
+}
+.ca-container .panel.dplh-panel .panel-body fieldset[aria-label="Details"] table tbody {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 15px 15px 0px 15px !important;
+}
+.ca-container .panel.dplh-panel .panel-body fieldset:not(fieldset[aria-label="Details"]) .control {
+  padding: 0px !important;
+}
+.ca-container .panel.dplh-panel .panel-body table {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  max-width: 1000px;
+}
+.ca-container .panel.dplh-panel .panel-body table tbody input,
+.ca-container .panel.dplh-panel .panel-body table tbody select {
+  margin-left: -15px;
+  width: 180px;
+  min-width: 180px;
+}
+.ca-container .panel.dplh-panel .panel-body table tbody tr td .new-tag-control {
+  margin-left: -15px;
+  width: 215px;
+}
+.ca-container .panel.dplh-panel .panel-body table tbody tr td .new-tag-control .view-grid table {
+  width: 100%;
+}
+.ca-container .panel.dplh-panel .panel-body table tbody tr td .new-tag-control .view-grid table tbody tr {
+  padding: 0px !important;
+  width: 100%;
+}
+.ca-container .panel.dplh-panel .panel-body .new-tag-control .new-tag {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-right: 35px;
+  text-align: left !important;
+  padding-top: 13px;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+.modal.fade.modal-form {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.mp-dashboard-btn {
+  width: 365px !important;
+}
+.mp-dashboard-btn > div {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+.payment-container {
+  background-color: #f5f5f5;
+}
+@media (min-width: 768px) {
+  .payment-container .row.form-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.payment-container .row.form-row #mainContent {
+  padding-top: 12px;
+  min-height: calc(100vh - 87px);
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel {
+  border: 0px !important;
+  width: 90% !important;
+  max-width: 1030px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .bread-crumb {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  padding: 0;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-heading {
+  border: 0;
+  padding-bottom: 100px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-heading .col-md-8 {
+  margin-left: -15px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-heading .col-md-8 h1 {
+  font-size: 35px;
+  margin-left: -15px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body {
+  background-color: #f5f5f5;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body .alert-danger {
+  margin: 15px !important;
+  color: #a94442 !important;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body .control input {
+  margin-left: -15px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body .actions {
+  float: right;
+  margin-right: 15px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body #successnextsteps {
+  margin: 15px;
+}
+.payment-container .row.form-row #mainContent .panel.dplh-panel .panel-body #errornextsteps {
+  margin: 15px;
+}
+.payment-container .row.form-row .fir-help {
+  background-color: #ffffff;
+}
+.page_section.sign-in {
+  margin-bottom: -40px;
+}
+.sign-in-body #mainContent .row {
+  margin: 30px 0px;
+}
+.sign-in-body #mainContent .staff-btn {
+  margin-top: -100px;
+}
+.sign-in-body #mainContent .staff-btn button {
+  border: 0px;
+  text-decoration: underline;
+  background-color: #ffffff;
+}
+.sign-in-body #mainContent .external-btn {
+  position: absolute;
+  top: 25rem;
+}
+.sign-in-body #mainContent .external-btn button {
+  padding: 50px;
+  font-size: 32px;
 }
 :root {
   accent-color: #d14210;
@@ -2042,12 +2351,6 @@ footer .footer-bottom {
   position: absolute;
   top: -45px;
   white-space: nowrap;
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 @keyframes spin {
   100% {
@@ -3176,6 +3479,13 @@ div#form1a_success_summary {
 .form-container fieldset .info label {
   font-weight: 400;
   width: 80%;
+}
+div[data-name="tab_general"] fieldset[aria-label="Upload"] table tbody tr td .control {
+  padding-left: 0px;
+}
+div[data-name="tab_general"] fieldset[aria-label="Upload document"] legend h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 details {
   border: 1px solid #aaa;
