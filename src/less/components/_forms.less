@@ -251,7 +251,7 @@ fieldset[aria-label="Payment details"] {
     align-items: flex-start;
     padding: 16px 24px;
     height: 61px;
-    background: @gray-light-tabs;
+    background: @brand-background;
     border: 1px solid @gray-light-tabs;
     flex: none;
     order: 0;
@@ -305,7 +305,7 @@ fieldset[aria-label="Submit Application"] {
     align-items: flex-start;
     padding: 16px 24px;
     height: 61px;
-    background: @gray-light-tabs;
+    background: @brand-background;
     border: 1px solid @gray-light-tabs;
     flex: none;
     order: 0;
@@ -384,9 +384,9 @@ fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
   display: none !important;
 }
 
-.list-styling fieldset[aria-label="Transport impacts"] legend {
-  display: none !important;
-}
+// .list-styling fieldset[aria-label="Transport impacts"] legend {
+//   display: none !important;
+// }
 
 @media (min-width: @screen-md-min) {
   label {
@@ -478,18 +478,19 @@ form {
     font-size: 30px;
   }
 
+  // old field set
   fieldset {
     .panel-title {
       display: block !important;
-      padding: 16px 24px 16px 24px;
-      height: 61px;
-      background: @gray-light-tabs;
-      border: 1px solid @gray-light-tabs;
+      // padding: 16px 24px 16px 24px;
+      // height: 61px;
+      // background: @gray-light-tabs;
+      // border: 1px solid @gray-light-tabs;
       font-family: "Heebo";
       font-style: normal;
-      font-weight: 700;
-      font-size: 22px;
-      margin-bottom: -20px;
+      // font-weight: 700;
+      // font-size: 22px;
+      // margin-bottom: -20px;
     }
 
     legend {
@@ -530,6 +531,7 @@ form {
         font-size: 1.6rem;
         font-weight: 300;
       }
+
     }
   }
 
@@ -857,6 +859,13 @@ tr:last-of-type .cell {
     margin-top: -35px;
     width: 40%;
     height: 4vh;
+
+    @media(max-width: @screen-xxl) {
+      padding: 0px 15px 0px 15px;
+      float: left;
+      margin-top: 20px;
+      height: 100%;
+    }
   }
 
   fieldset[aria-label="Community Schemes"] legend {
@@ -896,7 +905,10 @@ tr:last-of-type .cell {
   }
 
   >div {
-    fieldset {
+
+
+
+    fieldset:not([aria-label="Outstanding"]):not([aria-label="Pending and closed"]) {
       gap: 32px;
       width: 80%;
       height: 100%;
@@ -905,43 +917,73 @@ tr:last-of-type .cell {
       border: 1px solid @gray-light-tabs;
 
       legend {
-        padding: 16px 315px 16px 24px;
+        padding: 16px 150px 16px 24px;
         gap: 10px;
-        height: 61px;
-        background: @gray-light-tabs;
-        border: 1px solid @gray-light-tabs;
+        background: @brand-background;
+        // border: 1px solid @gray-light-tabs;
         font-family: "Heebo";
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
         outline: 1px solid @gray-light-tabs;
+        //new
+        height: auto;
+
+        h3 {
+          //new
+          width: 100%;
+          margin-bottom: 0px;
+        }
       }
 
       .subgrid:first-of-type {
         padding: 12px;
       }
     }
+
+
+
+  }
+
+  fieldset[aria-label="Recommendation Details"] {
+    margin-bottom: -10px !important;
   }
 
   input[type="text"] {
     padding-right: 35px !important;
     text-align: right;
+
+    @media(max-width: @screen-xxl) {
+      text-align: left
+    }
   }
 
   select {
     text-align: right;
     padding-right: 35px !important;
+
+    @media(max-width: @screen-xxl) {
+      text-align: left
+    }
   }
 
   textarea {
     text-align: right;
     padding-right: 35px !important;
+
+    @media(max-width: @screen-xxl) {
+      text-align: left
+    }
   }
 
   .boolean-radio[readonly="readonly"] {
     text-align: right;
     float: right;
     margin-right: 30px;
+
+    @media(max-width: @screen-xxl) {
+      text-align: left
+    }
   }
 
   th[scope="col"] {
@@ -972,6 +1014,41 @@ tr:last-of-type .cell {
       right: -12px;
     }
   }
+
+  .boolean-radio-cell .control label {
+    display: inline;
+    float: left;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 32px;
+    margin-left: -2px;
+    margin-right: 0;
+    padding: 0.8rem 4rem;
+    border: 1px solid @gray-light-tabs;
+    color: @gray-darker;
+  }
+
+
+
+  .boolean-radio-cell .control input {
+    display: none;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+  }
+
+
+
+  .boolean-radio-cell .control input:checked+label {
+    background-color: #808080;
+    color: @white;
+  }
+
+
+
+
 
 }
 
@@ -1061,4 +1138,120 @@ div[data-name="tab_general"] {
       }
     }
   }
+}
+
+.lodgement {
+  // margin-left: 30px;
+
+  summary {
+    padding: 16px 315px 16px 24px;
+    gap: 10px;
+    width: 80%;
+    height: 61px;
+    background: @gray-light-tabs;
+    border: 1px solid @gray-light-tabs;
+    margin: -1px 0px;
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  >div {
+
+    fieldset[aria-label="form1_disclaimer"],
+    fieldset[aria-label="Form2A_diclaimer"] {
+      all: unset;
+      margin-left: -15px;
+      background: none !important;
+      border: 0px !important;
+    }
+
+    fieldset[aria-label="Certificates of Title Description"] {
+      all: unset;
+    }
+
+
+
+
+    fieldset:not([aria-label="Payer details"]):not([aria-label="Submit application"]) {
+      gap: 32px;
+      height: 100%;
+      margin-bottom: 10px;
+      background: @white;
+      border: 1px solid @gray-light-tabs;
+
+      .page-description {
+        padding: 10px;
+      }
+
+      legend {
+        padding: 16px 150px 16px 24px;
+        gap: 10px;
+        height: auto;
+        background: @brand-background;
+        font-family: "Heebo";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        outline: 1px solid @gray-light-tabs;
+        margin: 0px !important;
+
+        h3 {
+          //new
+          width: 100%;
+          margin-bottom: 0px;
+        }
+      }
+
+      td {
+        padding: 10px !important;
+      }
+
+      .subgrid-cell {
+        .info {
+          label {
+            margin-bottom: -57px;
+            margin-top: 30px;
+            padding-left: 18px;
+          }
+
+          label[for="subgrid_consenttoapply"] {
+            margin-bottom: 0px;
+          }
+        }
+      }
+
+      .subgrid:first-of-type {
+        padding: 12px 0px;
+      }
+    }
+  }
+
+  th[scope="col"] {
+    background-color: @gray-light-title;
+
+    >a {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+  }
+
+  dt {
+    margin-bottom: 8px;
+  }
+
+
+  #subgrid_fir_outstanding {
+    .input-group {
+      position: relative;
+      top: -70px;
+      right: -12px;
+    }
+  }
+
+  #buttonsticker {
+    margin-bottom: 25px;
+  }
+
 }

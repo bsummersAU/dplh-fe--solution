@@ -27,6 +27,7 @@
 @brand-warning: #ff9067;
 @brand-danger: #d9534f;
 @brand-focus: #d45610;
+@brand-background: #E8E8E8;
 
 //== Scaffolding
 //
@@ -213,15 +214,9 @@
 //** Default `.form-control` height
 @input-height-base: (@line-height-computed + (@padding-base-vertical * 2) + 2);
 //** Large `.form-control` height
-@input-height-large: (
-  ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) +
-    2
-);
+@input-height-large: (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
-@input-height-small: (
-  floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) +
-    2
-);
+@input-height-small: (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
 
 //** `.form-group` margin
 @form-group-margin-bottom: 15px;
@@ -318,6 +313,12 @@
 @screen-lg-min: @screen-lg;
 //** Deprecated `@screen-lg-desktop` as of v3.0.1
 @screen-lg-desktop: @screen-lg-min;
+
+
+@screen-xxl: 1400px;
+@screen-xxl-min: @screen-xxl;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-xxl-desktop: @screen-xxl-min;
 
 // So media queries don't overlap when required, provide a maximum
 @screen-xs-max: (@screen-sm-min - 1);
@@ -554,10 +555,8 @@
 //** Popover outer arrow color
 @popover-arrow-outer-color: fadein(@popover-border-color, 5%);
 //** Popover outer arrow fallback color
-@popover-arrow-outer-fallback-color: darken(
-  @popover-fallback-border-color,
-  20%
-);
+@popover-arrow-outer-fallback-color: darken(@popover-fallback-border-color,
+        20%);
 
 //== Labels
 //
