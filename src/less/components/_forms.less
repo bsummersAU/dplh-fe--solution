@@ -795,7 +795,7 @@ tr:last-of-type .cell {
 }
 
 .page-description p:not(:nth-child(3)) {
-  padding-left: 20px;
+  // padding-left: 20px;
   padding-top: 20px;
 }
 
@@ -890,6 +890,14 @@ tr:last-of-type .cell {
 .ref {
   margin-left: 30px;
 
+  .boolean-radio {
+    .aspNetDisabled {
+      &:first-child {
+        margin-left: -1px;
+      }
+    }
+  }
+
   summary {
     padding: 16px 315px 16px 24px;
     gap: 10px;
@@ -981,6 +989,15 @@ tr:last-of-type .cell {
     float: right;
     margin-right: 30px;
 
+    @media(max-width: @screen-lg) {
+      margin: 0px;
+    }
+
+    @media(max-width: @screen-sm-min) {
+      width: 100%;
+      margin-right: -5vw;
+    }
+
     @media(max-width: @screen-xxl) {
       text-align: left
     }
@@ -999,6 +1016,16 @@ tr:last-of-type .cell {
     margin-bottom: 8px;
   }
 
+  .control.hasGrid {
+    dt {
+      padding: 8px 0px;
+    }
+
+    dd {
+      padding: 8px 0px;
+    }
+  }
+
   // dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
   //   background: #0001;
   //   }
@@ -1015,37 +1042,85 @@ tr:last-of-type .cell {
     }
   }
 
-  .boolean-radio-cell .control label {
-    display: inline;
-    float: left;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 32px;
-    margin-left: -2px;
-    margin-right: 0;
-    padding: 0.8rem 4rem;
-    border: 1px solid @gray-light-tabs;
-    color: @gray-darker;
+  // .boolean-radio-cell .control label {
+  //   display: inline;
+  //   float: left;
+  //   font-size: 2rem;
+  //   font-weight: 600;
+  //   line-height: 32px;
+  //   margin-left: -2px;
+  //   margin-right: 0;
+  //   padding: 0.8rem 4rem;
+  //   border: 1px solid @gray-light-tabs;
+  //   color: @gray-darker;
+  // }
+
+
+
+  // .boolean-radio-cell .control input {
+  //   display: none;
+  //   clip: rect(0, 0, 0, 0);
+  //   height: 1px;
+  //   width: 1px;
+  //   border: 0;
+  //   overflow: hidden;
+  // }
+
+
+
+  // .boolean-radio-cell .control input:checked+label {
+  //   background-color: #808080;
+  //   color: @white;
+  // }
+
+
+  .boolean-radio[disabled="disabled"] {
+    position: relative;
+    margin-top: -20px;
+
+    input[type="radio"] {
+      height: 50px !important;
+      width: 100px !important;
+      border-radius: 0px !important;
+
+      &::before {
+        height: 50px !important;
+        width: 100px !important;
+        border-radius: 0px !important;
+        top: -1px !important;
+        left: -2px !important;
+        color: white !important;
+
+      }
+
+      &:disabled::before {
+        box-shadow: inset 50px 50px #7f848b !important;
+      }
+
+      &:checked+label {
+        color: white !important;
+      }
+    }
+
+    label {
+      position: absolute;
+    }
+
+    input:first-child {
+      margin-left: -15px !important;
+      border: 1px solid #7f848b !important;
+    }
+
+    span:first-of-type input+label {
+      left: 105px;
+      top: 5px;
+    }
+
+    span:last-of-type input+label {
+      left: 10px;
+      top: 5px;
+    }
   }
-
-
-
-  .boolean-radio-cell .control input {
-    display: none;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    width: 1px;
-    border: 0;
-    overflow: hidden;
-  }
-
-
-
-  .boolean-radio-cell .control input:checked+label {
-    background-color: #808080;
-    color: @white;
-  }
-
 
 
 
@@ -1217,7 +1292,7 @@ div[data-name="tab_general"] {
           }
 
           label[for="subgrid_consenttoapply"] {
-            margin-bottom: 0px;
+            // margin-bottom: 0px;
           }
         }
       }
@@ -1254,4 +1329,19 @@ div[data-name="tab_general"] {
     margin-bottom: 25px;
   }
 
+}
+
+fieldset[aria-label="Contaminated sites"] {
+  p {
+    padding-left: 10px;
+    padding-top: 20px;
+  }
+}
+
+#content-container.container.wrapper-body {
+  width: 100% !important;
+}
+
+fieldset fieldset {
+  width: 100% !important;
 }

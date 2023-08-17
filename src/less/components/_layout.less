@@ -304,7 +304,7 @@ ul.stepper-vertical {
 
 #helpSection {
   h2 {
-    font-size: 20px;
+    font-size: 28px;
   }
 }
 
@@ -994,7 +994,17 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 }
 
 .home {
-  height: 170px !important;
+
+  // height: 170px !important;
+
+  .col-md-8 {
+    padding-left: 0px;
+  }
+
+  .row {
+    width: 100%;
+    margin-left: 0px !important;
+  }
 
   .section-landing-heading {
     margin-top: 40px;
@@ -1002,6 +1012,45 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
   .col-md-12 {
     margin-bottom: 0 !important;
+  }
+}
+
+.content-home {
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: @screen-xs) {
+      justify-content: center;
+    }
+
+    .home-card {
+      height: auto;
+      width: 250px;
+      border: 1px solid @table-border-color;
+      border-bottom: 10px solid @table-border-color;
+      border-radius: 3px;
+
+      @media (max-width: @screen-xs) {
+        margin: 10px 0px;
+      }
+
+      &:hover {
+        border-bottom: 10px solid @brand-info;
+      }
+
+      p {
+        padding: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: 130px
+      }
+    }
+
   }
 }
 
@@ -1255,6 +1304,37 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
 
 
 }
+
+.decision-info {
+
+  // new
+  background-color: white !important;
+  border: 1px solid @gray-light-tabs;
+  margin-left: 0px;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+
+
+
+  .col-md-3 {
+    padding: 15px !important;
+
+
+    div:first-child {
+      color: @gray;
+    }
+
+    div:last-child {
+      padding-top: 15px !important;
+      font-weight: 600;
+    }
+  }
+
+
+}
+
 
 .form-lodgement-info {
   background-color: @white  !important;
@@ -1731,6 +1811,12 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   //   background-color: @gray-light-title;
   // }
 
+  label[for="qvc_subdivisiondetails"] {
+    padding: 15px;
+    font-size: x-large;
+    font-weight: 1000;
+  }
+
   .panel-heading {
     border: 0;
     margin-bottom: 70px;
@@ -1793,6 +1879,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       tr {
         td {
           padding: 15px;
+          width: 100vw !important;
         }
       }
     }
@@ -1928,7 +2015,6 @@ table[data-name="section_decision_finalapproval"] {
     #btnUpdateEmail {
       position: absolute;
       left: 230px;
-      margin-top: 95px;
 
       @media (max-width: 1200px) {
         margin-top: 0px;
@@ -2109,14 +2195,7 @@ table[data-name="section_decision_finalapproval"] {
   background-color: rgba(0, 0, 0, 0.25)
 }
 
-.mp-dashboard-btn {
 
-  width: 365px !important;
-
-  >div {
-    justify-content: flex-start !important;
-  }
-}
 
 .payment-container {
   background-color: @gray-light-title;
@@ -2486,5 +2565,15 @@ table[data-name="section_decision_finalapproval"] {
 
 
     }
+  }
+}
+
+.section-padding {
+  margin: 48px 0px
+}
+
+section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit"] {
+  .modal-dialog {
+    margin-top: 20vh;
   }
 }

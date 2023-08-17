@@ -262,7 +262,7 @@ ul.stepper-vertical li.active a {
   font-weight: 600;
 }
 #helpSection h2 {
-  font-size: 20px;
+  font-size: 28px;
 }
 p.page-description {
   padding-left: 0 !important;
@@ -838,14 +838,57 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 [aria-label="Additional Supporting Documents"] .panel-title {
   display: none;
 }
-.home {
-  height: 170px !important;
+.home .col-md-8 {
+  padding-left: 0px;
+}
+.home .row {
+  width: 100%;
+  margin-left: 0px !important;
 }
 .home .section-landing-heading {
   margin-top: 40px;
 }
 .home .col-md-12 {
   margin-bottom: 0 !important;
+}
+.content-home .card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  .content-home .card-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.content-home .card-container .home-card {
+  height: auto;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-bottom: 10px solid #ddd;
+  border-radius: 3px;
+}
+@media (max-width: 480px) {
+  .content-home .card-container .home-card {
+    margin: 10px 0px;
+  }
+}
+.content-home .card-container .home-card:hover {
+  border-bottom: 10px solid #d14210;
+}
+.content-home .card-container .home-card p {
+  padding: 10px;
+}
+.content-home .card-container .home-card img {
+  width: 100%;
+  height: 130px;
 }
 .section-landing .section-landing-heading {
   padding: 0px 0 0px 0 !important;
@@ -1032,6 +1075,28 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   color: #7f848b;
 }
 .lodgement-info .row .col-md-3 div:last-child {
+  padding-top: 15px !important;
+  font-weight: 600;
+}
+.decision-info {
+  background-color: white !important;
+  border: 1px solid #d1d1d1;
+  margin-left: 0px;
+  width: 100%;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.decision-info .col-md-3 {
+  padding: 15px !important;
+}
+.decision-info .col-md-3 div:first-child {
+  color: #7f848b;
+}
+.decision-info .col-md-3 div:last-child {
   padding-top: 15px !important;
   font-weight: 600;
 }
@@ -1374,6 +1439,11 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 .fir-decision-container {
   background-color: #f5f5f5;
 }
+.fir-decision-container label[for="qvc_subdivisiondetails"] {
+  padding: 15px;
+  font-size: x-large;
+  font-weight: 1000;
+}
 .fir-decision-container .panel-heading {
   border: 0;
   margin-bottom: 70px;
@@ -1424,6 +1494,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
 }
 .fir-decision-container fieldset[aria-label="Documents"] tbody tr td {
   padding: 15px;
+  width: 100vw !important;
 }
 .fir-decision-container table[data-name="section_details"] {
   background: white;
@@ -1535,7 +1606,6 @@ table[data-name="section_decision_finalapproval"] tbody tr td select {
 .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
   position: absolute;
   left: 230px;
-  margin-top: 95px;
 }
 @media (max-width: 1200px) {
   .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
@@ -1665,14 +1735,6 @@ table[data-name="section_decision_finalapproval"] tbody tr td select {
 }
 .modal.fade.modal-form {
   background-color: rgba(0, 0, 0, 0.25);
-}
-.mp-dashboard-btn {
-  width: 365px !important;
-}
-.mp-dashboard-btn > div {
-  -webkit-box-pack: start !important;
-      -ms-flex-pack: start !important;
-          justify-content: flex-start !important;
 }
 .payment-container {
   background-color: #f5f5f5;
@@ -1957,6 +2019,12 @@ table[data-name="section_decision_finalapproval"] tbody tr td select {
   .center-banner .empty-banner-container h1 {
     font-size: 2em;
   }
+}
+.section-padding {
+  margin: 48px 0px;
+}
+section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit"] .modal-dialog {
+  margin-top: 20vh;
 }
 :root {
   accent-color: #d14210;
@@ -2690,6 +2758,126 @@ footer nav a {
 }
 .edit-form > div a:hover {
   text-decoration: underline;
+}
+.mp-dashboard-btn {
+  margin-left: 15px;
+  background-color: white !important;
+  border: 1px solid #d1d1d1;
+  margin-bottom: 40px;
+  max-width: 365px !important;
+}
+.mp-dashboard-btn > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 10px;
+}
+.mp-dashboard-btn > div img {
+  height: 25px;
+  margin-right: 10px;
+}
+.mp-dashboard-btn > div a {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 20px;
+  top: 3.5px;
+}
+.mp-dashboard-btn > div a:hover {
+  text-decoration: underline;
+}
+.mp-dashboard-btn > div {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+.lodgement input[type="radio"] {
+  border: 1px solid #d1d1d1 !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) {
+  position: relative;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"]:hover + label {
+  color: #ffffff;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"] {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"]:hover {
+  border: 1px solid #d1d1d1 !important;
+  background-color: #d14210;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"]::before {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
+  top: -1px !important;
+  left: -2px !important;
+  color: white !important;
+  -webkit-box-shadow: inset 50px 50px #d14210 !important;
+          box-shadow: inset 50px 50px #d14210 !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"]:disabled::before {
+  -webkit-box-shadow: inset 50px 50px #7f848b !important;
+          box-shadow: inset 50px 50px #7f848b !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input[type="radio"]:checked + label {
+  color: white !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) label {
+  position: absolute;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input:first-child {
+  margin-left: -5px !important;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input:first-child + label {
+  left: 135px;
+  top: 15px;
+}
+.lodgement .boolean-radio:not([disabled="disabled"]) input:nth-child(3) + label {
+  left: 30px;
+  top: 15px;
+}
+.lodgement .boolean-radio[disabled="disabled"] {
+  position: relative;
+}
+.lodgement .boolean-radio[disabled="disabled"] input[type="radio"] {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
+}
+.lodgement .boolean-radio[disabled="disabled"] input[type="radio"]::before {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
+  top: -1px !important;
+  left: -2px !important;
+  color: white !important;
+}
+.lodgement .boolean-radio[disabled="disabled"] input[type="radio"]:disabled::before {
+  -webkit-box-shadow: inset 50px 50px #7f848b !important;
+          box-shadow: inset 50px 50px #7f848b !important;
+}
+.lodgement .boolean-radio[disabled="disabled"] input[type="radio"]:checked + label {
+  color: white !important;
+}
+.lodgement .boolean-radio[disabled="disabled"] label {
+  position: absolute;
+}
+.lodgement .boolean-radio[disabled="disabled"] input:first-child {
+  margin-left: -15px !important;
+}
+.lodgement .boolean-radio[disabled="disabled"] span:first-of-type input + label {
+  left: 120px;
+  top: 15px;
+}
+.lodgement .boolean-radio[disabled="disabled"] span:last-of-type input + label {
+  left: 15px;
+  top: 15px;
 }
 .alert {
   border-radius: 4px;
@@ -3578,7 +3766,6 @@ tr:last-of-type .cell {
   padding-left: 50px;
 }
 .page-description p:not(:nth-child(3)) {
-  padding-left: 20px;
   padding-top: 20px;
 }
 .list-styling h3 {
@@ -3652,6 +3839,9 @@ tr:last-of-type .cell {
 }
 .ref {
   margin-left: 30px;
+}
+.ref .boolean-radio .aspNetDisabled:first-child {
+  margin-left: -1px;
 }
 .ref summary {
   padding: 16px 315px 16px 24px;
@@ -3727,6 +3917,17 @@ tr:last-of-type .cell {
   float: right;
   margin-right: 30px;
 }
+@media (max-width: 1200px) {
+  .ref .boolean-radio[readonly="readonly"] {
+    margin: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .ref .boolean-radio[readonly="readonly"] {
+    width: 100%;
+    margin-right: -5vw;
+  }
+}
 @media (max-width: 1400px) {
   .ref .boolean-radio[readonly="readonly"] {
     text-align: left;
@@ -3742,34 +3943,55 @@ tr:last-of-type .cell {
 .ref dt {
   margin-bottom: 8px;
 }
+.ref .control.hasGrid dt {
+  padding: 8px 0px;
+}
+.ref .control.hasGrid dd {
+  padding: 8px 0px;
+}
 .ref #subgrid_fir_outstanding .input-group {
   position: relative;
   top: -70px;
   right: -12px;
 }
-.ref .boolean-radio-cell .control label {
-  display: inline;
-  float: left;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 32px;
-  margin-left: -2px;
-  margin-right: 0;
-  padding: 0.8rem 4rem;
-  border: 1px solid #d1d1d1;
-  color: #2d2f32;
+.ref .boolean-radio[disabled="disabled"] {
+  position: relative;
+  margin-top: -20px;
 }
-.ref .boolean-radio-cell .control input {
-  display: none;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  width: 1px;
-  border: 0;
-  overflow: hidden;
+.ref .boolean-radio[disabled="disabled"] input[type="radio"] {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
 }
-.ref .boolean-radio-cell .control input:checked + label {
-  background-color: #808080;
-  color: #ffffff;
+.ref .boolean-radio[disabled="disabled"] input[type="radio"]::before {
+  height: 50px !important;
+  width: 100px !important;
+  border-radius: 0px !important;
+  top: -1px !important;
+  left: -2px !important;
+  color: white !important;
+}
+.ref .boolean-radio[disabled="disabled"] input[type="radio"]:disabled::before {
+  -webkit-box-shadow: inset 50px 50px #7f848b !important;
+          box-shadow: inset 50px 50px #7f848b !important;
+}
+.ref .boolean-radio[disabled="disabled"] input[type="radio"]:checked + label {
+  color: white !important;
+}
+.ref .boolean-radio[disabled="disabled"] label {
+  position: absolute;
+}
+.ref .boolean-radio[disabled="disabled"] input:first-child {
+  margin-left: -15px !important;
+  border: 1px solid #7f848b !important;
+}
+.ref .boolean-radio[disabled="disabled"] span:first-of-type input + label {
+  left: 105px;
+  top: 5px;
+}
+.ref .boolean-radio[disabled="disabled"] span:last-of-type input + label {
+  left: 10px;
+  top: 5px;
 }
 .table-display summary {
   padding: 16px 315px 16px 24px;
@@ -3886,9 +4108,6 @@ div[data-name="tab_general"] fieldset[aria-label="Upload document"] legend h3 {
   margin-top: 30px;
   padding-left: 18px;
 }
-.lodgement > div fieldset:not([aria-label="Payer details"]):not([aria-label="Submit application"]) .subgrid-cell .info label[for="subgrid_consenttoapply"] {
-  margin-bottom: 0px;
-}
 .lodgement > div fieldset:not([aria-label="Payer details"]):not([aria-label="Submit application"]) .subgrid:first-of-type {
   padding: 12px 0px;
 }
@@ -3909,6 +4128,16 @@ div[data-name="tab_general"] fieldset[aria-label="Upload document"] legend h3 {
 }
 .lodgement #buttonsticker {
   margin-bottom: 25px;
+}
+fieldset[aria-label="Contaminated sites"] p {
+  padding-left: 10px;
+  padding-top: 20px;
+}
+#content-container.container.wrapper-body {
+  width: 100% !important;
+}
+fieldset fieldset {
+  width: 100% !important;
 }
 details {
   border: 1px solid #aaa;
@@ -4080,7 +4309,6 @@ dd {
 }
 .b2c-container {
   background-color: #f5f5f5 !important;
-  height: 100%;
   /* endinject */
 }
 .b2c-container .page-heading {
@@ -4373,6 +4601,9 @@ dd {
 }
 .b2c-container #api {
   margin: 0 auto;
+}
+.b2c-container .heading {
+  margin-top: 50px;
 }
 .b2c-container .heading h1 {
   margin-bottom: 20px;
@@ -4794,9 +5025,6 @@ dd {
 @media only screen and (max-width: 600px) {
   .b2c-container img[data-tenant-branding-background=true] {
     display: none;
-  }
-  .b2c-container .container {
-    background-color: #f5f5f5;
   }
   .b2c-container .container .row .panel-default {
     border-radius: 0;

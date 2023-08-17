@@ -401,3 +401,153 @@
     }
   }
 }
+
+.mp-dashboard-btn {
+  margin-left: 15px;
+  background-color: white !important;
+  border: 1px solid @gray-light-tabs;
+  // width: 305px;
+  margin-bottom: 40px;
+
+  >div {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+
+    img {
+      height: 25px;
+      margin-right: 10px;
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 20px;
+      top: 3.5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  max-width: 365px !important;
+
+  >div {
+    justify-content: flex-start !important;
+  }
+}
+
+//new
+.lodgement {
+
+  input[type="radio"] {
+    border: 1px solid @gray-light-tabs  !important;
+
+  }
+
+  .boolean-radio:not([disabled="disabled"]) {
+    position: relative;
+
+
+    input[type="radio"]:hover+label {
+      color: @white;
+    }
+
+    input[type="radio"] {
+      height: 50px !important;
+      width: 100px !important;
+      border-radius: 0px !important;
+
+      &:hover {
+        border: 1px solid @gray-light-tabs  !important;
+        background-color: @brand-info;
+      }
+
+
+      &::before {
+        height: 50px !important;
+        width: 100px !important;
+        border-radius: 0px !important;
+        top: -1px !important;
+        left: -2px !important;
+        color: white !important;
+        box-shadow: inset 50px 50px #d14210 !important;
+      }
+
+      &:disabled::before {
+        box-shadow: inset 50px 50px #7f848b !important;
+      }
+
+      &:checked+label {
+        color: white !important;
+      }
+    }
+
+    label {
+      position: absolute;
+    }
+
+    input:first-child {
+      margin-left: -5px !important;
+    }
+
+    input:first-child+label {
+      left: 135px;
+      top: 15px;
+    }
+
+    input:nth-child(3)+label {
+      left: 30px;
+      top: 15px;
+    }
+  }
+
+  .boolean-radio[disabled="disabled"] {
+    position: relative;
+
+    input[type="radio"] {
+      height: 50px !important;
+      width: 100px !important;
+      border-radius: 0px !important;
+
+      &::before {
+        height: 50px !important;
+        width: 100px !important;
+        border-radius: 0px !important;
+        top: -1px !important;
+        left: -2px !important;
+        color: white !important;
+      }
+
+      &:disabled::before {
+        box-shadow: inset 50px 50px #7f848b !important;
+      }
+
+      &:checked+label {
+        color: white !important;
+      }
+    }
+
+    label {
+      position: absolute;
+    }
+
+    input:first-child {
+      margin-left: -15px !important;
+    }
+
+    span:first-of-type input+label {
+      left: 120px;
+      top: 15px;
+    }
+
+    span:last-of-type input+label {
+      left: 15px;
+      top: 15px;
+    }
+  }
+
+
+}
