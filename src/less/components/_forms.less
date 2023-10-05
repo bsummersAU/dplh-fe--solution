@@ -40,6 +40,8 @@ label {
   font-weight: 300;
 }
 
+
+
 .form-control {
   color: inherit;
   height: 50px;
@@ -132,7 +134,12 @@ label.control-radio {
   }
 }
 
+.required-alert-warning {
+  padding-bottom: 16px
+}
+
 .fieldset {
+
   >legend {
     border: none;
     font-weight: 600;
@@ -242,8 +249,21 @@ label.control-radio {
   }
 }
 
+.info.required {
+  label:after {
+    content: "" !important;
+  }
+}
+
 fieldset[aria-label="Payer details"],
 fieldset[aria-label="Payment details"] {
+
+  .info.required {
+    label:after {
+      content: "" !important;
+    }
+  }
+
   legend {
     box-sizing: border-box;
     display: flex;
@@ -293,12 +313,39 @@ fieldset[aria-label="Payment details"] {
       // &:focus {
       //   width: 39vw;
       // }
+
+
     }
+
+    tr td .control input:not([type="radio"])[readonly="readonly"] {
+      outline: none !important;
+    }
+
+
+  }
+
+  .boolean-radio-cell {
+    span[disabled="disabled"] {
+      margin-left: 15px;
+    }
+  }
+
+  a[readonly="readonly"] {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: -15px;
   }
 }
 
 fieldset[aria-label="Submit application"],
 fieldset[aria-label="Submit Application"] {
+
+  .info.required {
+    label:after {
+      content: "" !important;
+    }
+  }
+
   legend {
     box-sizing: border-box;
     display: flex;
@@ -428,6 +475,12 @@ fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
   }
 }
 
+.crmEntityFormView {
+  .actions {
+    float: right !important;
+  }
+}
+
 .crmEntityFormView .cell .picklist input[type="radio"] {
   margin: 6px 5px 5px 0;
   vertical-align: top;
@@ -544,6 +597,7 @@ form {
 
   .view-grid {
     table {
+      border: 1px solid @gray-light-tabs;
       background-color: @white;
 
       >thead {
@@ -662,33 +716,6 @@ form {
   }
 }
 
-// .crmEntityFormView .boolean-radio input[type="radio"]::before {
-//   content: "";
-//   width: 14px;
-//   height: 14px;
-//   display: block;
-//   border-radius: 50%;
-//   transform: scale(0);
-//   transition: 120ms transform ease-in-out;
-//   position: absolute;
-//   top:2px;
-//   left: 2px;
-//   box-shadow: inset 1em 1em @brand-info;
-// }
-// .crmEntityFormView .boolean-radio input[type="radio"]:checked {
-//   border: 1px solid @brand-info;
-//   &:disabled {
-//     border: 1px solid @gray-darker;
-//   }
-// }
-// .crmEntityFormView .boolean-radio input[type="radio"]:checked::before {
-//   transform: scale(1);
-// }
-
-// .crmEntityFormView .boolean-radio input[type="radio"]:focus {
-//   outline: 2px dotted @brand-info;
-//   outline-offset: 2px;
-// }
 
 // Switch radio buttons in DOM
 .boolean-radio {
@@ -862,9 +889,14 @@ tr:last-of-type .cell {
 
     @media(max-width: @screen-xxl) {
       padding: 0px 15px 0px 15px;
+      float: right;
+      height: 100%;
+    }
+
+    @media(max-width: @screen-sm-min) {
       float: left;
       margin-top: 20px;
-      height: 100%;
+      width: 100%;
     }
   }
 
@@ -888,6 +920,7 @@ tr:last-of-type .cell {
 }
 
 .ref {
+  margin-top: 24px;
   margin-left: 30px;
 
   .boolean-radio {
@@ -901,7 +934,7 @@ tr:last-of-type .cell {
   summary {
     padding: 16px 315px 16px 24px;
     gap: 10px;
-    width: 80%;
+    width: 100%;
     height: 61px;
     background: @gray-light-tabs;
     border: 1px solid @gray-light-tabs;
@@ -918,7 +951,7 @@ tr:last-of-type .cell {
 
     fieldset:not([aria-label="Outstanding"]):not([aria-label="Pending and closed"]) {
       gap: 32px;
-      width: 80%;
+      width: 95%;
       height: 100%;
       margin-bottom: 10px;
       background: @white;
@@ -984,6 +1017,10 @@ tr:last-of-type .cell {
     }
   }
 
+  #leftnavigationbtns input {
+    margin-left: 30px;
+  }
+
   .boolean-radio[readonly="readonly"] {
     text-align: right;
     float: right;
@@ -1026,14 +1063,7 @@ tr:last-of-type .cell {
     }
   }
 
-  // dt:not(:nth-child(4n + 1)):not(:nth-child(4n + 4)){
-  //   background: #0001;
-  //   }
 
-  //   dd:not(:nth-child(4n + 1)):not(:nth-child(4n + 2)){
-  //   background: #0001;
-  //   height: 23px;;
-  //   }
   #subgrid_fir_outstanding {
     .input-group {
       position: relative;
@@ -1073,90 +1103,67 @@ tr:last-of-type .cell {
   //   color: @white;
   // }
 
+  fieldset[aria-label="Consent to apply"],
+  fieldset[aria-label="On-site sewage disposal"] {
+    .boolean-radio[disabled="disabled"] {
+      margin-top: 0px;
+    }
+  }
 
-  .boolean-radio[disabled="disabled"] {
-    position: relative;
-    margin-top: -20px;
+  fieldset {
+    .boolean-radio[disabled="disabled"] {
+      position: relative;
+      margin-top: -20px;
 
-    input[type="radio"] {
-      height: 50px !important;
-      width: 100px !important;
-      border-radius: 0px !important;
-
-      &::before {
+      input[type="radio"] {
         height: 50px !important;
         width: 100px !important;
         border-radius: 0px !important;
-        top: -1px !important;
-        left: -2px !important;
-        color: white !important;
 
+        &::before {
+          height: 50px !important;
+          width: 100px !important;
+          border-radius: 0px !important;
+          top: -1px !important;
+          left: -2px !important;
+          color: white !important;
+
+        }
+
+        &:disabled::before {
+          box-shadow: inset 50px 50px #7f848b !important;
+        }
+
+        &:checked+label {
+          color: white !important;
+        }
       }
 
-      &:disabled::before {
-        box-shadow: inset 50px 50px #7f848b !important;
+      label {
+        position: absolute;
       }
 
-      &:checked+label {
-        color: white !important;
+      input:first-child {
+        margin-left: -15px !important;
+        border: 1px solid #7f848b !important;
       }
-    }
 
-    label {
-      position: absolute;
-    }
+      span:first-of-type input+label {
+        left: 105px;
+        top: 5px;
+      }
 
-    input:first-child {
-      margin-left: -15px !important;
-      border: 1px solid #7f848b !important;
-    }
-
-    span:first-of-type input+label {
-      left: 105px;
-      top: 5px;
-    }
-
-    span:last-of-type input+label {
-      left: 10px;
-      top: 5px;
+      span:last-of-type input+label {
+        left: 10px;
+        top: 5px;
+      }
     }
   }
-
 
 
 
 }
 
-.table-display {
-  summary {
-    padding: 16px 315px 16px 24px;
-    margin: -1px 0px;
-    font-family: "Heebo";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-  }
-
-  .info {
-    width: 50%;
-  }
-
-  .control:not(.hasGrid) {
-    width: 50%;
-    float: right;
-    margin-top: -35px;
-    padding-left: 25%;
-  }
-
-  td tr {
-    padding-bottom: 0px !important;
-    border-bottom: 0 !important;
-  }
-
-  label {
-    padding: 10px 10px 0px 10px;
-  }
-}
 
 fieldset[aria-label$="fieldset-body"] {
   background: white;
@@ -1216,7 +1223,11 @@ div[data-name="tab_general"] {
 }
 
 .lodgement {
-  // margin-left: 30px;
+
+  .page-description {
+    margin-bottom: 16px;
+    margin-top: -8px;
+  }
 
   summary {
     padding: 16px 315px 16px 24px;
@@ -1233,6 +1244,13 @@ div[data-name="tab_general"] {
   }
 
   >div {
+
+
+    #disclosurecontent {
+      margin-top: 32px;
+      margin-left: 12px;
+      padding-right: 40px;
+    }
 
     fieldset[aria-label="form1_disclaimer"],
     fieldset[aria-label="Form2A_diclaimer"] {
@@ -1252,12 +1270,12 @@ div[data-name="tab_general"] {
     fieldset:not([aria-label="Payer details"]):not([aria-label="Submit application"]) {
       gap: 32px;
       height: 100%;
-      margin-bottom: 10px;
+      margin-bottom: 24px;
       background: @white;
       border: 1px solid @gray-light-tabs;
 
       .page-description {
-        padding: 10px;
+        padding: 16px 24px 0px 24px;
       }
 
       legend {
@@ -1280,15 +1298,18 @@ div[data-name="tab_general"] {
       }
 
       td {
-        padding: 10px !important;
+        padding: 8px 24px 16px 24px !important;
+
+
       }
 
       .subgrid-cell {
         .info {
           label {
-            margin-bottom: -57px;
+            margin-bottom: -60px;
             margin-top: 30px;
             padding-left: 18px;
+            max-width: 30vw;
           }
 
           label[for="subgrid_consenttoapply"] {
@@ -1344,4 +1365,42 @@ fieldset[aria-label="Contaminated sites"] {
 
 fieldset fieldset {
   width: 100% !important;
+}
+
+fieldset[aria-label="DisclosureContent"] {
+  padding: 10px;
+}
+
+
+.declaration-container {
+  #mainContent {
+    background-color: @gray-light-title;
+
+    .panel {
+      width: 65% !important;
+
+      @media (max-width: @screen-md-min ) {
+        width: 90% !important;
+      }
+
+      .panel-body {
+        #disclosurecontent {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .actions {
+      margin-right: 32px !important;
+
+      input {
+        margin-top: 0px !important;
+      }
+    }
+  }
+
+  .col-md-3 {
+    padding-top: 75px !important;
+  }
+
 }

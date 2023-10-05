@@ -1,0 +1,90 @@
+.table-display {
+    summary {
+        padding: 16px 315px 16px 24px;
+        margin: -1px 0px;
+        font-family: "Heebo";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .info {
+        width: 50%;
+    }
+
+    .control:not(.hasGrid) {
+        width: 50%;
+        float: right;
+        margin-top: -35px;
+        padding-left: 25%;
+    }
+
+    td tr {
+        padding-bottom: 0px !important;
+        border-bottom: 0 !important;
+    }
+
+    label {
+        padding: 10px 10px 0px 10px;
+    }
+}
+
+table[data-name="section_decision_subdivsiondetails"],
+table[data-name="section_decision_finalapproval"] {
+    tbody {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100vw;
+
+        tr {
+            .label {
+                padding: 10px;
+            }
+
+            td {
+                padding: 15px !important;
+
+                input {
+                    width: 22vw !important;
+                }
+
+                select {
+                    width: 22vw !important;
+                }
+            }
+        }
+    }
+}
+
+// Table not inside a <form>
+
+.view-grid {
+    >table {
+        >thead {
+            >tr {
+                >th {
+                    a {
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                            color: #000;
+                        }
+
+                        &:focus-visible {
+                            text-decoration: none;
+                            border: 2px dotted #000;
+                            color: #000;
+                            padding: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// General Table
+td {
+    font-weight: 400;
+}

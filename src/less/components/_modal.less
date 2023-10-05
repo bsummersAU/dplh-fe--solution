@@ -1,0 +1,98 @@
+.modal {
+
+    // Modal styles
+    // close button on modals
+    .form-close {
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1;
+        color: #000;
+        top: 2.5% !important;
+
+        &:focus,
+        &:hover {
+            color: @brand-info;
+            opacity: 1;
+        }
+    }
+
+    .modal-header {
+        .modal-title {
+            font-size: 32px;
+            margin-left: 16px;
+
+            .fa-pencil-square-o {
+                display: none;
+            }
+        }
+    }
+
+
+    .form-action-container-right:not(input) {
+        padding: 0px 15px !important;
+        float: right;
+    }
+}
+
+#dplh_confidential[disabled="disabled"] {
+    margin-left: 15px;
+}
+
+.SharepointDocumentUpload {
+    margin-left: -15px;
+}
+
+[action*="modal-form-template-path"] {
+    .actions {
+        padding: 0px 15px !important;
+        margin: -32px 0 0 0 !important;
+        justify-content: end;
+    }
+}
+
+[portal-modal] {
+    .modal-footer {
+        .btn-left {
+            float: left;
+        }
+
+
+    }
+}
+
+.modal:not([aria-label="Delete"]) {
+
+    .modal-content {
+        .modal-header {
+            margin-bottom: 20px;
+            margin-top: 10px;
+
+            .close {
+                margin-top: -25px;
+                padding-right: 15px;
+
+                &:focus-visible {
+                    outline: 2px dotted #d45610;
+                }
+            }
+
+            .modal-body {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.modal.fade.modal-form {
+    background-color: rgba(0, 0, 0, 0.25)
+}
+
+section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit"] {
+    .modal-dialog {
+        margin-top: 20vh;
+    }
+}
+
+.modal-form .modal-body iframe {
+    height: 65vh !important;
+}

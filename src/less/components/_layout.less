@@ -74,6 +74,8 @@ body {
       textarea {}
     }
   }
+
+
 }
 
 .dplh-3-col {
@@ -194,8 +196,16 @@ body {
 
       input[title="Unlock Application"] {
         position: absolute;
-        top: -45px;
+        top: -22px;
         white-space: nowrap;
+      }
+
+
+    }
+
+    .form1A-unlock {
+      input[title="Unlock Application"] {
+        top: -42px !important;
       }
     }
   }
@@ -313,6 +323,10 @@ p.page-description {
 }
 
 .data-loading-spinner {
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   position: absolute;
   /* Sit on top of the page content */
   display: block;
@@ -325,22 +339,22 @@ p.page-description {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   /* Black background with opacity */
   z-index: 0;
   /* Specify a stack order in case you're using a different order for other elements */
   cursor: progress;
   /* Add a pointer on hover */
 
+
+
   .spinner {
-    position: absolute;
+    margin-bottom: 50px;
+    // margin-left: 145px;
     height: 125px;
     width: 125px;
-    border: 5px solid transparent;
-    border-top-color: @gray-links;
-    top: 50%;
-    left: 45%;
-    margin: -30px;
+    border: 8px solid transparent;
+    border-top-color: #2FA781;
     border-radius: 50%;
     animation: spin 2s linear infinite;
 
@@ -348,21 +362,21 @@ p.page-description {
     &:after {
       content: '';
       position: absolute;
-      border: 5px solid transparent;
+      border: 8px solid transparent;
       border-radius: 50%;
     }
 
     &:before {
-      border-top-color: @brand-focus;
-      top: -12px;
-      left: -12px;
-      right: -12px;
-      bottom: -12px;
+      border-top-color: #CA6702;
+      top: -22px;
+      left: -22px;
+      right: -22px;
+      bottom: -22px;
       animation: spin 3s linear infinite;
     }
 
     &:after {
-      border-top-color: #FFFBFE;
+      border-top-color: #4798D7;
       top: 6px;
       left: 6px;
       right: 6px;
@@ -462,7 +476,7 @@ a[title="Profile"]:target {
       .col-centre {
         overflow-y: auto;
         overflow-x: hidden;
-        height: calc(100vh - 64px);
+        height: calc(100vh - 149px);
         position: relative;
       }
 
@@ -626,68 +640,13 @@ fieldset[aria-label*="Required documents"] {
   }
 }
 
-// Modal styles
-// close button on modals
-.form-close {
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1;
-  color: #000;
-  position: absolute;
-  top: 0.8% !important;
-}
 
-[action*="modal-form-template-path"] {
-  .actions {
-    padding: 0 !important;
-    margin: -32px 0 0 0 !important;
-    justify-content: end;
-  }
-}
-
-.form-close:focus,
-.form-close:hover {
-  color: @brand-info;
-  opacity: 1;
-}
-
-.modal-title .fa-pencil-square-o {
-  display: none;
-}
 
 // I feel dirty writing this one... this removes the space taken up by
 // input error message when there isn't one active. Sorry! Blame the
 // Microsoft developers!
 .validators [style*="visibility:hidden"] {
   display: none;
-}
-
-// Table not inside a <form>
-
-.view-grid {
-  >table {
-    >thead {
-      >tr {
-        >th {
-          a {
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-              color: #000;
-            }
-
-            &:focus-visible {
-              text-decoration: none;
-              border: 2px dotted #000;
-              color: #000;
-              padding: 2px;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 a.list-group-item:hover {
@@ -738,10 +697,7 @@ form[action="/profile/"] .weblink[aria-label="Profile"]::after {
   color: @brand-success;
 }
 
-// General Table
-td {
-  font-weight: 400;
-}
+
 
 // readonly forms display
 .readyOnlyInfo {
@@ -808,34 +764,6 @@ td {
       .fa {
         display: none;
       }
-    }
-  }
-}
-
-[portal-modal] {
-  .modal-footer {
-    .btn-left {
-      float: left;
-    }
-  }
-}
-
-.modal-content {
-  .modal-header {
-    margin-bottom: 20px;
-    margin-top: 10px;
-
-    .close {
-      margin-top: -25px;
-      padding-right: 15px;
-
-      &:focus-visible {
-        outline: 2px dotted #d45610;
-      }
-    }
-
-    .modal-body {
-      padding-bottom: 20px;
     }
   }
 }
@@ -1032,6 +960,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       border: 1px solid @table-border-color;
       border-bottom: 10px solid @table-border-color;
       border-radius: 3px;
+      margin: 16px 0px;
 
       @media (max-width: @screen-xs) {
         margin: 10px 0px;
@@ -1155,27 +1084,12 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 
   table {
-    // width: 99.8%;
 
     thead {
-      // old
-      // background-color: @gray-light-title;
-      // border: 1px solid @gray-light-title;
-
       tr {
         th {
           width: 10% !important;
         }
-      }
-    }
-
-    tbody {
-      //old
-      // border: 1px solid @gray-light-title  !important;
-
-      tr {
-        //old
-        // background-color: @white  !important;
       }
     }
   }
@@ -1211,7 +1125,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   border-bottom: 3px solid #d45610 !important;
 
   &:hover {
-    border: 0 !important;
+    border-bottom: 3px solid #d45610 !important;
   }
 }
 
@@ -1227,9 +1141,19 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     }
   }
 
-  .tab-pane h4 {
-    margin-top: 60px;
-    margin-bottom: -60px;
+  .tab-pane {
+    h4 {
+      margin-top: 60px;
+      margin-bottom: -60px;
+    }
+
+    .entitylist {
+      h4 {
+        margin-top: 0;
+        margin-bottom: -0;
+      }
+    }
+
   }
 }
 
@@ -1265,15 +1189,31 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 }
 
+.info-button-wrapper {
+  display: flex;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  >div {
+    margin: 10px 0px;
+  }
+
+}
+
+
 .lodgement-info {
 
   // new
   background-color: white !important;
   border: 1px solid @gray-light-tabs;
-  margin-left: 15px;
-  width: 70%;
-  margin-bottom: 50px;
+  margin-left: 15px !important;
+  width: 67%;
   padding-left: 40px;
+
+  @media (max-width: @screen-lg-min) {
+    width: 95%;
+  }
+
 
   .row {
     display: flex;
@@ -1384,35 +1324,7 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   }
 }
 
-// div[data-name="tab_fir"] {
-//   .tab-column {
-//     div {
-//       fieldset {
-//         all: unset;
-//         margin-top: 80px;
-//         width: 80%;
-
-//         legend {
-//           all: unset;
-//           position: relative;
-//         }
-
-//         .entity-grid {
-//           background: white;
-//           border: 1px solid @gray-light-tabs;
-//           margin-left: -25px;
-//         }
-
-//         th {
-//           background: @white;
-//         }
-//       }
-//     }
-//   }
-// }
-
 .fir-container {
-  // background-color: @gray-light-title;
 
   #mainContent {
     padding-top: 12px;
@@ -1534,9 +1446,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
           }
         }
       }
-
-      // table[data-name="section_responsedetails"] {
-      // }
 
       fieldset[aria-label="Response"] {
         margin-top: 20px;
@@ -1850,12 +1759,6 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
       background: white;
       padding: 15px;
       border: 1px solid @gray-light-tabs;
-
-      table {
-        tbody {
-          display: flex;
-        }
-      }
     }
   }
 
@@ -1908,32 +1811,6 @@ label[for="qvc_finalapprovaldetails"] {
   padding: 15px;
 }
 
-table[data-name="section_decision_subdivsiondetails"],
-table[data-name="section_decision_finalapproval"] {
-  tbody {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    width: 100vw;
-
-    tr {
-      .label {
-        padding: 10px;
-      }
-
-      td {
-        padding: 15px !important;
-
-        input {
-          width: 22vw !important;
-        }
-
-        select {
-          width: 22vw !important;
-        }
-      }
-    }
-  }
-}
 
 .profile-container {
 
@@ -1972,15 +1849,17 @@ table[data-name="section_decision_finalapproval"] {
           margin-right: 40px;
 
           td {
-            width: 350px;
+            width: 400px;
             min-width: 250px;
 
-            @media(max-width: 1250px) {
+
+
+            @media(max-width: @screen-lg-min) {
               width: 360px;
             }
 
             @media(max-width: @screen-sm) {
-              width: 275px;
+              max-width: 375px;
             }
 
             .control {
@@ -2035,6 +1914,7 @@ table[data-name="section_decision_finalapproval"] {
   .form-custom-actions {
     width: 100%;
     max-width: 1000px;
+
   }
 
   fieldset {
@@ -2175,8 +2055,6 @@ table[data-name="section_decision_finalapproval"] {
 
       }
 
-
-
       .new-tag-control .new-tag {
         height: fit-content;
         padding-right: 35px;
@@ -2191,12 +2069,6 @@ table[data-name="section_decision_finalapproval"] {
   }
 }
 
-.modal.fade.modal-form {
-  background-color: rgba(0, 0, 0, 0.25)
-}
-
-
-
 .payment-container {
   background-color: @gray-light-title;
 
@@ -2207,7 +2079,8 @@ table[data-name="section_decision_finalapproval"] {
 
     #mainContent {
       padding-top: 12px;
-      min-height: calc(100vh - 87px);
+      min-height: calc(100vh - 60px) !important;
+
 
       .panel.dplh-panel {
         border: 0px !important;
@@ -2271,23 +2144,18 @@ table[data-name="section_decision_finalapproval"] {
 
     .fir-help {
       background-color: #ffffff;
+      min-height: calc(100vh - 60px) !important;
     }
   }
 }
 
 .page_section.sign-in {
-  // position: absolute;
-  // width: 100vw;
-  // background: @gray-light-title;
-  // margin-top: -20px;
-  // left: 0px;
+
   margin-bottom: -40px
 }
 
 .sign-in-body {
   #mainContent {
-
-    // padding-top: 175px;
     .row {
       margin: 30px 0px;
     }
@@ -2409,6 +2277,10 @@ table[data-name="section_decision_finalapproval"] {
 
     p {
       width: 75%;
+
+      @media (max-width: @screen-md-min) {
+        width: 100%;
+      }
     }
   }
 
@@ -2440,6 +2312,10 @@ table[data-name="section_decision_finalapproval"] {
         width: 90%;
       }
 
+      @media (max-width:@screen-md-min) {
+        width: 100%;
+      }
+
 
 
       fieldset {
@@ -2452,11 +2328,21 @@ table[data-name="section_decision_finalapproval"] {
 
       .rightnavigationbtns {
         margin-right: 30px;
+        float: right;
       }
     }
 
     .col-md-9 {
-      padding-left: 230px
+      padding-left: 230px;
+
+      @media (max-width: @screen-md-min) {
+        padding-left: 15%;
+      }
+
+      @media (max-width: @screen-xxl-min) {
+        padding-left: 130px;
+      }
+
     }
 
     .col-md-3 {
@@ -2481,15 +2367,12 @@ table[data-name="section_decision_finalapproval"] {
 }
 
 .secondary-layout {
-  min-height: calc(100vh - 200px) !important;
+  min-height: calc(100vh - 155px) !important;
 
 
-  @media (max-width: @screen-xxl) {
-    >#mainContent {
-      min-height: calc(100vh - 200px) !important;
-    }
+  @media (min-width: @screen-xxl) {
 
-    min-height: auto !important;
+    min-height: calc(100vh - 195px) !important;
   }
 }
 
@@ -2503,6 +2386,7 @@ table[data-name="section_decision_finalapproval"] {
     display: block;
     background-size: contain;
     width: 100vw;
+    min-width: 1440px;
     height: 139px;
     background-position: top;
     background-repeat: repeat-x;
@@ -2514,6 +2398,7 @@ table[data-name="section_decision_finalapproval"] {
     display: block;
     background-size: contain;
     width: 100vw;
+    min-width: 1440px;
     height: 139px;
     background-position: top;
     background-repeat: repeat-x;
@@ -2559,11 +2444,6 @@ table[data-name="section_decision_finalapproval"] {
       @media(max-width: @screen-md) {
         font-size: 2.0em;
       }
-
-
-
-
-
     }
   }
 }
@@ -2572,8 +2452,40 @@ table[data-name="section_decision_finalapproval"] {
   margin: 48px 0px
 }
 
-section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit"] {
-  .modal-dialog {
-    margin-top: 20vh;
+.disclosure-container {
+  .panel.dplh-panel {
+    width: 80% !important;
+  }
+}
+
+.faq-container {
+  margin-top: 32px;
+
+  h1+p {
+    font-size: 22px !important;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    margin: 80px 0px 48px 0px;
+  }
+
+  .sub-text {
+    font-size: 18px;
+  }
+
+  .article {
+    margin: 32px 24px;
+
+    h4 {
+      margin: 16px 0px !important;
+    }
+  }
+}
+
+.referral-container {
+
+  .col-left {
+    height: 100% !important;
   }
 }
