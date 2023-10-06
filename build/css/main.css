@@ -1869,7 +1869,7 @@ label[for="qvc_finalapprovaldetails"] {
   float: right;
 }
 .authorise-user-container .row.form-row .col-md-9 {
-  padding-left: 230px;
+  padding-left: 50px;
 }
 @media (max-width: 992px) {
   .authorise-user-container .row.form-row .col-md-9 {
@@ -1878,7 +1878,7 @@ label[for="qvc_finalapprovaldetails"] {
 }
 @media (max-width: 1400px) {
   .authorise-user-container .row.form-row .col-md-9 {
-    padding-left: 130px;
+    padding-left: 50px;
   }
 }
 .authorise-user-container .row.form-row .col-md-3 {
