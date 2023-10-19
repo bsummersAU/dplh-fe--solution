@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0 !important;
+      }
+      .container {
+        font-family: Heebo;
+      }
+
+      .header {
+        display: flex;
+        justify-content: center;
+      }
+
+      .banner {
+        display: block;
+        background-size: contain;
+        width: 100%;
+        min-width: 100%;
+        background-position: top;
+        background-repeat: repeat-x;
+      }
+
+      section .signOff {
+        display: flex;
+      }
+      section .signOff-img {
+        width: 40px;
+        height: 40px;
+      }
+
+      section .signOff-text {
+        font-size: 24px;
+        margin-top: 4px;
+        margin-left: 10px;
+        font-weight: 500;
+      }
+
+      .letter-body {
+        margin: 24px 40px;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <header class="header">
+      <img
+        src="https://dplh-dev-onlinewa.powerappsportals.com/dplh_banner-main.png"
+        alt="planning online banner"
+        class="banner"
+      />
+    </header>
+    <section class="letter-body">
+      <p>Dear {fullname},</p>
+      <br />
+      <p>Your permissions to Planning Online has been changed:</p>
+      <p>
+        You were added to Service Administrator role for {Account}. Therefore,
+        you should now manage users for {Account} in Planning Online.
+      </p>
+      <p>
+        If you think your permissions were incorrectly changed, please contact
+        either your Service administrator(s) or DPLH Customer support.
+      </p>
+      <br />
+      <p>Kind regards,</p>
+      <p>Planning Administration</p>
+      <p>Department of Planning Lands and Heritage</p>
+      <div class="signOff">
+        <img
+          src="https://dplh-dev-onlinewa.powerappsportals.com/wa-gov-crest-black.svg"
+          class="signOff-img"
+          alt="wa-gov-crest-black.png"
+        />
+        <span class="signOff-text">Planning Online</span>
+      </div>
+    </section>
+  </body>
+</html>

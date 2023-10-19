@@ -519,6 +519,18 @@ a[title="Profile"]:target {
   .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(100vh - 169px) !important;
+    position: relative;
+  }
+}
+
+@media (min-width: 1600px) {
+
+  .col-left,
+  .col-right,
+  .col-centre {
+    overflow-y: auto;
+    overflow-x: hidden;
     height: calc(100vh - 195px) !important;
     position: relative;
   }
@@ -1817,7 +1829,7 @@ label[for="qvc_finalapprovaldetails"] {
   .col-md-9 {
     padding-left: 215px;
 
-    @media (max-width:@screen-xxl ) {
+    @media (max-width: 1920px) {
       padding-left: 15px;
     }
   }
@@ -1835,6 +1847,7 @@ label[for="qvc_finalapprovaldetails"] {
   .row.form-row {
     display: flex;
     flex-wrap: wrap;
+    min-height: 100vh;
   }
 
   fieldset[aria-label="Your account information"] {
@@ -1849,7 +1862,7 @@ label[for="qvc_finalapprovaldetails"] {
           margin-right: 40px;
 
           td {
-            width: 400px;
+            width: 350px;
             min-width: 250px;
 
 
@@ -1894,9 +1907,17 @@ label[for="qvc_finalapprovaldetails"] {
     #btnUpdateEmail {
       position: absolute;
       left: 230px;
+      margin-top: 16px;
+
 
       @media (max-width: 1200px) {
         margin-top: 0px;
+        left: 30px;
+      }
+
+      @media (max-width: 1920px) {
+        margin-top: 16px;
+        left: 30px;
       }
     }
   }
@@ -1933,7 +1954,6 @@ label[for="qvc_finalapprovaldetails"] {
   .fir-help {
     background-color: @gray-light-title;
     padding: 32px 30px;
-    height: 100vh !important;
   }
 
 }
@@ -2399,7 +2419,7 @@ label[for="qvc_finalapprovaldetails"] {
     background-size: contain;
     width: 100vw;
     min-width: 1440px;
-    height: 139px;
+    height: 111px;
     background-position: top;
     background-repeat: repeat-x;
 
@@ -2427,6 +2447,11 @@ label[for="qvc_finalapprovaldetails"] {
     @media(max-width: @screen-xxl) {
       height: 91px;
     }
+
+    @media(max-width: 1600px) {
+      height: 111px;
+    }
+
 
 
     h1 {
@@ -2489,3 +2514,11 @@ label[for="qvc_finalapprovaldetails"] {
     height: 100% !important;
   }
 }
+
+// add my profile (button)
+
+// add other
+
+// add .sub-text
+
+// is this the primary applicant

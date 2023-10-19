@@ -1,5 +1,14 @@
 .b2c-container {
     background-color: #f5f5f5 !important;
+    min-height: 100vh !important;
+
+    input {
+        min-width: 320px;
+    }
+
+    #verifying_blurb {
+        display: none !important;
+    }
 
     .page-heading {
         padding-top: 20px;
@@ -557,10 +566,12 @@
         box-shadow: none;
         background-color: #fff !important;
         background-image: none !important;
-        color: #555
+        color: #555;
+        min-width: 340px !important;
     }
 
-    #attributeList ul li input[disabled='disabled'] {
+    #attributeList ul li input[disabled='disabled'],
+    input[disabled] {
         outline: 0;
         height: 30px;
         width: 70%;

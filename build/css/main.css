@@ -485,6 +485,16 @@ a[title="Profile"]:target {
   .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(100vh - 169px) !important;
+    position: relative;
+  }
+}
+@media (min-width: 1600px) {
+  .col-left,
+  .col-right,
+  .col-centre {
+    overflow-y: auto;
+    overflow-x: hidden;
     height: calc(100vh - 195px) !important;
     position: relative;
   }
@@ -1483,7 +1493,7 @@ label[for="qvc_finalapprovaldetails"] {
 .profile-container .col-md-9 {
   padding-left: 215px;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1920px) {
   .profile-container .col-md-9 {
     padding-left: 15px;
   }
@@ -1502,6 +1512,7 @@ label[for="qvc_finalapprovaldetails"] {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-height: 100vh;
 }
 .profile-container fieldset[aria-label="Your account information"] table tbody {
   display: -webkit-box;
@@ -1518,7 +1529,7 @@ label[for="qvc_finalapprovaldetails"] {
   margin-right: 40px;
 }
 .profile-container fieldset[aria-label="Your account information"] table tbody tr td {
-  width: 400px;
+  width: 350px;
   min-width: 250px;
 }
 @media (max-width: 1200px) {
@@ -1551,10 +1562,18 @@ label[for="qvc_finalapprovaldetails"] {
 .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
   position: absolute;
   left: 230px;
+  margin-top: 16px;
 }
 @media (max-width: 1200px) {
   .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
     margin-top: 0px;
+    left: 30px;
+  }
+}
+@media (max-width: 1920px) {
+  .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
+    margin-top: 16px;
+    left: 30px;
   }
 }
 .profile-container fieldset[aria-label="Preferred communication method"] {
@@ -1582,7 +1601,6 @@ label[for="qvc_finalapprovaldetails"] {
 .profile-container .fir-help {
   background-color: #f5f5f5;
   padding: 32px 30px;
-  height: 100vh !important;
 }
 .non-italic {
   font-style: normal;
@@ -1928,7 +1946,7 @@ label[for="qvc_finalapprovaldetails"] {
   background-size: contain;
   width: 100vw;
   min-width: 1440px;
-  height: 139px;
+  height: 111px;
   background-position: top;
   background-repeat: repeat-x;
 }
@@ -1962,6 +1980,11 @@ label[for="qvc_finalapprovaldetails"] {
 @media (max-width: 1400px) {
   .center-banner .empty-banner-container {
     height: 91px;
+  }
+}
+@media (max-width: 1600px) {
+  .center-banner .empty-banner-container {
+    height: 111px;
   }
 }
 .center-banner .empty-banner-container h1 {
@@ -2991,29 +3014,7 @@ footer nav a {
   color: #a94442 !important;
 }
 .notifications {
-  position: absolute;
-  left: 39vw;
-  top: 60vh;
-}
-@media (max-width: 1400px) {
-  .notifications {
-    left: 35.5vw;
-  }
-}
-@media (max-width: 992px) {
-  .notifications {
-    left: 29.5vw;
-  }
-}
-@media (max-width: 768px) {
-  .notifications {
-    left: 20.5vw;
-  }
-}
-@media (max-width: 480px) {
-  .notifications {
-    left: 6.5vw;
-  }
+  margin-top: 0px !important;
 }
 .progress.list-group.top {
   min-height: 60px;
@@ -4454,7 +4455,14 @@ dd {
 }
 .b2c-container {
   background-color: #f5f5f5 !important;
+  min-height: 100vh !important;
   /* endinject */
+}
+.b2c-container input {
+  min-width: 320px;
+}
+.b2c-container #verifying_blurb {
+  display: none !important;
 }
 .b2c-container .page-heading {
   padding-top: 20px;
@@ -4920,8 +4928,10 @@ dd {
   background-color: #fff !important;
   background-image: none !important;
   color: #555;
+  min-width: 340px !important;
 }
-.b2c-container #attributeList ul li input[disabled='disabled'] {
+.b2c-container #attributeList ul li input[disabled='disabled'],
+.b2c-container input[disabled] {
   outline: 0;
   height: 30px;
   width: 70%;
