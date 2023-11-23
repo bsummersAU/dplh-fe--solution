@@ -267,6 +267,16 @@ ul.stepper-vertical li.active a {
 #helpSection h2 {
   font-size: 28px;
 }
+#helpSection .OutlineElement {
+  background: #f5f5f5 !important;
+}
+#helpSection ul {
+  padding-left: 24px;
+  padding-top: 8px;
+}
+#helpSection a {
+  top: 16px;
+}
 p.page-description {
   padding-left: 0 !important;
 }
@@ -1514,7 +1524,20 @@ label[for="qvc_finalapprovaldetails"] {
       flex-wrap: wrap;
   min-height: 100vh;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody {
+.profile-container fieldset table[data-name="tab_profile_postaladdress"] tr:nth-child(2) {
+  width: 100%;
+}
+.profile-container fieldset table[data-name="tab_profile_postaladdress"] tr:nth-child(3) {
+  width: 100%;
+}
+.profile-container fieldset table[data-name="tab_profile_postaladdress"] tr:last-child {
+  width: 100%;
+  padding-top: 16px;
+}
+.profile-container fieldset table[data-name="tab_profile_contactinfo"] tr:nth-child(1) {
+  width: 100%;
+}
+.profile-container fieldset table tbody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1525,53 +1548,55 @@ label[for="qvc_finalapprovaldetails"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr {
-  margin-right: 40px;
-}
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td {
-  width: 350px;
-  min-width: 250px;
-}
-@media (max-width: 1200px) {
-  .profile-container fieldset[aria-label="Your account information"] table tbody tr td {
-    width: 360px;
-  }
+.profile-container fieldset table tbody tr {
+  width: 50%;
 }
 @media (max-width: 768px) {
-  .profile-container fieldset[aria-label="Your account information"] table tbody tr td {
-    max-width: 375px;
+  .profile-container fieldset table tbody tr {
+    min-width: 270px;
   }
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control {
+.profile-container fieldset table tbody tr td {
+  width: 100vw;
+}
+@media (max-width: 768px) {
+  .profile-container fieldset table tbody tr td {
+    width: 100%;
+  }
+}
+.profile-container fieldset table tbody tr td .control {
   margin-left: -15px !important;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control input[id="emailaddress1"] {
+.profile-container fieldset table tbody tr td .control input[id="emailaddress1"] {
   display: block !important;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control input[id="emailaddress2"] {
+.profile-container fieldset table tbody tr td .control input[id="emailaddress2"] {
   display: block !important;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control > .control .text-primary {
+.profile-container fieldset table tbody tr td .control > .control .text-primary {
   display: none;
 }
-.profile-container fieldset[aria-label="Your account information"] table tbody tr td .control input[readonly="readonly"] {
+.profile-container fieldset table tbody tr td .control input[readonly="readonly"] {
   padding-left: 15px !important;
   background: #f5f5f5 !important;
   border: 1px solid #d1d1d1 !important;
 }
-.profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
+.profile-container fieldset table #dplh_isemailpreferred_label {
+  font-weight: 300;
+}
+.profile-container fieldset #btnUpdateEmail {
   position: absolute;
   left: 230px;
   margin-top: 16px;
 }
 @media (max-width: 1200px) {
-  .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
+  .profile-container fieldset #btnUpdateEmail {
     margin-top: 0px;
     left: 30px;
   }
 }
 @media (max-width: 1920px) {
-  .profile-container fieldset[aria-label="Your account information"] #btnUpdateEmail {
+  .profile-container fieldset #btnUpdateEmail {
     margin-top: 16px;
     left: 30px;
   }
@@ -1764,15 +1789,28 @@ label[for="qvc_finalapprovaldetails"] {
 }
 .sign-in-body #mainContent .staff-btn {
   margin-top: -100px;
+  float: right;
 }
 .sign-in-body #mainContent .staff-btn button {
   border: 0px;
   text-decoration: underline;
   background-color: #ffffff;
 }
+@media (max-width: 992px) {
+  .sign-in-body #mainContent .staff-btn {
+    margin-top: 0 !important;
+    float: left !important;
+    padding-left: 24px;
+  }
+  .sign-in-body #mainContent .external-btn {
+    top: 0 !important;
+  }
+  .sign-in-body #mainContent .external-btn button {
+    width: 100%;
+  }
+}
 .sign-in-body #mainContent .external-btn {
-  position: absolute;
-  top: 13rem;
+  top: 9rem;
 }
 .sign-in-body #mainContent .external-btn button {
   padding: 50px;
@@ -1886,20 +1924,17 @@ label[for="qvc_finalapprovaldetails"] {
   margin-right: 30px;
   float: right;
 }
-.authorise-user-container .row.form-row .col-md-9 {
-  padding-left: 50px;
-}
 @media (max-width: 992px) {
-  .authorise-user-container .row.form-row .col-md-9 {
+  .authorise-user-container .row.form-row .col-md-8 {
     padding-left: 15%;
   }
 }
 @media (max-width: 1400px) {
-  .authorise-user-container .row.form-row .col-md-9 {
+  .authorise-user-container .row.form-row .col-md-8 {
     padding-left: 50px;
   }
 }
-.authorise-user-container .row.form-row .col-md-3 {
+.authorise-user-container .row.form-row .col-md-4 {
   background-color: #f5f5f5;
   padding: 32px 30px;
 }
@@ -1946,7 +1981,7 @@ label[for="qvc_finalapprovaldetails"] {
   background-size: contain;
   width: 100vw;
   min-width: 1440px;
-  height: 111px;
+  height: 139px;
   background-position: top;
   background-repeat: repeat-x;
 }
@@ -1955,12 +1990,17 @@ label[for="qvc_finalapprovaldetails"] {
     height: 95px;
   }
 }
+@media (max-width: 1600px) {
+  .center-banner .banner-container-secondary {
+    height: 111px;
+  }
+}
 .center-banner .empty-banner-container {
   background-image: url(dplh_banner-empty.png);
   display: block;
   background-size: contain;
   width: 100vw;
-  height: 138px;
+  height: 139px;
   background-position: top;
   background-repeat: repeat-x;
   display: -webkit-box;
@@ -1977,14 +2017,19 @@ label[for="qvc_finalapprovaldetails"] {
   text-shadow: 5px 5px rgba(0, 0, 0, 0.2);
   min-width: 992px;
 }
+@media (max-width: 992px) {
+  .center-banner .empty-banner-container {
+    height: 108px;
+  }
+}
 @media (max-width: 1400px) {
   .center-banner .empty-banner-container {
-    height: 91px;
+    height: 91px !important;
   }
 }
 @media (max-width: 1600px) {
   .center-banner .empty-banner-container {
-    height: 111px;
+    height: 108px;
   }
 }
 .center-banner .empty-banner-container h1 {
@@ -2033,6 +2078,41 @@ label[for="qvc_finalapprovaldetails"] {
 }
 .referral-container .col-left {
   height: 100% !important;
+}
+.col-centre,
+.col-left,
+.col-right,
+select,
+body {
+  /* Track */
+  /* Handle */
+}
+.col-centre::-webkit-scrollbar,
+.col-left::-webkit-scrollbar,
+.col-right::-webkit-scrollbar,
+select::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px !important;
+}
+.col-centre::-webkit-scrollbar-track,
+.col-left::-webkit-scrollbar-track,
+.col-right::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.col-centre::-webkit-scrollbar-thumb,
+.col-left::-webkit-scrollbar-thumb,
+.col-right::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  outline: 1px solid lightgray;
+}
+.ka-container .ka-header {
+  font-size: 32px;
+  font-weight: 900;
 }
 :root {
   accent-color: #d14210;
@@ -4453,9 +4533,15 @@ dd {
   -webkit-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
+#verifying_blurb {
+  color: #006C90 !important;
+  border: 2px solid #006C90;
+  background: #F6FBFE;
+  padding: 30px 80px;
+}
 .b2c-container {
   background-color: #f5f5f5 !important;
-  min-height: 100vh !important;
+  height: auto;
   /* endinject */
 }
 .b2c-container input {
@@ -4494,11 +4580,11 @@ dd {
   margin-bottom: 5px;
 }
 .b2c-container .pageLevel {
-  width: 293px;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   margin-top: 5px;
-  padding: 5px;
-  font-size: 1.1em;
+  padding: 8px 0px;
+  font-size: 18px;
   height: auto;
 }
 .b2c-container #panel,
@@ -4529,9 +4615,6 @@ dd {
   white-space: nowrap;
   font-size: 1em;
   font-weight: 700;
-}
-.b2c-container .buttons {
-  padding-top: 10px;
 }
 .b2c-container button {
   width: auto;
@@ -4779,13 +4862,6 @@ dd {
 .b2c-container ul {
   padding: 0;
 }
-.b2c-container #simplemodal-container .simplemodal-data {
-  padding: 5px 8px;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 3px;
-  font-style: italic;
-}
 .b2c-container #LocalAccountSigninEmailExchange,
 .b2c-container #SignInWithLogonNameExchange {
   background-image: url(none);
@@ -4842,7 +4918,6 @@ dd {
 }
 .b2c-container .buttons {
   width: 100%;
-  margin-bottom: 10px;
 }
 .b2c-container .buttons button {
   display: block;
@@ -4925,7 +5000,7 @@ dd {
   border-bottom: 1px solid #ccc;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #fff !important;
+  background-color: #fff;
   background-image: none !important;
   color: #555;
   min-width: 340px !important;
@@ -5543,4 +5618,69 @@ dd {
 }
 .b2c-container input::placeholder {
   color: transparent !important;
+}
+.modal .form-close {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  top: 2.5% !important;
+}
+.modal .form-close:focus,
+.modal .form-close:hover {
+  color: #d14210;
+  opacity: 1;
+}
+.modal .modal-header .modal-title {
+  font-size: 24px;
+  margin-left: 16px;
+}
+.modal .modal-header .modal-title .fa-pencil-square-o {
+  display: none;
+}
+.modal .form-action-container-right:not(input) {
+  padding: 0px 15px !important;
+  float: right;
+}
+#dplh_confidential[disabled="disabled"] {
+  margin-left: 15px;
+}
+.SharepointDocumentUpload {
+  margin-left: -15px;
+}
+[action*="modal-form-template-path"] .actions {
+  padding: 0px 15px !important;
+  margin: -32px 0 0 0 !important;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+[portal-modal] .modal-footer .btn-left {
+  float: left;
+}
+.modal:not([aria-label="Delete"]) .modal-content .modal-header {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.modal:not([aria-label="Delete"]) .modal-content .modal-header .close {
+  margin-top: -25px;
+  padding-right: 15px;
+}
+.modal:not([aria-label="Delete"]) .modal-content .modal-header .close:focus-visible {
+  outline: 2px dotted #d45610;
+}
+.modal:not([aria-label="Delete"]) .modal-content .modal-header .modal-body {
+  padding-bottom: 20px;
+}
+.modal.fade.modal-form {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit"] .modal-dialog {
+  margin-top: 20vh;
+}
+.modal-form .modal-body iframe {
+  height: 65vh !important;
+}
+section#modal-submit.modal-submit.in {
+  background: rgba(0, 0, 1, 0.5);
 }
