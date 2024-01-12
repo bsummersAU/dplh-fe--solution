@@ -597,7 +597,7 @@ form {
 
   .view-grid {
     table {
-      border: 1px solid @gray-light-tabs;
+      // border: 1px solid @gray-light-tabs;
       background-color: @white;
 
       >thead {
@@ -782,6 +782,8 @@ tr:last-of-type .cell {
       font-weight: 700;
       font-size: 24px;
     }
+
+
   }
 
   details {
@@ -817,9 +819,9 @@ tr:last-of-type .cell {
   }
 }
 
-.page-description p:nth-child(3) {
-  padding-left: 50px;
-}
+// .page-description p:nth-child(3) {
+//   padding-left: 50px;
+// }
 
 .page-description p:not(:nth-child(3)) {
   // padding-left: 20px;
@@ -1108,6 +1110,10 @@ tr:last-of-type .cell {
     .boolean-radio[disabled="disabled"] {
       margin-top: 0px;
     }
+
+    #subgrid_consenttoapply {
+      margin-top: 7vh !important;
+    }
   }
 
   fieldset {
@@ -1252,6 +1258,10 @@ div[data-name="tab_general"] {
       padding-right: 40px;
     }
 
+    label[for="subgrid_applicants"] {
+      max-width: 100% !important;
+    }
+
     fieldset[aria-label="form1_disclaimer"],
     fieldset[aria-label="Form2A_diclaimer"] {
       all: unset;
@@ -1306,7 +1316,7 @@ div[data-name="tab_general"] {
       .subgrid-cell {
         .info {
           label {
-            margin-bottom: -60px;
+            // margin-bottom: -60px;
             margin-top: 30px;
             padding-left: 18px;
             max-width: 30vw;

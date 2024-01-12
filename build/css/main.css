@@ -170,6 +170,7 @@ body > form {
 }
 .dplh-3-col #navigationbtns input[type="button"] + input[type="button"] {
   margin-left: 8px;
+  margin-right: 8px;
 }
 .dplh-3-col #navigationbtns #unlockappform {
   width: 0;
@@ -178,9 +179,6 @@ body > form {
   position: absolute;
   top: -22px;
   white-space: nowrap;
-}
-.dplh-3-col #navigationbtns .form1A-unlock input[title="Unlock Application"] {
-  top: -42px !important;
 }
 .col-md-3 {
   padding: 28px;
@@ -266,6 +264,9 @@ ul.stepper-vertical li.active a {
 }
 #helpSection h2 {
   font-size: 28px;
+}
+#helpSection h3 {
+  font-size: 24px;
 }
 #helpSection .OutlineElement {
   background: #f5f5f5 !important;
@@ -743,7 +744,7 @@ a.link-disabled::before {
   border-radius: 2px;
   color: #fff;
   font-size: 14px;
-  left: 6;
+  left: 6px;
   padding: 10px 20px;
   position: absolute;
   top: -50px;
@@ -751,6 +752,7 @@ a.link-disabled::before {
   transition: top 1s ease-out;
   z-index: 999999;
 }
+.skip-to-content a:focus,
 .skip-to-content a:focus-visible {
   border: 2px solid #fff;
   outline: 2px dotted #d54614;
@@ -850,6 +852,9 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   border-bottom: 10px solid #ddd;
   border-radius: 3px;
   margin: 16px 0px;
+}
+.content-home .card-container .home-card:nth-child(2) img {
+  width: 85% !important;
 }
 @media (max-width: 480px) {
   .content-home .card-container .home-card {
@@ -983,11 +988,12 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   position: absolute;
   margin-top: 20px;
 }
-.tab-content .tab-pane h4 {
+.tab-content .tab-pane h3 {
   margin-top: 60px;
   margin-bottom: -60px;
 }
-.tab-content .tab-pane .entitylist h4 {
+.tab-content .tab-pane .entitylist h4,
+.tab-content .tab-pane .entitylist h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1992,7 +1998,7 @@ label[for="qvc_finalapprovaldetails"] {
 }
 @media (max-width: 1600px) {
   .center-banner .banner-container-secondary {
-    height: 111px;
+    height: 13vh;
   }
 }
 .center-banner .empty-banner-container {
@@ -2113,6 +2119,9 @@ body::-webkit-scrollbar-thumb {
 .ka-container .ka-header {
   font-size: 32px;
   font-weight: 900;
+}
+fieldset[aria-label="empty_fieldset"] {
+  display: none;
 }
 :root {
   accent-color: #d14210;
@@ -2796,6 +2805,7 @@ footer nav a {
 }
 .dplh--col #navigationbtns input[type="button"] + input[type="button"] {
   margin-left: 8px;
+  margin-right: 8px;
 }
 .dplh--col #navigationbtns #unlockappform {
   width: 0;
@@ -3040,6 +3050,35 @@ footer nav a {
 }
 .site-container-2-col #rightnavigationbtns {
   width: 20%;
+}
+.submit-nav-btns #unlockappform {
+  margin-left: 64px;
+  margin-top: -28px !important;
+}
+.submit-nav-btns #unlockappform .submit-btn {
+  background-color: white !important;
+  border-color: #2d2f32 !important;
+  color: #000 !important;
+}
+.submit-nav-btns #unlockappform .submit-btn:active,
+.submit-nav-btns #unlockappform .submit-btn:hover {
+  outline: 0 !important;
+  background-color: white !important;
+  border-color: #d14210 !important;
+  color: #d14210 !important;
+}
+.submit-nav-btns #unlockappform .submit-btn:focus-visible {
+  outline: 2px dotted #000 !important;
+  outline-offset: 2px !important;
+  background-color: white !important;
+  border-color: #d14210 !important;
+  color: #d14210 !important;
+}
+.submit-nav-btns .form1A-unlock input {
+  top: -42px !important;
+}
+.submit-nav-btns .ol-unlock input {
+  top: -42px !important;
 }
 .alert {
   border-radius: 4px;
@@ -3787,7 +3826,6 @@ form .grid-actions {
   margin-bottom: 16px;
 }
 form .view-grid table {
-  border: 1px solid #d1d1d1;
   background-color: #ffffff;
 }
 form .view-grid table > thead a {
@@ -3961,9 +3999,6 @@ tr:last-of-type .cell {
 }
 .form-summary td.cell {
   padding: 0;
-}
-.page-description p:nth-child(3) {
-  padding-left: 50px;
 }
 .page-description p:not(:nth-child(3)) {
   padding-top: 20px;
@@ -4168,6 +4203,10 @@ tr:last-of-type .cell {
 .ref fieldset[aria-label="On-site sewage disposal"] .boolean-radio[disabled="disabled"] {
   margin-top: 0px;
 }
+.ref fieldset[aria-label="Consent to apply"] #subgrid_consenttoapply,
+.ref fieldset[aria-label="On-site sewage disposal"] #subgrid_consenttoapply {
+  margin-top: 7vh !important;
+}
 .ref fieldset .boolean-radio[disabled="disabled"] {
   position: relative;
   margin-top: -20px;
@@ -4263,6 +4302,9 @@ div[data-name="tab_general"] fieldset[aria-label="Upload document"] legend h3 {
   margin-left: 12px;
   padding-right: 40px;
 }
+.lodgement > div label[for="subgrid_applicants"] {
+  max-width: 100% !important;
+}
 .lodgement > div fieldset[aria-label="form1_disclaimer"],
 .lodgement > div fieldset[aria-label="Form2A_diclaimer"] {
   all: unset;
@@ -4303,7 +4345,6 @@ div[data-name="tab_general"] fieldset[aria-label="Upload document"] legend h3 {
   padding: 8px 24px 16px 24px !important;
 }
 .lodgement > div fieldset:not([aria-label="Payer details"]):not([aria-label="Submit application"]) .subgrid-cell .info label {
-  margin-bottom: -60px;
   margin-top: 30px;
   padding-left: 18px;
   max-width: 30vw;
@@ -5683,4 +5724,7 @@ section[aria-label="<span class='fa fa-save-o' aria-hidden='true'></span> Submit
 }
 section#modal-submit.modal-submit.in {
   background: rgba(0, 0, 1, 0.5);
+}
+section#modal-submit.modal-submit.in .modal-dialog {
+  margin-top: 30vh;
 }
