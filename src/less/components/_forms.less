@@ -375,7 +375,7 @@ fieldset[aria-label="Submit Application"] {
 }
 
 fieldset[aria-label$="fieldset-header"]:has(#returntoapplication) {
-  height: 100% !important;
+  // height: 100% !important;
   margin-bottom: 10px !important;
   background: @white  !important;
   border: 1px solid @gray-light-tabs  !important;
@@ -615,6 +615,10 @@ form {
 
             &:first-child {
               padding-left: 16px;
+
+              @media(max-width: @screen-xs) {
+                padding: 0px;
+              }
             }
           }
         }
@@ -1285,7 +1289,7 @@ div[data-name="tab_general"] {
       border: 1px solid @gray-light-tabs;
 
       .page-description {
-        padding: 16px 24px 0px 24px;
+        padding: 16px 16px 0px 16px;
       }
 
       legend {
@@ -1308,9 +1312,23 @@ div[data-name="tab_general"] {
       }
 
       td {
-        padding: 8px 24px 16px 24px !important;
+        padding: 8px 16px 16px 16px !important;
+
+        @media(max-width: @screen-sm) {
+          padding: 0px;
+        }
+
+      }
 
 
+      .table[role="grid"] {
+        td {
+
+          @media(max-width: @screen-sm) {
+            padding: 8px 0px !important;
+          }
+
+        }
       }
 
       .subgrid-cell {

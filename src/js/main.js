@@ -1,7 +1,7 @@
 //=require ../../node_modules/bootstrap/dist/js/bootstrap.min.js
 
-PAS/APL/Forms/RequiredDocumentsHeading
+PAS / APL / Forms / RequiredDocumentsHeading;
 
-$(function(){
-  console.log('jquery & bootstrap are ready');
-})
+$(function () {
+  console.log("jquery & bootstrap are ready");
+});

@@ -1,9 +1,10 @@
 .alert {
   border-radius: 4px;
 
-  h4 {
+  h2 {
     font-weight: 600;
     color: @brand-primary;
+    font-size: 20px;
   }
 
   ul {
@@ -68,4 +69,34 @@
 
 .notifications {
   margin-top: 0px !important;
+}
+
+.landing-alert {
+  padding: 16px;
+  display: flex;
+  align-items: baseline;
+  border-radius: 16px;
+
+  .alert-heading {
+
+    p {
+      background-color: #004f73;
+      color: white;
+      border-radius: 16px;
+      padding: 8px 16px 4px;
+      margin-right: 16px;
+      line-height: 27px;
+    }
+  }
+
+  .alert-content {
+    .field-label {
+      color: #004f73;
+    }
+
+    p:not(.field-label) {
+      color: @gray-base;
+    }
+  }
+
 }

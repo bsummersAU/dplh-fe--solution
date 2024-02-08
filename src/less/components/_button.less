@@ -162,7 +162,7 @@
 
   input[type="button"]+input[type="button"] {
     margin-left: 8px;
-    margin-right: 8px;
+    // margin-right: 8px;
   }
 
   #unlockappform {
@@ -448,4 +448,24 @@
     }
   }
 
+}
+
+#addmyprofilebtn {
+  .btn-default !important;
+}
+
+#navigationbtns {
+  @media(max-width: @screen-xs) {
+
+    #leftnavigationbtn {
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+
+    #rightnavigationbtns {
+      display: flex;
+
+    }
+  }
 }

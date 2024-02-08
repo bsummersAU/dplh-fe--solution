@@ -1,14 +1,25 @@
 .pagination {
     >li>a {
-        font-size  : 16px;
+        font-size: 16px;
         font-weight: 600;
+
+        &:focus-visible {
+            outline: 2px dotted #000;
+            outline-offset: 2px;
+            background-color: white;
+            border-color: #d14210;
+            color: #d14210;
+        }
     }
-    > .active > a,
-    > .active > a:active {
-        background-color: @brand-primary !important;
+
+    >.active>a,
+    >.active>a:active {
+        background-color: @brand-primary  !important;
     }
-    > .active > a:hover,
-    > .active > a:focus  {
-        background-color: @brand-info !important;
+
+    >.active>a:hover,
+    >.active>a:focus {
+        background-color: @brand-info  !important;
     }
+
 }
