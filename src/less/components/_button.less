@@ -469,3 +469,32 @@
     }
   }
 }
+
+@media(max-width: @screen-xs-min) {
+  #navigationbtns.submit-nav-btns {
+    #leftnavigationbtns {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #unlockappform {
+      margin-left: 0;
+      margin-top: 21px !important;
+
+      input {
+        top: 0 !important;
+      }
+    }
+
+    #rightnavigationbtns {
+      flex-direction: column;
+
+      #prevButton {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 4px;
+      }
+    }
+  }
+
+}

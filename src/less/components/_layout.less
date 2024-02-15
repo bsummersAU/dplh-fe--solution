@@ -86,7 +86,8 @@ body {
     height: 100vh;
   }
 
-  #mainContent:has(#returntoapplication) {
+  #mainContent:has(#returntoapplication),
+  #mainContent:has(.fee-summary) {
     height: unset;
   }
 
@@ -183,20 +184,12 @@ body {
     .col-right,
     .col-centre {
       padding-top: 32px;
-      height: 100%;
-      min-height: 100vh;
+      // height: 100%;
+      // min-height: 100vh;
     }
   }
 
-  // .col-left {
-  //   position: fixed;
-  //   z-index: 10;
-  //   background: white;
-  //   width: 95%;
-  //   transition-property: width, min-width;
-  //   transition-duration: 0.3s;
-  //   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // }
+
   #navigationbtns {
     height: @stepperFooterHeight;
     padding: 16px;
@@ -565,8 +558,8 @@ a[title="Profile"]:target {
     overflow-y: auto;
     overflow-x: hidden;
     // height: calc(100vh - 169px) !important;
-    height: 100%;
-    min-height: 100vh;
+    // height: 100%;
+    // min-height: 100vh;
     position: relative;
   }
 }

@@ -94,7 +94,8 @@ body > form {
 .dplh-3-col #mainContent {
   height: 100vh;
 }
-.dplh-3-col #mainContent:has(#returntoapplication) {
+.dplh-3-col #mainContent:has(#returntoapplication),
+.dplh-3-col #mainContent:has(.fee-summary) {
   height: unset;
 }
 .dplh-3-col #mainContent:has(.ol-submit-container) fieldset {
@@ -159,8 +160,6 @@ body > form {
 .dplh-3-col .form-row .col-right,
 .dplh-3-col .form-row .col-centre {
   padding-top: 32px;
-  height: 100%;
-  min-height: 100vh;
 }
 .dplh-3-col #navigationbtns {
   height: 77px;
@@ -509,8 +508,6 @@ a[title="Profile"]:target {
   .col-centre {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100%;
-    min-height: 100vh;
     position: relative;
   }
 }
@@ -3128,6 +3125,35 @@ footer nav a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+@media (max-width: 480px) {
+  #navigationbtns.submit-nav-btns #leftnavigationbtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #navigationbtns.submit-nav-btns #unlockappform {
+    margin-left: 0;
+    margin-top: 21px !important;
+  }
+  #navigationbtns.submit-nav-btns #unlockappform input {
+    top: 0 !important;
+  }
+  #navigationbtns.submit-nav-btns #rightnavigationbtns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #navigationbtns.submit-nav-btns #rightnavigationbtns #prevButton {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 4px;
   }
 }
 .alert {
