@@ -1,0 +1,204 @@
+<script>
+  $(function () {
+    $(".btn-line").remove();
+    $("#content > .nav").hide();
+    $("#external-login-heading").hide();
+  });
+
+  const html = `{% include 'PAS-Banner' title:"Planning Online Portal" %}`;
+  const footer = `<div style="width: 100vw; displ">{% editable snippets 'PAS/Footer' %}</div>`;
+  $("#content-container").prepend(html);
+  $("#content-container").css("padding", "0");
+  $("body").append(footer);
+</script>
+<section class="page_section sign-in">
+  <div class="container" id="mainContent">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="section-landing-heading">
+          <span class="xrm-editable-text xrm-attribute"
+            ><span class="xrm-attribute-value">Sign in with...</span></span
+          >
+        </h1>
+
+        <p>
+          <span
+            >You can sign in to Planning Online using one of the services
+            below.</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer_down"></div>
+</section>
+
+<section class="sign-in-body container">
+  <div id="mainContent">
+    <form action="/Account/Login/ExternalLogin?ReturnUrl=%2F" method="post">
+      <input
+        name="__RequestVerificationToken"
+        type="hidden"
+        value="fcnxUHue-yARj6h4txQ_H3HxkmpvoR0WjUN6lZtSgUHBwI7p7vEcb3KzBtNdrPc0T-QHZoJFgI7y8e0wOEFel_MSOAoB230z_YLACDj7tOY1"
+      />
+      <div class="form-horizontal">
+        <div
+          aria-describedby="loginValidationSummary"
+          aria-label="Sign in failed."
+          class="validation-summary-valid listStyleTypeNone alert alert-block alert-danger"
+          data-valmsg-summary="true"
+          id="loginValidationSummary"
+          tabindex="0"
+        >
+          <ul>
+            <li style="display: none"></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Facebook</h4>
+
+                <p>
+                  If you have a Facebook account, you can sign into Planning
+                  Online with this account. If you would like to create an
+                  account or learn more about Facebook accounts, click this
+                  <a href="https://www.facebook.com/index.php" target="_blank"
+                    >link</a
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Google</h4>
+
+                <p>
+                  If you have a Google account, you can sign into Planning
+                  Online with this account. If you would like to create an
+                  account or learn more about Google accounts, click this
+                  <a
+                    href="https://www.google.com/account/about/?hl=en"
+                    target="_blank"
+                    >link</a
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Digital Identity</h4>
+
+                <p>
+                  <span
+                    >This is provided by the Australian Government. If you have
+                    a Digital Identity account, you can sign into Planning
+                    Online with this account. If you would like to create an
+                    account or learn more about Digital Identity, click this
+                    <a
+                      href="https://my.gov.au/en/about/help/digital-identity"
+                      target="_blank"
+                      >link</a
+                    >.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-center">
+            <div class="row">
+              <div class="col-md-12 external-btn">
+                <button
+                  id="{{
+                    settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']
+                  }}"
+                  name="provider"
+                  title="Sign into Planning Online."
+                  type="submit"
+                  value="{{
+                    settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']
+                  }}"
+                >
+                  <b>Sign into Planning Online&nbsp;&nbsp;&nbsp;&gt;</b>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-right" style="margin-top: 30px">
+          <div class="col-md-6 staff-btn">
+            <button
+              id="https://login.windows.net/1077f4f6-6cad-4f1d-9994-9421a25eaa3f/"
+              name="provider"
+              title="Sign in as an internal staff member."
+              type="submit"
+              value="https://login.windows.net/1077f4f6-6cad-4f1d-9994-9421a25eaa3f/"
+            >
+              <b>Sign in as an internal staff member&nbsp;&nbsp;&nbsp;&gt;</b>
+            </button>
+          </div>
+        </div>
+      </div>
+      <b><b> </b></b>
+    </form>
+  </div>
+</section>
+
+// new
+
+
+
+{% include 'PAS-Banner' title:"Planning Online Portal" %}
+<section class="page_section section-landing home section-padding">
+  <div id="mainContent" class="container">
+    <div class="row ">
+      <div class="col-md-12">       
+        <h1 class="section-landing-heading">{% editable snippets 'PAS/Home/Title' type: 'text' tag: 'span' %}</h1>
+        <div class="section-landing-sub-heading">{% editable snippets 'PAS/Home/Subtitle' type: 'text' tag: 'span' %}</div>        
+      </div>
+       {% comment %}
+      {% if user == null %}
+      <div class="col-md-12">   
+        <a aria-label="Sign in" href="/SignIn?returnUrl=%2F" title="Sign In or Register" class="btn button submit-btn btn-primary">Sign In or Register</a> 
+      </div>
+      {% endif %}
+      {% endcomment %}
+  
+
+        <form action="/Account/Login/ExternalLogin?ReturnUrl=%2F" method="post"><input name="__RequestVerificationToken" type="hidden" value="fcnxUHue-yARj6h4txQ_H3HxkmpvoR0WjUN6lZtSgUHBwI7p7vEcb3KzBtNdrPc0T-QHZoJFgI7y8e0wOEFel_MSOAoB230z_YLACDj7tOY1">
+        <div class="form-horizontal">
+        <div class="row">
+        <div class="col-md-6 text-center">
+        <div class="row">
+        <div class="col-md-12 external-btn"><button id="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}" name="provider" title="Sign into Planning Online." type="submit" value="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}"><b>Sign into Planning Online&nbsp;&nbsp;&nbsp;&gt;</b></button></div>
+        </div>
+        </div>
+        </div>
+
+        </form>
+    
+
+    </div>
+  </div>
+ 
+</section>
+
+<script>
+  $(function () {
+    $(".btn-line").remove();
+    $("#content > .nav").hide();
+    $("#external-login-heading").hide();    
+  });
+
+
+</script>
+
+
+{% editable snippets 'PAS/Footer' %}

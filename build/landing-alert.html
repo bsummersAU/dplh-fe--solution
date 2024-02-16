@@ -7,3 +7,48 @@
     <p>This is text is TBC so blah blah for the interm</p>
   </div>
 </div>
+
+
+<div class="col-md-12 external-btn"><button id="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}" name="provider" title="Sign into Planning Online." type="submit" value="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}"></button></div>
+</div>
+
+
+
+
+<form action="/Account/Login/ExternalLogin?ReturnUrl=%2F" method="post"><input name="__RequestVerificationToken" type="hidden" value="fcnxUHue-yARj6h4txQ_H3HxkmpvoR0WjUN6lZtSgUHBwI7p7vEcb3KzBtNdrPc0T-QHZoJFgI7y8e0wOEFel_MSOAoB230z_YLACDj7tOY1">
+<div class="form-horizontal">
+<div aria-describedby="loginValidationSummary" aria-label="Sign in failed." class="validation-summary-valid listStyleTypeNone alert alert-block alert-danger" data-valmsg-summary="true" id="loginValidationSummary" tabindex="0">
+<ul>
+	<li style="display:none"></li>
+</ul>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="row">
+<div class="col-md-12">
+<h4>Facebook</h4>
+
+<p>If you have a Facebook account, you can sign into Planning Online with this account. If you would like to create an account or learn more about Facebook accounts, click this <a href="https://www.facebook.com/index.php" target="_blank">link</a>.</p>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<h4>Google</h4>
+
+<p>If you have a Google account, you can sign into Planning Online with this account. If you would like to create an account or learn more about Google accounts, click this <a href="https://www.google.com/account/about/?hl=en" target="_blank">link</a>.</p>
+</div>
+</div>
+
+
+</div>
+
+<div class="col-md-6 text-center">
+<div class="row">
+<div class="col-md-12 external-btn"><button id="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}" name="provider" title="Sign into Planning Online." type="submit" value="{{settings['Authentication/OpenIdConnect/AAD-B2C_1/Authority']}}"><b>Sign into Planning Online&nbsp;&nbsp;&nbsp;&gt;</b></button></div>
+</div>
+</div>
+</div>
+
+</form>

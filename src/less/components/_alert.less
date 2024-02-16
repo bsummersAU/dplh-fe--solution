@@ -77,10 +77,13 @@
   align-items: baseline;
   border-radius: 16px;
 
+  a {
+    font-weight: 500;
+  }
+
   .alert-heading {
 
     p {
-      background-color: #004f73;
       color: white;
       border-radius: 16px;
       padding: 8px 16px 4px;
@@ -91,11 +94,53 @@
 
   .alert-content {
     .field-label {
-      color: #004f73;
+      color: @brand-blue;
     }
 
     p:not(.field-label) {
       color: @gray-base;
+    }
+  }
+
+  &.alert-info {
+    .alert-heading {
+      p {
+        background-color: @brand-blue;
+      }
+    }
+
+    .alert-content {
+      .field-label {
+        color: @brand-blue;
+      }
+    }
+  }
+
+  &.alert-warning {
+    .alert-heading {
+      p {
+        background-color: @state-warning-text;
+      }
+    }
+
+    .alert-content {
+      .field-label {
+        color: @state-warning-text;
+      }
+    }
+  }
+
+  &.alert-danger {
+    .alert-heading {
+      p {
+        background-color: @state-danger-text;
+      }
+    }
+
+    .alert-content {
+      .field-label {
+        color: @state-danger-text;
+      }
     }
   }
 
