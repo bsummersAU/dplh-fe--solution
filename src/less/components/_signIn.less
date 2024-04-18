@@ -68,7 +68,12 @@
             border: 1px solid @gray-light-tabs;
             background: @white;
             max-width: 550px;
+            width: 50%;
             margin: 16px;
+
+            @media(max-width: @screen-lg) {
+                width: 100%;
+            }
 
             .card-heading {
                 color: #000;
@@ -79,8 +84,7 @@
             }
 
             .card-content {
-                color: #4D4F5C;
-                font-family: "Open Sans";
+                color: #000;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -93,7 +97,9 @@
 
             .btn {
                 width: fit-content;
-                margin-top: 4px !important;
+                margin-top: auto !important;
+
+
             }
         }
 
