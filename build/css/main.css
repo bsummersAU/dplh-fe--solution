@@ -26,6 +26,10 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/heebo/v26/NGSpv5_NC0k9P_v6ZUCbLRAHxK1EICuccg.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'font-awesome';
+  src: url("../fonts/fa-solid-900.ttf");
+}
 .field-label-bold {
   font-family: Heebo;
   font-size: 22px;
@@ -1975,7 +1979,6 @@ label[for="qvc_finalapprovaldetails"] {
 }
 .section-padding-top {
   margin-top: 48px;
-  margin-bottom: -28px;
 }
 .disclosure-container .panel.dplh-panel {
   width: 80% !important;
@@ -2178,10 +2181,10 @@ fieldset[aria-label="empty_fieldset"] {
 .contact-us .col-right a i {
   padding-right: 16px;
   font-size: 24px;
+  margin-top: -6px;
 }
 .support-container {
-  margin: 30px auto;
-  padding: 50px 15px;
+  padding: 45px 15px 30px 15px;
 }
 .support-container .btn-layout {
   display: -webkit-box;
@@ -4838,6 +4841,31 @@ dd {
 .rotating {
   -webkit-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
+}
+.fa-newspaper::before {
+  font-family: "font-awesome";
+  content: "\f1ea" !important;
+  font-style: normal;
+}
+.fa-book-open-reader::before {
+  font-family: "font-awesome";
+  content: "\f5da" !important;
+  font-style: normal;
+}
+.fa-circle-question::before {
+  font-family: "font-awesome";
+  content: "\f059" !important;
+  font-style: normal;
+}
+.fa-phone::before {
+  font-family: "font-awesome";
+  content: "\f095" !important;
+  font-style: normal;
+}
+.fa-share::before {
+  font-family: "font-awesome";
+  content: "\f0e0" !important;
+  font-style: normal;
 }
 #verifying_blurb {
   color: #006C90 !important;
