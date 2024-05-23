@@ -925,6 +925,13 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   left: 540px;
   margin-top: -125px;
 }
+.page_section .input-group:has([title="Form 2A"]) {
+  padding-left: 15px;
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin-top: -125px;
+}
 .page_section .section-landing-heading {
   padding: 50px 0 0px 0;
 }
@@ -1150,6 +1157,11 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] > ul
   border: 1px solid #d1d1d1 !important;
   width: 69%;
   background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .page_section fieldset {
+    width: 100%;
+  }
 }
 .page_section fieldset table thead {
   border: 0;
@@ -2184,7 +2196,7 @@ fieldset[aria-label="empty_fieldset"] {
   margin-top: -6px;
 }
 .support-container {
-  padding: 45px 15px 30px 15px;
+  padding: 50px 15px 35px 15px;
 }
 .support-container .btn-layout {
   display: -webkit-box;
@@ -2234,6 +2246,9 @@ fieldset[aria-label="empty_fieldset"] {
 .support-container .btn-layout a i {
   padding-bottom: 16px;
   font-size: 32px;
+}
+.ka-header {
+  padding-top: 16px;
 }
 :root {
   accent-color: #d14210;
@@ -2835,6 +2850,20 @@ footer nav a {
   padding: 0 0.25em 0 0;
   margin: 0;
 }
+.btn-primary:focus {
+  background-color: #d14210;
+  color: #ffffff;
+  border: 0;
+  outline: 2px dotted #000;
+  outline-offset: 2px;
+}
+.btn-primary:focus-visible {
+  outline: 2px dotted #000;
+  outline-offset: 2px;
+  background-color: white;
+  border-color: #d14210;
+  color: #d14210;
+}
 .btn-default {
   background-color: white;
   border-color: #2d2f32;
@@ -2846,6 +2875,13 @@ footer nav a {
   background-color: white;
   border-color: #d14210;
   color: #d14210;
+}
+.btn-default:focus {
+  background-color: #d14210;
+  color: #ffffff;
+  border: 0;
+  outline: 2px dotted #000;
+  outline-offset: 2px;
 }
 .btn-default:focus-visible {
   outline: 2px dotted #000;
@@ -2892,33 +2928,6 @@ footer nav a {
   background-color: white;
   border-color: #d14210;
   color: #d14210;
-}
-#cancelBtn {
-  background-color: #000;
-  border: 0;
-}
-#cancelBtn:focus-visible {
-  background-color: #ffffff;
-  color: #d45610;
-  border: 2px dotted #d45610;
-}
-#cancelBtn:hover {
-  background-color: #d45610;
-  color: #ffffff;
-  border: 0;
-}
-#acceptBtn {
-  background-color: #000;
-}
-#acceptBtn:focus-visible {
-  background-color: #ffffff;
-  color: #d45610;
-  border: 2px dotted #d45610;
-  text-decoration: overline;
-}
-#acceptBtn:hover {
-  background-color: #d45610;
-  color: #ffffff;
 }
 .dplh--col #navigationbtns {
   width: 75vw;
@@ -3202,6 +3211,13 @@ footer nav a {
   border-color: #d14210 !important;
   color: #d14210 !important;
 }
+.submit-nav-btns #unlockappform .submit-btn:focus {
+  background-color: #d14210 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  outline: 2px dotted #000 !important;
+  outline-offset: 2px !important;
+}
 .submit-nav-btns #unlockappform .submit-btn:focus-visible {
   outline: 2px dotted #000 !important;
   outline-offset: 2px !important;
@@ -3226,6 +3242,13 @@ footer nav a {
   background-color: white !important;
   border-color: #d14210 !important;
   color: #d14210 !important;
+}
+#addmyprofilebtn:focus {
+  background-color: #d14210 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  outline: 2px dotted #000 !important;
+  outline-offset: 2px !important;
 }
 #addmyprofilebtn:focus-visible {
   outline: 2px dotted #000 !important;

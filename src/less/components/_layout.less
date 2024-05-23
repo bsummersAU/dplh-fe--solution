@@ -44,6 +44,8 @@ body {
 }
 
 .container {
+
+
   max-width: 1240px;
 
   @media (min-width: 1200px) {
@@ -440,6 +442,8 @@ p.page-description {
   }
 }
 
+;
+
 // change placeholder text colour
 input#dplh_phonenumber::placeholder {
   color: white;
@@ -462,11 +466,6 @@ a[title="Profile"]:target {
   border-left: 5px solid @brand-focus;
 }
 
-// @media (min-width: 1700px) {
-//   .dplh--col #navigationbtns {
-//     width: 106% !important;
-//   }
-// }
 
 @media (max-width: @screen-sm-max) {
   .page-actions {
@@ -1106,6 +1105,16 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
     margin-top: -125px;
   }
 
+  .input-group:has([title="Form 2A"]) {
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+    left: 0;
+    margin-top: -125px;
+
+    a[title="Form 2A"] {}
+  }
+
   .section-landing-heading {
     padding: 50px 0 0px 0;
   }
@@ -1396,6 +1405,10 @@ fieldset[aria-label="Required documents"] [class="list-required-documents"] {
   border: 1px solid @gray-light-tabs  !important;
   width: 69%;
   background-color: @white;
+
+  @media(max-width: @screen-md) {
+    width: 100%;
+  }
 
   table {
     thead {
@@ -2683,7 +2696,7 @@ html[dir=ltr] .table-fluid td {
 }
 
 .support-container {
-  padding: 45px 15px 30px 15px;
+  padding: 50px 15px 35px 15px;
 
   .btn-layout {
     display: flex;
@@ -2718,4 +2731,8 @@ html[dir=ltr] .table-fluid td {
       }
     }
   }
+}
+
+.ka-header {
+  padding-top: 16px;
 }

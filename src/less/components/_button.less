@@ -40,6 +40,28 @@
   }
 }
 
+.btn-primary {
+
+  &:focus {
+    background-color: @brand-info;
+    color: @white;
+    border: 0;
+    outline: 2px dotted #000;
+    outline-offset: 2px;
+  }
+
+  &:focus-visible {
+    outline: 2px dotted #000;
+    outline-offset: 2px;
+    background-color: white;
+    border-color: @brand-info;
+    color: @brand-info;
+  }
+}
+
+
+
+
 .btn-default {
   background-color: white;
   border-color: @gray-darker;
@@ -51,6 +73,14 @@
     background-color: white;
     border-color: @brand-info;
     color: @brand-info;
+  }
+
+  &:focus {
+    background-color: @brand-info;
+    color: @white;
+    border: 0;
+    outline: 2px dotted #000;
+    outline-offset: 2px;
   }
 
   &:focus-visible {
@@ -108,38 +138,39 @@
   }
 }
 
-#cancelBtn {
-  background-color: #000;
-  border: 0;
+// #cancelBtn,
+// #acceptBtn {
+//   background-color: #000;
+//   border: 0;
 
-  &:focus-visible {
-    background-color: @white;
-    color: @brand-focus;
-    border: 2px dotted @brand-focus;
-  }
+//   &:focus-visible,
+//   &:focus {
+//     background-color: @brand-focus;
+//     color: @white;
+//   }
 
-  &:hover {
-    background-color: @brand-focus;
-    color: @white;
-    border: 0;
-  }
-}
+//   &:hover {
+//     background-color: @brand-focus;
+//     color: @white;
+//     border: 0;
+//   }
+// }
 
-#acceptBtn {
-  background-color: #000;
+//  {
+//   background-color: #000;
 
-  &:focus-visible {
-    background-color: @white;
-    color: @brand-focus;
-    border: 2px dotted @brand-focus;
-    text-decoration: overline;
-  }
+//   &:focus-visible {
+//     background-color: @white;
+//     color: @brand-focus;
+//     border: 2px dotted @brand-focus;
+//     text-decoration: overline;
+//   }
 
-  &:hover {
-    background-color: @brand-focus;
-    color: @white;
-  }
-}
+//   &:hover {
+//     background-color: @brand-focus;
+//     color: @white;
+//   }
+// }
 
 .dplh--col #navigationbtns {
   width: 75vw;
